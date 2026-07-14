@@ -3,470 +3,473 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
 <meta name="description" content="Doruk Erel — Embedded Systems Developer, Hardware & Network Administrator. Academic portfolio and CV.">
 <meta name="author" content="Doruk Erel">
 <title>Doruk Erel — Academic Portfolio & CV</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230369a1'/%3E%3Cstop offset='100%25' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='34' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, Times New Roman, serif' font-weight='700' font-size='26' fill='%23ffffff'%3EDE%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%238a1538'/%3E%3Cstop offset='100%25' stop-color='%2326355c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='34' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, Times New Roman, serif' font-weight='700' font-size='26' fill='%23ffffff'%3EDE%3C/text%3E%3C/svg%3E">
 <style>
   :root {
+    color-scheme: light only;
     --bg: #f6f8fb;
     --surface: #ffffff;
     --ink: #0f172a;
-    --ink-soft: #475569;
-    --ink-faint: #64748b;
-    --accent: #0369a1;
-    --accent-2: #0ea5e9;
+    --ink-soft: #000000;
+    --ink-faint: #000000;
+    --accent: #8a1538;
+    --accent-2: #26355c;
     --line: #e2e8f0;
     --line-soft: #eef2f7;
-    --chip: #eef5fb;
-    --chip-ink: #0c4a6e;
+    --chip: #f7eef1;
+    --chip-ink: #6e1423;
     --radius: 14px;
     --shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.18);
     --shadow-sm: 0 2px 10px -4px rgba(15, 23, 42, 0.12);
     --maxw: 980px;
   }
 
-  * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 
-  body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, system-ui, -apple-system, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    margin: 0;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
+body { 
+font-family: 'Inter', 'Segoe UI', Tahoma, system-ui, -apple-system, sans-serif; 
+background: #99D9EA; 
+color: var(--ink); 
+margin: 0; 
+line-height: 1.65; 
+-webkit-font-smoothing: antialiased; 
+}
 
-  /* serif accent for headings */
-  h1, h2, h3 { font-family: 'Georgia', 'Times New Roman', serif; }
+/* serif accent for headings */ 
+h1, h2, h3 { font-family: 'Georgia', 'Times New Roman', serif; }
 
-  a { color: var(--accent); text-decoration: none; font-weight: 500; }
-  a:hover { text-decoration: underline; }
+a { color: var(--accent); text-decoration: none; font-weight: 500; } 
+a:hover { text-decoration: underline; }
 
-  /* ---------- TOP NAV ---------- */
-  .nav {
-    position: sticky;
-    top: 0;
-    z-index: 900;
-    backdrop-filter: saturate(180%) blur(10px);
-    background: rgba(255, 255, 255, 0.82);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0.7rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  .brand {
-    font-family: 'Georgia', serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--ink);
-    letter-spacing: 0.2px;
-    white-space: nowrap;
-  }
-  .brand span { color: var(--accent); }
-  .nav-links {
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    font-size: 0.92rem;
-  }
-  .nav-links a { color: var(--ink-soft); font-weight: 500; }
-  .nav-links a:hover { color: var(--accent); text-decoration: none; }
-  .nav-actions { display: flex; gap: 0.5rem; align-items: center; }
+/* ---------- TOP NAV ---------- */ 
+.nav { 
+position: sticky; 
+top: 0; 
+z-index: 900; 
+backdrop-filter: saturate(180%) blur(10px); 
+background: rgba(255, 255, 255, 0.82); 
+border-bottom: 1px solid var(--line); 
+} 
+.nav-inner { 
+max-width: var(--maxw); 
+margin: 0 auto; 
+padding: 0.7rem 1.5rem; 
+display: flex; 
+align-items: center; 
+justify-content: space-between; 
+gap: 1rem; 
+} 
+.brand { 
+font-family: 'Georgia', serif; 
+font-weight: 700; 
+font-size: 1.1rem; 
+color: var(--ink); 
+letter-spacing: 0.2px; 
+white-space: nowrap; 
+} 
+.brand span { color: var(--accent); } 
+.nav-links { 
+display: flex; 
+gap: 1.25rem; 
+flex-wrap: wrap; 
+font-size: 0.92rem; 
+} 
+.nav-links a { color: var(--ink-soft); font-weight: 500; } 
+.nav-links a:hover { color: var(--accent); text-decoration: none; } 
+.nav-actions { display: flex; gap: 0.5rem; align-items: center; }
 
-  .btn {
-    border: 1px solid var(--accent);
-    background: var(--accent);
-    color: #fff;
-    padding: 0.5rem 0.95rem;
-    border-radius: 999px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s, transform 0.05s;
-    font-family: inherit;
-  }
-  .btn:hover { background: #024d78; }
-  .btn:active { transform: translateY(1px); }
-  .btn.ghost {
-    background: transparent;
-    color: var(--accent);
-  }
-  .btn.ghost:hover { background: var(--chip); }
+.btn { 
+border: 1px solid var(--accent); 
+background: var(--accent); 
+color: #fff; 
+padding: 0.5rem 0.95rem; 
+border-radius: 999px; 
+font-size: 0.88rem; 
+font-weight: 600; 
+cursor: pointer; 
+white-space: nowrap; 
+transition: background 0.2s, transform 0.05s; 
+font-family: inherit; 
+} 
+.btn:hover { background: #5e0f2b; } 
+.btn:active { transform: translateY(1px); } 
+.btn.ghost { 
+background: transparent; 
+color: var(--accent); 
+} 
+.btn.ghost:hover { background: var(--chip); }
 
-  @media (max-width: 720px) {
-    .nav-links { display: none; }
-  }
+@media (max-width: 720px) { 
+.nav-links { display: none; } 
+}
 
-  /* ---------- LAYOUT ---------- */
-  .container { max-width: var(--maxw); margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+/* ---------- LAYOUT ---------- */ 
+.container { max-width: var(--maxw); margin: 0 auto; padding: 2rem 1.5rem 4rem; }
 
-  section.block {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 2.5rem;
-    margin-bottom: 1.8rem;
-    box-shadow: var(--shadow-sm);
-  }
+section.block { 
+background: var(--surface); 
+border: 1px solid var(--line); 
+border-radius: var(--radius); 
+padding: 2.5rem; 
+margin-bottom: 1.8rem; 
+box-shadow: var(--shadow-sm); 
+}
 
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-  .section-head h2 {
-    font-size: 1.6rem;
-    margin: 0;
-    color: var(--ink);
-  }
-  .section-head .num {
-    font-family: 'Georgia', serif;
-    color: var(--accent-2);
-    font-size: 1rem;
-    font-weight: 700;
-  }
-  .section-head::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--line);
-    align-self: center;
-  }
+.section-head { 
+display: flex; 
+align-items: baseline; 
+gap: 0.75rem; 
+margin-bottom: 1.5rem; 
+} 
+.section-head h2 { 
+font-size: 1.6rem; 
+margin: 0; 
+color: var(--ink); 
+} 
+.section-head .num { 
+font-family: 'Georgia', serif; 
+color: var(--ink); 
+font-size: 1rem; 
+font-weight: 700; 
+} 
+.section-head::after { 
+content: ""; 
+flex: 1; 
+height: 1px; 
+background: var(--line); 
+align-self: center; 
+}
 
-  h3 { font-size: 1.18rem; margin: 0 0 0.4rem; color: var(--ink); }
+h3 { font-size: 1.18rem; margin: 0 0 0.4rem; color: var(--ink); }
 
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  @media (max-width: 720px) {
-    .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    section.block { padding: 1.75rem; }
-  }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; } 
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } 
+@media (max-width: 720px) { 
+.grid-2, .grid-3 { grid-template-columns: 1fr; } 
+section.block { padding: 1.75rem; } 
+}
 
-  /* ---------- HERO ---------- */
-  .hero {
-    background:
-      radial-gradient(1200px 400px at 80% -10%, rgba(14,165,233,0.16), transparent 60%),
-      linear-gradient(180deg, #ffffff, #f3f8fc);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 3.25rem 2.5rem;
-    margin-bottom: 1.8rem;
-    box-shadow: var(--shadow);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2rem;
-    align-items: center;
-  }
-  .avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Georgia', serif;
-    font-size: 2.6rem;
-    font-weight: 700;
-    box-shadow: 0 8px 24px -8px rgba(3,105,161,0.55);
-    flex-shrink: 0;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-  }
-  .avatar.has-photo { color: transparent; }
-  .avatar.has-photo .avatar-initials { display: none; }
-  .hero h1 { font-size: 2.7rem; margin: 0 0 0.35rem; color: var(--ink); line-height: 1.1; }
-  .hero .role { font-size: 1.15rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-  .hero .meta { color: var(--ink-faint); font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
-  .hero .summary { margin-top: 1rem; color: var(--ink-soft); max-width: 60ch; }
-  @media (max-width: 600px) {
-    .hero { grid-template-columns: 1fr; text-align: center; padding: 2.25rem 1.5rem; }
-    .avatar { margin: 0 auto; }
-    .hero .meta { justify-content: center; }
-  }
+/* ---------- HERO ---------- */ 
+.hero { 
+background: 
+radial-gradient(1200px 400px at 80% -10%, rgba(138,21,56,0.14), transparent 60%), 
+linear-gradient(180deg, #ffffff, #f8eef1); 
+border: 1px solid var(--line); 
+border-radius: var(--radius); 
+padding: 3.25rem 2.5rem; 
+margin-bottom: 1.8rem; 
+box-shadow: var(--shadow); 
+display: grid; 
+grid-template-columns: auto 1fr; 
+gap: 2rem; 
+align-items: center; 
+} 
+.avatar { 
+width: 120px; 
+height: 120px; 
+border-radius: 50%; 
+background: linear-gradient(135deg, var(--accent), var(--accent-2)); 
+color: #fff; 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+font-family: 'Georgia', serif; 
+font-size: 2.6rem; 
+font-weight: 700; 
+box-shadow: 0 8px 24px -8px rgba(138,21,56,0.5); 
+flex-shrink: 0; 
+overflow: hidden; 
+background-size: cover; 
+background-position: center; 
+} 
+.avatar.has-photo { color: transparent; } 
+.avatar.has-photo .avatar-initials { display: none; } 
+.hero h1 { font-size: 2.7rem; margin: 0 0 0.35rem; color: var(--ink); line-height: 1.1; } 
+.hero .role { font-size: 1.15rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; } 
+.hero .meta { color: var(--ink-faint); font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; } 
+.hero .summary { margin-top: 1rem; color: var(--ink-soft); max-width: 60ch; } 
+@media (max-width: 600px) { 
+.hero { grid-template-columns: 1fr; text-align: center; padding: 2.25rem 1.5rem; } 
+.avatar { margin: 0 auto; } 
+.hero .meta { justify-content: center; } 
+}
 
-  /* ---------- CARDS / TAGS ---------- */
-  .card {
-    background: #fbfdff;
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--accent-2);
-    padding: 1.4rem 1.5rem;
-    border-radius: 10px;
-  }
-  .card + .card { margin-top: 1rem; }
-  .card .muted { color: var(--ink-faint); font-size: 0.9rem; }
+/* ---------- CARDS / TAGS ---------- */ 
+.card { 
+background: #fbfdff; 
+border: 1px solid var(--line); 
+border-left: 3px solid var(--accent-2); 
+padding: 1.4rem 1.5rem; 
+border-radius: 10px; 
+} 
+.card + .card { margin-top: 1rem; } 
+.card .muted { color: var(--ink-faint); font-size: 0.9rem; }
 
-  .pill-list { list-style: none; padding: 0; margin: 0.5rem 0 0; }
-  .pill-list li {
-    position: relative;
-    padding-left: 1.3rem;
-    margin-bottom: 0.3rem;
-    color: var(--ink-soft);
-  }
-  .pill-list li::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0.62em;
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--accent-2);
-  }
-  .score {
-    display: inline-block;
-    margin-left: 0.35rem;
-    min-width: 1.4rem;
-    text-align: center;
-    padding: 0.05rem 0.45rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #fff;
-    background: #16a34a;            /* 4–5: green */
-    vertical-align: 1px;
-  }
-  .score.mid { background: #0ea5e9; }  /* 3: blue */
+.pill-list { list-style: none; padding: 0; margin: 0.5rem 0 0; } 
+.pill-list li { 
+position: relative; 
+padding-left: 1.3rem; 
+margin-bottom: 0.3rem; 
+color: var(--ink-soft); 
+} 
+.pill-list li::before { 
+content: ""; 
+position: absolute; 
+left: 0; top: 0.62em; 
+width: 7px; height: 7px; 
+border-radius: 50%; 
+background: var(--accent-2); 
+} 
+.score { 
+display: inline-block; 
+margin-left: 0.35rem; 
+min-width: 1.4rem; 
+text-align: center; 
+padding: 0.05rem 0.45rem; 
+border-radius: 6px; 
+font-size: 0.8rem; 
+font-weight: 700; 
+color: #fff; 
+background: #16a34a;            /* 4–5: green / 
+vertical-align: 1px; 
+} 
+.score.mid { background: #26355c; }  / 3: navy */
 
-  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
-  .tag {
-    background: var(--chip);
-    color: var(--chip-ink);
-    padding: 0.35rem 0.85rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1px solid #d7e8f5;
-  }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; } 
+.tag { 
+background: var(--chip); 
+color: var(--chip-ink); 
+padding: 0.35rem 0.85rem; 
+border-radius: 999px; 
+font-size: 0.85rem; 
+font-weight: 600; 
+border: 1px solid #e9d2da; 
+}
 
-  .exam-group strong { display: block; margin: 0.9rem 0 0.2rem; color: var(--ink); }
-  .exam-group strong:first-child { margin-top: 0; }
+.exam-group strong { display: block; margin: 0.9rem 0 0.2rem; color: var(--ink); } 
+.exam-group strong:first-child { margin-top: 0; }
 
-  /* ---------- CONTACT ---------- */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-  @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-group strong {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--accent);
-  }
-  .contact-group div { margin-bottom: 0.3rem; color: var(--ink-soft); }
+/* ---------- CONTACT ---------- */ 
+.contact-grid { 
+display: grid; 
+grid-template-columns: 1fr 1fr; 
+gap: 1.5rem; 
+} 
+@media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } } 
+.contact-group strong { 
+display: block; 
+margin-bottom: 0.5rem; 
+font-size: 0.82rem; 
+text-transform: uppercase; 
+letter-spacing: 0.06em; 
+color: var(--accent); 
+} 
+.contact-group div { margin-bottom: 0.3rem; color: var(--ink-soft); }
 
-  /* certificate cards */
-  .cert {
-    text-align: center;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 1.25rem;
-    background: #fbfdff;
-  }
-  .cert .badge {
-    width: 56px; height: 56px;
-    margin: 0 auto 0.75rem;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; font-size: 1.5rem;
-  }
-  .cert strong { display: block; color: var(--ink); }
-  .cert p { font-size: 0.88rem; color: var(--ink-faint); margin: 0.3rem 0 0; }
+/* certificate cards */ 
+.cert { 
+text-align: center; 
+border: 1px solid var(--line); 
+border-radius: 10px; 
+padding: 1.25rem; 
+background: #fbfdff; 
+} 
+.cert .badge { 
+width: 56px; height: 56px; 
+margin: 0 auto 0.75rem; 
+border-radius: 12px; 
+background: linear-gradient(135deg, var(--accent), var(--accent-2)); 
+display: flex; align-items: center; justify-content: center; 
+color: #fff; font-size: 1.5rem; 
+} 
+.cert strong { display: block; color: var(--ink); } 
+.cert p { font-size: 0.88rem; color: var(--ink-faint); margin: 0.3rem 0 0; }
 
-  footer.foot {
-    text-align: center;
-    color: var(--ink-faint);
-    font-size: 0.85rem;
-    padding: 1rem 0 0;
-  }
+footer.foot { 
+text-align: center; 
+color: var(--ink-faint); 
+font-size: 0.85rem; 
+padding: 1rem 0 0; 
+}
 
-  /* ---------- LIVE GITHUB REPOS ---------- */
-  .repo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  @media (max-width: 720px) { .repo-grid { grid-template-columns: 1fr; } }
-  .repo-card { display: flex; flex-direction: column; }
-  .repo-card h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
-  .repo-card h3 a { color: var(--ink); }
-  .repo-card h3 a:hover { color: var(--accent); }
-  .repo-desc { color: var(--ink-soft); margin: 0.35rem 0 0; flex: 1; font-size: 0.95rem; }
-  .repo-meta {
-    display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
-    margin-top: 0.8rem; font-size: 0.85rem; color: var(--ink-faint);
-    align-items: center;
-  }
-  .lang-dot {
-    width: 11px; height: 11px; border-radius: 50%;
-    display: inline-block; margin-right: 0.4rem; vertical-align: -1px;
-    background: var(--accent-2);
-  }
-  .repo-status { color: var(--ink-faint); font-size: 0.95rem; padding: 0.5rem 0; }
-  .repo-status a { font-weight: 600; }
-  .repo-skeleton {
-    height: 120px; border-radius: 10px;
-    background: linear-gradient(90deg, #f1f5f9 25%, #e8eef5 37%, #f1f5f9 63%);
-    background-size: 400% 100%;
-    animation: shimmer 1.4s ease infinite;
-    border: 1px solid var(--line);
-  }
-  @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+/* ---------- LIVE GITHUB REPOS ---------- */ 
+.repo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; } 
+@media (max-width: 720px) { .repo-grid { grid-template-columns: 1fr; } } 
+.repo-card { display: flex; flex-direction: column; } 
+.repo-card h3 { font-size: 1.05rem; margin-bottom: 0.2rem; } 
+.repo-card h3 a { color: var(--ink); } 
+.repo-card h3 a:hover { color: var(--accent); } 
+.repo-desc { color: var(--ink-soft); margin: 0.35rem 0 0; flex: 1; font-size: 0.95rem; } 
+.repo-meta { 
+display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; 
+margin-top: 0.8rem; font-size: 0.85rem; color: var(--ink-faint); 
+align-items: center; 
+} 
+.lang-dot { 
+width: 11px; height: 11px; border-radius: 50%; 
+display: inline-block; margin-right: 0.4rem; vertical-align: -1px; 
+background: var(--accent-2); 
+} 
+.repo-status { color: var(--ink-faint); font-size: 0.95rem; padding: 0.5rem 0; } 
+.repo-status a { font-weight: 600; } 
+.repo-skeleton { 
+height: 120px; border-radius: 10px; 
+background: linear-gradient(90deg, #f1f5f9 25%, #e8eef5 37%, #f1f5f9 63%); 
+background-size: 400% 100%; 
+animation: shimmer 1.4s ease infinite; 
+border: 1px solid var(--line); 
+} 
+@keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
 
-  /* ---------- DOCUMENTS / DOWNLOADS ---------- */
-  .doc-list { display: grid; gap: 0.75rem; }
-  .doc-item {
-    display: flex; align-items: center; gap: 1rem;
-    border: 1px solid var(--line); border-radius: 10px;
-    padding: 0.9rem 1.1rem; background: #fbfdff;
-  }
-  .doc-ico {
-    width: 44px; height: 44px; border-radius: 9px; flex-shrink: 0;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: #fff; display: flex; align-items: center; justify-content: center;
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px;
-  }
-  .doc-info { flex: 1; min-width: 0; }
-  .doc-info strong { color: var(--ink); display: block; }
-  .doc-info span { font-size: 0.85rem; color: var(--ink-faint); }
-  .doc-dl {
-    border: 1px solid var(--accent); color: var(--accent); background: transparent;
-    padding: 0.45rem 1rem; border-radius: 999px;
-    font-size: 0.85rem; font-weight: 600; white-space: nowrap;
-  }
-  .doc-dl:hover { background: var(--accent); color: #fff; text-decoration: none; }
-  @media (max-width: 520px) { .doc-item { flex-wrap: wrap; } .doc-dl { width: 100%; text-align: center; } }
+/* ---------- DOCUMENTS / DOWNLOADS ---------- */ 
+.doc-list { display: grid; gap: 0.75rem; } 
+.doc-item { 
+display: flex; align-items: center; gap: 1rem; 
+border: 1px solid var(--line); border-radius: 10px; 
+padding: 0.9rem 1.1rem; background: #fbfdff; 
+} 
+.doc-ico { 
+width: 44px; height: 44px; border-radius: 9px; flex-shrink: 0; 
+background: linear-gradient(135deg, var(--accent), var(--accent-2)); 
+color: #fff; display: flex; align-items: center; justify-content: center; 
+font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px; 
+} 
+.doc-info { flex: 1; min-width: 0; } 
+.doc-info strong { color: var(--ink); display: block; } 
+.doc-info span { font-size: 0.85rem; color: var(--ink-faint); } 
+.doc-dl { 
+border: 1px solid var(--accent); color: var(--accent); background: transparent; 
+padding: 0.45rem 1rem; border-radius: 999px; 
+font-size: 0.85rem; font-weight: 600; white-space: nowrap; 
+} 
+.doc-dl:hover { background: var(--accent); color: #fff; text-decoration: none; } 
+@media (max-width: 520px) { .doc-item { flex-wrap: wrap; } .doc-dl { width: 100%; text-align: center; } }
 
-  /* ---------- COMPACT ARCHIVE ---------- */
-  .arch-cat { margin-top: 1.6rem; }
-  .arch-cat:first-child { margin-top: 0; }
-  .arch-cat > h3 {
-    font-size: 1.02rem; color: var(--accent);
-    border-bottom: 1px solid var(--line); padding-bottom: 0.4rem; margin: 0 0 0.4rem;
-  }
-  .arch-list { list-style: none; margin: 0; padding: 0; }
-  .arch-item {
-    display: flex; align-items: baseline; gap: 0.7rem;
-    padding: 0.45rem 0; border-bottom: 1px dashed var(--line-soft); font-size: 0.94rem;
-  }
-  .arch-item:last-child { border-bottom: none; }
-  .arch-item .t { color: var(--ink); flex: 1 1 auto; min-width: 0; }
-  .arch-item .fn {
-    color: var(--ink-faint); font-size: 0.78rem;
-    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; white-space: nowrap;
-  }
-  .arch-item a.dl { white-space: nowrap; font-size: 0.85rem; font-weight: 600; flex-shrink: 0; }
-  @media (max-width: 620px) { .arch-item .fn { display: none; } }
+/* ---------- COMPACT ARCHIVE ---------- */ 
+.arch-cat { margin-top: 1.6rem; } 
+.arch-cat:first-child { margin-top: 0; } 
+.arch-cat > h3 { 
+font-size: 1.02rem; color: var(--accent); 
+border-bottom: 1px solid var(--line); padding-bottom: 0.4rem; margin: 0 0 0.4rem; 
+} 
+.arch-list { list-style: none; margin: 0; padding: 0; } 
+.arch-item { 
+display: flex; align-items: baseline; gap: 0.7rem; 
+padding: 0.45rem 0; border-bottom: 1px dashed var(--line-soft); font-size: 0.94rem; 
+} 
+.arch-item:last-child { border-bottom: none; } 
+.arch-item .t { color: var(--ink); flex: 1 1 auto; min-width: 0; } 
+.arch-item .fn { 
+color: var(--ink-faint); font-size: 0.78rem; 
+font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; white-space: nowrap; 
+} 
+.arch-item a.dl { white-space: nowrap; font-size: 0.85rem; font-weight: 600; flex-shrink: 0; } 
+@media (max-width: 620px) { .arch-item .fn { display: none; } }
 
-  .redacted-tag { display: inline-block; margin-left: 0.5rem; padding: 0.08rem 0.45rem; border-radius: 5px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #b91c1c; background: #fee2e2; border: 1px solid #fecaca; vertical-align: 1px; }
-  .arch-note { color: var(--ink-faint); font-size: 0.88rem; margin: 0 0 1.2rem; }
+.redacted-tag { display: inline-block; margin-left: 0.5rem; padding: 0.08rem 0.45rem; border-radius: 5px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #b91c1c; background: #fee2e2; border: 1px solid #fecaca; vertical-align: 1px; } 
+.arch-note { color: var(--ink-faint); font-size: 0.88rem; margin: 0 0 1.2rem; }
 
-  .arch-item a.doc-dl { white-space: nowrap; flex-shrink: 0; font-size: 0.82rem; padding: 0.35rem 0.8rem; }
+.arch-item a.doc-dl { white-space: nowrap; flex-shrink: 0; font-size: 0.82rem; padding: 0.35rem 0.8rem; }
 
-  /* "not on GitHub" project badge */
-  .repo-badge {
-    display: inline-block; margin-left: 0.4rem; vertical-align: 2px;
-    font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
-    color: #92400e; background: #fef3c7; border: 1px solid #fde68a; border-radius: 5px; padding: 0.05rem 0.4rem;
-  }
-  .repo-card.repo-offline { border-left-color: #f59e0b; }
+/* "not on GitHub" project badge */ 
+.repo-badge { 
+display: inline-block; margin-left: 0.4rem; vertical-align: 2px; 
+font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; 
+color: #92400e; background: #fef3c7; border: 1px solid #fde68a; border-radius: 5px; padding: 0.05rem 0.4rem; 
+} 
+.repo-card.repo-offline { border-left-color: #f59e0b; }
 
-  /* ---------- ARCHIVE: ACCORDION DROPDOWN ---------- */
-  .arch-cat > h3 {
-    cursor: pointer; user-select: none;
-    display: flex; align-items: center; gap: 0.6rem;
-    transition: color 0.15s;
-  }
-  .arch-cat > h3:hover { color: var(--accent-2); }
-  .arch-cat > h3 .count {
-    margin-left: auto; font-size: 0.76rem; font-weight: 700; color: var(--ink-faint);
-    background: var(--chip); border: 1px solid #d7e8f5; border-radius: 999px; padding: 0.05rem 0.5rem;
-    font-family: ui-monospace, Menlo, monospace;
-  }
-  .arch-cat > h3 .chev { font-size: 0.7rem; color: var(--ink-faint); transition: transform 0.2s; }
-  .arch-cat.open > h3 .chev { transform: rotate(180deg); }
-  .arch-cat:not(.open) .arch-list { display: none; }
+/* ---------- ARCHIVE: ACCORDION DROPDOWN ---------- */ 
+.arch-cat > h3 { 
+cursor: pointer; user-select: none; 
+display: flex; align-items: center; gap: 0.6rem; 
+transition: color 0.15s; 
+} 
+.arch-cat > h3:hover { color: var(--accent-2); } 
+.arch-cat > h3 .count { 
+margin-left: auto; font-size: 0.76rem; font-weight: 700; color: var(--ink-faint); 
+background: var(--chip); border: 1px solid #e9d2da; border-radius: 999px; padding: 0.05rem 0.5rem; 
+font-family: ui-monospace, Menlo, monospace; 
+} 
+.arch-cat > h3 .chev { font-size: 0.7rem; color: var(--ink-faint); transition: transform 0.2s; } 
+.arch-cat.open > h3 .chev { transform: rotate(180deg); } 
+.arch-cat:not(.open) .arch-list { display: none; }
 
-  /* per-file "View" button */
-  .doc-view {
-    border: 1px solid var(--line); background: #fff; color: var(--accent);
-    padding: 0.35rem 0.8rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
-    cursor: pointer; white-space: nowrap; font-family: inherit; flex-shrink: 0;
-  }
-  .doc-view:hover { background: var(--chip); }
+/* per-file "View" button */ 
+.doc-view { 
+border: 1px solid var(--line); background: #fff; color: var(--accent); 
+padding: 0.35rem 0.8rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600; 
+cursor: pointer; white-space: nowrap; font-family: inherit; flex-shrink: 0; 
+} 
+.doc-view:hover { background: var(--chip); }
 
-  /* ---------- IN-PAGE DOCUMENT VIEWER (MODAL) ---------- */
-  .viewer-backdrop {
-    position: fixed; inset: 0; z-index: 2000; display: none;
-    align-items: center; justify-content: center; padding: 1.5rem;
-    background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(2px);
-  }
-  .viewer-backdrop.open { display: flex; }
-  .viewer {
-    background: #fff; width: min(980px, 100%); height: min(90vh, 100%);
-    border-radius: 14px; overflow: hidden; display: flex; flex-direction: column;
-    box-shadow: 0 24px 70px -18px rgba(0, 0, 0, 0.55);
-  }
-  .viewer-head {
-    display: flex; align-items: center; gap: 0.9rem;
-    padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--line);
-  }
-  .viewer-head .vtitle {
-    flex: 1; min-width: 0; font-weight: 600; color: var(--ink); font-size: 0.95rem;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-  .viewer-head a.vdl { font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
-  .viewer-head button.vclose {
-    border: none; background: var(--chip); color: var(--ink);
-    width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1rem; line-height: 1;
-    flex-shrink: 0;
-  }
-  .viewer-head button.vclose:hover { background: #e2e8f0; }
-  .viewer iframe { flex: 1; width: 100%; border: 0; background: #f1f5f9; }
-  @media print { .viewer-backdrop { display: none !important; } }
+/* ---------- IN-PAGE DOCUMENT VIEWER (MODAL) ---------- */ 
+.viewer-backdrop { 
+position: fixed; inset: 0; z-index: 2000; display: none; 
+align-items: center; justify-content: center; padding: 1.5rem; 
+background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(2px); 
+} 
+.viewer-backdrop.open { display: flex; } 
+.viewer { 
+background: #fff; width: min(980px, 100%); height: min(90vh, 100%); 
+border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; 
+box-shadow: 0 24px 70px -18px rgba(0, 0, 0, 0.55); 
+} 
+.viewer-head { 
+display: flex; align-items: center; gap: 0.9rem; 
+padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--line); 
+} 
+.viewer-head .vtitle { 
+flex: 1; min-width: 0; font-weight: 600; color: var(--ink); font-size: 0.95rem; 
+white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+} 
+.viewer-head a.vdl { font-size: 0.85rem; font-weight: 600; white-space: nowrap; } 
+.viewer-head button.vclose { 
+border: none; background: var(--chip); color: var(--ink); 
+width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1rem; line-height: 1; 
+flex-shrink: 0; 
+} 
+.viewer-head button.vclose:hover { background: #e2e8f0; } 
+.viewer iframe { flex: 1; width: 100%; border: 0; background: #f1f5f9; } 
+@media print { .viewer-backdrop { display: none !important; } }
 
-  /* language visibility */
-  body:not(.lang-en) .en-text { display: none !important; }
-  body.lang-en .tr-text { display: none !important; }
+/* language visibility */ 
+body:not(.lang-en) .en-text { display: none !important; } 
+body.lang-en .tr-text { display: none !important; }
 
-  /* ---------- PRINT ---------- */
-  @media print {
-    :root { --maxw: 100%; }
-    body { background: #fff; font-size: 11px; }
-    .nav, .no-print { display: none !important; }
-    .container { padding: 0; max-width: 100%; }
-    .hero, section.block {
-      box-shadow: none;
-      border: 1px solid #ccc;
-      padding: 1rem 1.25rem;
-      margin-bottom: 0.75rem;
-      break-inside: avoid;
-    }
-    .hero { background: #fff; }
-    .avatar { width: 80px; height: 80px; font-size: 1.8rem; box-shadow: none; }
-    .hero h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.2rem; }
-    a { color: var(--ink); text-decoration: none; }
-    .tag { border: 1px solid #ccc; background: #f3f3f3; }
-    .section-head::after { background: #ddd; }
-  }
+/* ---------- PRINT ---------- */ 
+@media print { 
+:root { --maxw: 100%; } 
+body { background: #fff; font-size: 11px; } 
+.nav, .no-print { display: none !important; } 
+.container { padding: 0; max-width: 100%; } 
+.hero, section.block { 
+box-shadow: none; 
+border: 1px solid #ccc; 
+padding: 1rem 1.25rem; 
+margin-bottom: 0.75rem; 
+break-inside: avoid; 
+} 
+.hero { background: #fff; } 
+.avatar { width: 80px; height: 80px; font-size: 1.8rem; box-shadow: none; } 
+.hero h1 { font-size: 1.8rem; } 
+h2 { font-size: 1.2rem; } 
+a { color: var(--ink); text-decoration: none; } 
+.tag { border: 1px solid #ccc; background: #f3f3f3; } 
+footer.foot { color: var(--ink-faint); } 
+.section-head::after { background: #ddd; } 
+} 
 </style>
 </head>
 <body class="lang-en">
 
-<!-- ===== NAV ===== -->
+<!-- = NAV = -->
 <nav class="nav no-print">
   <div class="nav-inner">
     <div class="brand">Doruk <span>Erel</span></div>
@@ -490,7 +493,7 @@
 
 <div class="container">
 
-  <!-- ===== HERO ===== -->
+  <!-- = HERO = -->
   <header class="hero" id="about">
     <div class="avatar" id="avatar"><span class="avatar-initials">DE</span></div>
     <div>
@@ -511,7 +514,7 @@
     </div>
   </header>
 
-  <!-- ===== EDUCATION ===== -->
+  <!-- = EDUCATION = -->
   <section class="block" id="education">
     <div class="section-head">
       <span class="num">01</span>
@@ -526,8 +529,6 @@
             <span class="en-text">Bilfen Ankara Çayyolu Science High School</span>
           </strong>
           <div class="muted"><span class="tr-text">Ankara, Türkiye</span><span class="en-text">Ankara, Turkey</span></div>
-          <!-- To show your GPA, replace the line below: -->
-          <!-- <div style="margin-top:.5rem"><strong>GPA:</strong> 95 / 100</div> -->
           <p style="margin:.75rem 0 .25rem;font-size:.92rem;color:var(--ink-faint)">
             <span class="tr-text">Karneler talep üzerine sunulabilir:</span>
             <span class="en-text">Report cards available on request:</span>
@@ -552,7 +553,7 @@
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
+  <!-- = SKILLS = -->
   <section class="block" id="skills">
     <div class="section-head">
       <span class="num">02</span>
@@ -583,7 +584,7 @@
     </div>
   </section>
 
-  <!-- ===== PROJECTS (LIVE FROM GITHUB) ===== -->
+  <!-- = PROJECTS (LIVE FROM GITHUB) = -->
   <section class="block" id="projects">
     <div class="section-head">
       <span class="num">03</span>
@@ -599,7 +600,7 @@
     </div>
   </section>
 
-  <!-- ===== CERTIFICATES ===== -->
+  <!-- = CERTIFICATES = -->
   <section class="block" id="certs">
     <div class="section-head">
       <span class="num">04</span>
@@ -624,7 +625,7 @@
     </div>
   </section>
 
-  <!-- ===== DOCUMENTS / DOWNLOADS ===== -->
+  <!-- = DOCUMENTS / DOWNLOADS = -->
   <section class="block" id="documents">
     <div class="section-head">
       <span class="num">05</span>
@@ -646,254 +647,254 @@
       </ul>
     </div>
 
-      <div class="arch-cat">
-        <h3><span class="tr-text">Akademik Kayıtlar &amp; Karneler</span><span class="en-text">Academic Records &amp; Transcripts</span></h3>
-        <ul class="arch-list">
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">9. Sınıf Karnesi</span><span class="en-text">Grade 9 Report Card</span></span>
-          <span class="fn">9-Sinif-Karne.pdf</span>
-          <a class="doc-dl" href="files/9-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">9. Sınıf Takdir Belgesi</span><span class="en-text">Grade 9 Honour Certificate</span></span>
-          <span class="fn">9-Sinif-Taktir.pdf</span>
-          <a class="doc-dl" href="files/9-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">10. Sınıf Karnesi</span><span class="en-text">Grade 10 Report Card</span></span>
-          <span class="fn">10-Sinif-Karne.pdf</span>
-          <a class="doc-dl" href="files/10-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">10. Sınıf Takdir Belgesi</span><span class="en-text">Grade 10 Honour Certificate</span></span>
-          <span class="fn">10-Sinif-Taktir.pdf</span>
-          <a class="doc-dl" href="files/10-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">11. Sınıf Karnesi</span><span class="en-text">Grade 11 Report Card</span></span>
-          <span class="fn">11-Sinif-Karne.pdf</span>
-          <a class="doc-dl" href="files/11-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">11. Sınıf Takdir Belgesi</span><span class="en-text">Grade 11 Honour Certificate</span></span>
-          <span class="fn">11-Sinif-Taktir.pdf</span>
-          <a class="doc-dl" href="files/11-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">11. Sınıf Üstün Başarı Belgesi</span><span class="en-text">Grade 11 High Honour Certificate</span></span>
-          <span class="fn">ustun-basari-belgesi.pdf</span>
-          <a class="doc-dl" href="files/ustun-basari-belgesi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">TZV Bölge Finali Belgesi</span><span class="en-text">TZV Regional Final Certificate</span></span>
-          <span class="fn">TZV-Bolge-Finali.pdf</span>
-          <a class="doc-dl" href="files/TZV-Bolge-Finali.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        </ul>
-      </div>
-      <div class="arch-cat">
-        <h3><span class="tr-text">Bilim, Matematik &amp; Mühendislik Ödülleri</span><span class="en-text">Science, Math &amp; Engineering Awards</span></h3>
-        <ul class="arch-list">
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">URFODU 2026 Kimya Diploması</span><span class="en-text">URFODU 2026 Chemistry Diploma</span></span>
-          <span class="fn">urfodu-kimya-2026.pdf</span>
-          <a class="doc-dl" href="files/urfodu-kimya-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">URFODU 2025 Kimya Katılım</span><span class="en-text">URFODU 2025 Chemistry Participation</span></span>
-          <span class="fn">urfodu-kimya-2025.pdf</span>
-          <a class="doc-dl" href="files/urfodu-kimya-2025.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Waterloo Avogadro Sınavı Birinciliği</span><span class="en-text">Waterloo Avogadro Contest — 1st Place</span></span>
-          <span class="fn">waterloo-avogadro-2026.pdf</span>
-          <a class="doc-dl" href="files/waterloo-avogadro-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">URFODU Kimya Derece Belgesi</span><span class="en-text">URFODU Chemistry Ranking Certificate</span></span>
-          <span class="fn">URFODU-Kimya-Derece.pdf</span>
-          <a class="doc-dl" href="files/URFODU-Kimya-Derece.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Kanguru Matematik Başarı Belgesi</span><span class="en-text">Kangaroo Math Achievement Certificate</span></span>
-          <span class="fn">kanguru-matematik-2026.pdf</span>
-          <a class="doc-dl" href="files/kanguru-matematik-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">HBEC 11. Sınıf Katılım Sertifikası</span><span class="en-text">HBEC Grade 11 Participation</span></span>
-          <span class="fn">hbec-katilim-11.pdf</span>
-          <a class="doc-dl" href="files/hbec-katilim-11.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">HBEC 10. Sınıf Katılım Sertifikası</span><span class="en-text">HBEC Grade 10 Participation</span></span>
-          <span class="fn">hbec-katilim-10.pdf</span>
-          <a class="doc-dl" href="files/hbec-katilim-10.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">9. Sınıf TALES Matematik Katılım</span><span class="en-text">Grade 9 TALES Math Participation</span></span>
-          <span class="fn">tales-matematik-9.pdf</span>
-          <a class="doc-dl" href="files/tales-matematik-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">9. Sınıf URFODU Kimya Derece</span><span class="en-text">Grade 9 URFODU Chemistry Ranking</span></span>
-          <span class="fn">urfodu-kimya-derece-9.pdf</span>
-          <a class="doc-dl" href="files/urfodu-kimya-derece-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">URFODU İngilizce Katılım Belgesi</span><span class="en-text">URFODU English Participation</span></span>
-          <span class="fn">urfodu-ingilizce-katilim.pdf</span>
-          <a class="doc-dl" href="files/urfodu-ingilizce-katilim.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">9. Sınıf Kanguru Matematik Katılım</span><span class="en-text">Grade 9 Kangaroo Math Participation</span></span>
-          <span class="fn">kanguru-matematik-9.pdf</span>
-          <a class="doc-dl" href="files/kanguru-matematik-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Bilfen Hackidhon Katılım Belgesi</span><span class="en-text">Bilfen Hackathon Participation</span></span>
-          <span class="fn">hackidhon.pdf</span>
-          <a class="doc-dl" href="files/hackidhon.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        </ul>
-      </div>
-      <div class="arch-cat">
-        <h3><span class="tr-text">Müzik, Sanat &amp; Diller</span><span class="en-text">Music, Arts &amp; Languages</span></h3>
-        <ul class="arch-list">
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Odeon Gitar Eğitim Sertifikası I</span><span class="en-text">Odeon Guitar Certificate I</span></span>
-          <span class="fn">odeon-gitar-1.pdf</span>
-          <a class="doc-dl" href="files/odeon-gitar-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Odeon Gitar Eğitim Sertifikası II</span><span class="en-text">Odeon Guitar Certificate II</span></span>
-          <span class="fn">odeon-gitar-2.pdf</span>
-          <a class="doc-dl" href="files/odeon-gitar-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Odeon Piyano Eğitim Sertifikası I</span><span class="en-text">Odeon Piano Certificate I</span></span>
-          <span class="fn">odeon-piyano-1.pdf</span>
-          <a class="doc-dl" href="files/odeon-piyano-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Odeon Piyano Eğitim Sertifikası II</span><span class="en-text">Odeon Piano Certificate II</span></span>
-          <span class="fn">odeon-piyano-2.pdf</span>
-          <a class="doc-dl" href="files/odeon-piyano-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Lotus Sanat Akademisi Piyano Sertifikası</span><span class="en-text">Lotus Art Academy Piano Certificate</span></span>
-          <span class="fn">lotus-piyano-sertifika.pdf</span>
-          <a class="doc-dl" href="files/lotus-piyano-sertifika.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">LCM Piano Grade 2 Sertifikası</span><span class="en-text">LCM Piano Grade 2 Certificate</span></span>
-          <span class="fn">lcm-piano-grade-2.pdf</span>
-          <a class="doc-dl" href="files/lcm-piano-grade-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Cambridge İngilizce Sertifikası</span><span class="en-text">Cambridge English Certificate</span></span>
-          <span class="fn">cambridge-ingilizce-sertifikasi.pdf</span>
-          <a class="doc-dl" href="files/cambridge-ingilizce-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">TOEFL Junior Skor Raporu — 2024</span><span class="en-text">TOEFL Junior Score Report — 2024</span></span>
-          <span class="fn">TOEFL-Junior-Score-Report-2024.pdf</span>
-          <a class="doc-dl" href="files/TOEFL-Junior-Score-Report-2024.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">TOEFL Junior Başarı Sertifikası — 2024</span><span class="en-text">TOEFL Junior Certificate of Achievement — 2024</span></span>
-          <span class="fn">TOEFL-Junior-Certificate-2024.pdf</span>
-          <a class="doc-dl" href="files/TOEFL-Junior-Certificate-2024.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Uluslararası Gençlik Ödülü — Bronz</span><span class="en-text">Int&#x27;l Award for Young People — Bronze</span></span>
-          <span class="fn">Genclik-Odulu-Bronz.pdf</span>
-          <a class="doc-dl" href="files/Genclik-Odulu-Bronz.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Uluslararası Gençlik Ödülü — Gümüş</span><span class="en-text">Int&#x27;l Award for Young People — Silver</span></span>
-          <span class="fn">Genclik-Odulu-Gumus.pdf</span>
-          <a class="doc-dl" href="files/Genclik-Odulu-Gumus.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        </ul>
-      </div>
-      <div class="arch-cat">
-        <h3><span class="tr-text">Spor, Sosyal &amp; Ekstra Müfredat</span><span class="en-text">Sports, Social &amp; Extracurricular</span></h3>
-        <ul class="arch-list">
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Bilkent Yaz Kampı Sertifikası</span><span class="en-text">Bilkent Summer Camp Certificate</span></span>
-          <span class="fn">Bilkent-Yaz-Kampi.pdf</span>
-          <a class="doc-dl" href="files/Bilkent-Yaz-Kampi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Bilkent Fast &amp; Curious Sertifikası</span><span class="en-text">Bilkent Fast &amp; Curious Certificate</span></span>
-          <span class="fn">Bilkent-Fast-Curious.pdf</span>
-          <a class="doc-dl" href="files/Bilkent-Fast-Curious.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">GAE Dünya Ötesi Yaşam Atölyesi</span><span class="en-text">GAE Extraterrestrial Life Workshop</span></span>
-          <span class="fn">GAE-Dunya-Otesi.pdf</span>
-          <a class="doc-dl" href="files/GAE-Dunya-Otesi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">9. Sınıf Sosyal Etkinlik Katılım Belgesi</span><span class="en-text">Grade 9 Social Activity Participation</span></span>
-          <span class="fn">9-sinif-sosyal-etkinlik-katılım.pdf</span>
-          <a class="doc-dl" href="files/9-sinif-sosyal-etkinlik-katılım.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">10. Sınıf Sosyal Etkinlik Belgesi</span><span class="en-text">Grade 10 Social Activity Certificate</span></span>
-          <span class="fn">10-sinif-sosyal-etkinlik.pdf</span>
-          <a class="doc-dl" href="files/10-sinif-sosyal-etkinlik.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">11. Sınıf Sosyal Etkinlik Belgesi</span><span class="en-text">Grade 11 Social Activity Certificate</span></span>
-          <span class="fn">11-sinif-sosyal-etkinlik.pdf</span>
-          <a class="doc-dl" href="files/11-sinif-sosyal-etkinlik.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Dalgıç (Scuba) Sertifikası</span><span class="en-text">Scuba Diving Certificate</span></span>
-          <span class="fn">dalgic-sertifikasi.pdf</span>
-          <a class="doc-dl" href="files/dalgic-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Kayak Sertifikası</span><span class="en-text">Skiing Certificate</span></span>
-          <span class="fn">kayak-sertifikasi.pdf</span>
-          <a class="doc-dl" href="files/kayak-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">iFLY Orlando Uçuş Sertifikası</span><span class="en-text">iFLY Orlando Indoor Skydiving Certificate</span></span>
-          <span class="fn">ifly-ucus-sertifikasi.pdf</span>
-          <a class="doc-dl" href="files/ifly-ucus-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Çankaya Üniv. Jimnastik Başarı Belgesi</span><span class="en-text">Çankaya Univ. Gymnastics Achievement</span></span>
-          <span class="fn">cankaya-jimnastik-basari.pdf</span>
-          <a class="doc-dl" href="files/cankaya-jimnastik-basari.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı I</span><span class="en-text">Çankaya Univ. Basketball Achievement I</span></span>
-          <span class="fn">cankaya-basketbol-1.pdf</span>
-          <a class="doc-dl" href="files/cankaya-basketbol-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı II</span><span class="en-text">Çankaya Univ. Basketball Achievement II</span></span>
-          <span class="fn">cankaya-basketbol-2.pdf</span>
-          <a class="doc-dl" href="files/cankaya-basketbol-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı III</span><span class="en-text">Çankaya Univ. Basketball Achievement III</span></span>
-          <span class="fn">cankaya-basketbol-3.pdf</span>
-          <a class="doc-dl" href="files/cankaya-basketbol-3.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        <li class="arch-item">
-          <span class="t"><span class="tr-text">NASA Kennedy Uzay Merkezi Kampı</span><span class="en-text">NASA Kennedy Space Center Camp</span></span>
-          <span class="fn">NASA-KSC-Camp.pdf</span>
-          <a class="doc-dl" href="files/NASA-KSC-Camp.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
-        </li>
-        </ul>
-      </div>
+  <div class="arch-cat">
+    <h3><span class="tr-text">Akademik Kayıtlar &amp; Karneler</span><span class="en-text">Academic Records &amp; Transcripts</span></h3>
+    <ul class="arch-list">
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">9. Sınıf Karnesi</span><span class="en-text">Grade 9 Report Card</span></span>
+      <span class="fn">9-Sinif-Karne.pdf</span>
+      <a class="doc-dl" href="files/9-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">9. Sınıf Takdir Belgesi</span><span class="en-text">Grade 9 Honour Certificate</span></span>
+      <span class="fn">9-Sinif-Taktir.pdf</span>
+      <a class="doc-dl" href="files/9-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">10. Sınıf Karnesi</span><span class="en-text">Grade 10 Report Card</span></span>
+      <span class="fn">10-Sinif-Karne.pdf</span>
+      <a class="doc-dl" href="files/10-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">10. Sınıf Takdir Belgesi</span><span class="en-text">Grade 10 Honour Certificate</span></span>
+      <span class="fn">10-Sinif-Taktir.pdf</span>
+      <a class="doc-dl" href="files/10-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">11. Sınıf Karnesi</span><span class="en-text">Grade 11 Report Card</span></span>
+      <span class="fn">11-Sinif-Karne.pdf</span>
+      <a class="doc-dl" href="files/11-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">11. Sınıf Takdir Belgesi</span><span class="en-text">Grade 11 Honour Certificate</span></span>
+      <span class="fn">11-Sinif-Taktir.pdf</span>
+      <a class="doc-dl" href="files/11-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">11. Sınıf Üstün Başarı Belgesi</span><span class="en-text">Grade 11 High Honour Certificate</span></span>
+      <span class="fn">ustun-basari-belgesi.pdf</span>
+      <a class="doc-dl" href="files/ustun-basari-belgesi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">TZV Bölge Finali Belgesi</span><span class="en-text">TZV Regional Final Certificate</span></span>
+      <span class="fn">TZV-Bolge-Finali.pdf</span>
+      <a class="doc-dl" href="files/TZV-Bolge-Finali.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    </ul>
+  </div>
+  <div class="arch-cat">
+    <h3><span class="tr-text">Bilim, Matematik &amp; Mühendislik Ödülleri</span><span class="en-text">Science, Math &amp; Engineering Awards</span></h3>
+    <ul class="arch-list">
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">URFODU 2026 Kimya Diploması</span><span class="en-text">URFODU 2026 Chemistry Diploma</span></span>
+      <span class="fn">urfodu-kimya-2026.pdf</span>
+      <a class="doc-dl" href="files/urfodu-kimya-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">URFODU 2025 Kimya Katılım</span><span class="en-text">URFODU 2025 Chemistry Participation</span></span>
+      <span class="fn">urfodu-kimya-2025.pdf</span>
+      <a class="doc-dl" href="files/urfodu-kimya-2025.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Waterloo Avogadro Sınavı Birinciliği</span><span class="en-text">Waterloo Avogadro Contest — 1st Place</span></span>
+      <span class="fn">waterloo-avogadro-2026.pdf</span>
+      <a class="doc-dl" href="files/waterloo-avogadro-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">URFODU Kimya Derece Belgesi</span><span class="en-text">URFODU Chemistry Ranking Certificate</span></span>
+      <span class="fn">URFODU-Kimya-Derece.pdf</span>
+      <a class="doc-dl" href="files/URFODU-Kimya-Derece.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Kanguru Matematik Başarı Belgesi</span><span class="en-text">Kangaroo Math Achievement Certificate</span></span>
+      <span class="fn">kanguru-matematik-2026.pdf</span>
+      <a class="doc-dl" href="files/kanguru-matematik-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">HBEC 11. Sınıf Katılım Sertifikası</span><span class="en-text">HBEC Grade 11 Participation</span></span>
+      <span class="fn">hbec-katilim-11.pdf</span>
+      <a class="doc-dl" href="files/hbec-katilim-11.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">HBEC 10. Sınıf Katılım Sertifikası</span><span class="en-text">HBEC Grade 10 Participation</span></span>
+      <span class="fn">hbec-katilim-10.pdf</span>
+      <a class="doc-dl" href="files/hbec-katilim-10.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">9. Sınıf TALES Matematik Katılım</span><span class="en-text">Grade 9 TALES Math Participation</span></span>
+      <span class="fn">tales-matematik-9.pdf</span>
+      <a class="doc-dl" href="files/tales-matematik-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">9. Sınıf URFODU Kimya Derece</span><span class="en-text">Grade 9 URFODU Chemistry Ranking</span></span>
+      <span class="fn">urfodu-kimya-derece-9.pdf</span>
+      <a class="doc-dl" href="files/urfodu-kimya-derece-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">URFODU İngilizce Katılım Belgesi</span><span class="en-text">URFODU English Participation</span></span>
+      <span class="fn">urfodu-ingilizce-katilim.pdf</span>
+      <a class="doc-dl" href="files/urfodu-ingilizce-katilim.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">9. Sınıf Kanguru Matematik Katılım</span><span class="en-text">Grade 9 Kangaroo Math Participation</span></span>
+      <span class="fn">kanguru-matematik-9.pdf</span>
+      <a class="doc-dl" href="files/kanguru-matematik-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Bilfen Hackidhon Katılım Belgesi</span><span class="en-text">Bilfen Hackathon Participation</span></span>
+      <span class="fn">hackidhon.pdf</span>
+      <a class="doc-dl" href="files/hackidhon.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    </ul>
+  </div>
+  <div class="arch-cat">
+    <h3><span class="tr-text">Müzik, Sanat &amp; Diller</span><span class="en-text">Music, Arts &amp; Languages</span></h3>
+    <ul class="arch-list">
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Odeon Gitar Eğitim Sertifikası I</span><span class="en-text">Odeon Guitar Certificate I</span></span>
+      <span class="fn">odeon-gitar-1.pdf</span>
+      <a class="doc-dl" href="files/odeon-gitar-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Odeon Gitar Eğitim Sertifikası II</span><span class="en-text">Odeon Guitar Certificate II</span></span>
+      <span class="fn">odeon-gitar-2.pdf</span>
+      <a class="doc-dl" href="files/odeon-gitar-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Odeon Piyano Eğitim Sertifikası I</span><span class="en-text">Odeon Piano Certificate I</span></span>
+      <span class="fn">odeon-piyano-1.pdf</span>
+      <a class="doc-dl" href="files/odeon-piyano-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Odeon Piyano Eğitim Sertifikası II</span><span class="en-text">Odeon Piano Certificate II</span></span>
+      <span class="fn">odeon-piyano-2.pdf</span>
+      <a class="doc-dl" href="files/odeon-piyano-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Lotus Sanat Akademisi Piyano Sertifikası</span><span class="en-text">Lotus Art Academy Piano Certificate</span></span>
+      <span class="fn">lotus-piyano-sertifika.pdf</span>
+      <a class="doc-dl" href="files/lotus-piyano-sertifika.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">LCM Piano Grade 2 Sertifikası</span><span class="en-text">LCM Piano Grade 2 Certificate</span></span>
+      <span class="fn">lcm-piano-grade-2.pdf</span>
+      <a class="doc-dl" href="files/lcm-piano-grade-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Cambridge İngilizce Sertifikası</span><span class="en-text">Cambridge English Certificate</span></span>
+      <span class="fn">cambridge-ingilizce-sertifikasi.pdf</span>
+      <a class="doc-dl" href="files/cambridge-ingilizce-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">TOEFL Junior Skor Raporu — 2024</span><span class="en-text">TOEFL Junior Score Report — 2024</span></span>
+      <span class="fn">TOEFL-Junior-Score-Report-2024.pdf</span>
+      <a class="doc-dl" href="files/TOEFL-Junior-Score-Report-2024.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">TOEFL Junior Başarı Sertifikası — 2024</span><span class="en-text">TOEFL Junior Certificate of Achievement — 2024</span></span>
+      <span class="fn">TOEFL-Junior-Certificate-2024.pdf</span>
+      <a class="doc-dl" href="files/TOEFL-Junior-Certificate-2024.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Uluslararası Gençlik Ödülü — Bronz</span><span class="en-text">Int&#x27;l Award for Young People — Bronze</span></span>
+      <span class="fn">Genclik-Odulu-Bronz.pdf</span>
+      <a class="doc-dl" href="files/Genclik-Odulu-Bronz.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Uluslararası Gençlik Ödülü — Gümüş</span><span class="en-text">Int&#x27;l Award for Young People — Silver</span></span>
+      <span class="fn">Genclik-Odulu-Gumus.pdf</span>
+      <a class="doc-dl" href="files/Genclik-Odulu-Gumus.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    </ul>
+  </div>
+  <div class="arch-cat">
+    <h3><span class="tr-text">Spor, Sosyal &amp; Ekstra Müfredat</span><span class="en-text">Sports, Social &amp; Extracurricular</span></h3>
+    <ul class="arch-list">
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Bilkent Yaz Kampı Sertifikası</span><span class="en-text">Bilkent Summer Camp Certificate</span></span>
+      <span class="fn">Bilkent-Yaz-Kampi.pdf</span>
+      <a class="doc-dl" href="files/Bilkent-Yaz-Kampi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Bilkent Fast &amp; Curious Sertifikası</span><span class="en-text">Bilkent Fast &amp; Curious Certificate</span></span>
+      <span class="fn">Bilkent-Fast-Curious.pdf</span>
+      <a class="doc-dl" href="files/Bilkent-Fast-Curious.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">GAE Dünya Ötesi Yaşam Atölyesi</span><span class="en-text">GAE Extraterrestrial Life Workshop</span></span>
+      <span class="fn">GAE-Dunya-Otesi.pdf</span>
+      <a class="doc-dl" href="files/GAE-Dunya-Otesi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">9. Sınıf Sosyal Etkinlik Katılım Belgesi</span><span class="en-text">Grade 9 Social Activity Participation</span></span>
+      <span class="fn">9-sinif-sosyal-etkinlik-katılım.pdf</span>
+      <a class="doc-dl" href="files/9-sinif-sosyal-etkinlik-katılım.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">10. Sınıf Sosyal Etkinlik Belgesi</span><span class="en-text">Grade 10 Social Activity Certificate</span></span>
+      <span class="fn">10-sinif-sosyal-etkinlik.pdf</span>
+      <a class="doc-dl" href="files/10-sinif-sosyal-etkinlik.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">11. Sınıf Sosyal Etkinlik Belgesi</span><span class="en-text">Grade 11 Social Activity Certificate</span></span>
+      <span class="fn">11-sinif-sosyal-etkinlik.pdf</span>
+      <a class="doc-dl" href="files/11-sinif-sosyal-etkinlik.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Dalgıç (Scuba) Sertifikası</span><span class="en-text">Scuba Diving Certificate</span></span>
+      <span class="fn">dalgic-sertifikasi.pdf</span>
+      <a class="doc-dl" href="files/dalgic-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Kayak Sertifikası</span><span class="en-text">Skiing Certificate</span></span>
+      <span class="fn">kayak-sertifikasi.pdf</span>
+      <a class="doc-dl" href="files/kayak-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">iFLY Orlando Uçuş Sertifikası</span><span class="en-text">iFLY Orlando Indoor Skydiving Certificate</span></span>
+      <span class="fn">ifly-ucus-sertifikasi.pdf</span>
+      <a class="doc-dl" href="files/ifly-ucus-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Çankaya Üniv. Jimnastik Başarı Belgesi</span><span class="en-text">Çankaya Univ. Gymnastics Achievement</span></span>
+      <span class="fn">cankaya-jimnastik-basari.pdf</span>
+      <a class="doc-dl" href="files/cankaya-jimnastik-basari.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı I</span><span class="en-text">Çankaya Univ. Basketball Achievement I</span></span>
+      <span class="fn">cankaya-basketbol-1.pdf</span>
+      <a class="doc-dl" href="files/cankaya-basketbol-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı II</span><span class="en-text">Çankaya Univ. Basketball Achievement II</span></span>
+      <span class="fn">cankaya-basketbol-2.pdf</span>
+      <a class="doc-dl" href="files/cankaya-basketbol-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı III</span><span class="en-text">Çankaya Univ. Basketball Achievement III</span></span>
+      <span class="fn">cankaya-basketbol-3.pdf</span>
+      <a class="doc-dl" href="files/cankaya-basketbol-3.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    <li class="arch-item">
+      <span class="t"><span class="tr-text">NASA Kennedy Uzay Merkezi Kampı</span><span class="en-text">NASA Kennedy Space Center Camp</span></span>
+      <span class="fn">NASA-KSC-Camp.pdf</span>
+      <a class="doc-dl" href="files/NASA-KSC-Camp.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+    </li>
+    </ul>
+  </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- = CONTACT = -->
   <section class="block" id="contact">
     <div class="section-head">
       <span class="num">06</span>
@@ -948,7 +949,7 @@
     return match ? match[1] : null;
   }
   function applyLanguage(lang) {
-    const isEn = lang === 'en';
+    const isEn = lang = 'en';
     document.body.classList.toggle('lang-en', isEn);
     document.getElementById('langBtn').textContent = isEn ? 'TR' : 'EN';
     document.documentElement.lang = isEn ? 'en' : 'tr';
@@ -958,11 +959,9 @@
     applyLanguage(newLang);
     setLangCookie(newLang);
   }
-  // On load: honor a saved cookie if present; otherwise the page already
-  // defaults to English via the static markup, so there's nothing to do.
   (function initLanguage() {
     const saved = getLangCookie();
-    if (saved === 'tr') applyLanguage('tr');
+    if (saved = 'tr') applyLanguage('tr');
   })();
 
   /* ---------- PROFILE PHOTO ----------
@@ -974,31 +973,24 @@
     if (!avatar) return;
     let i = 0;
     (function tryNext() {
-      if (i >= candidates.length) return;            // none found -> keep "DE"
+      if (i >= candidates.length) return;
       const img = new Image();
       img.onload = function () {
         avatar.style.backgroundImage = 'url("files/' + candidates[i] + '")';
         avatar.classList.add('has-photo');
       };
-      img.onerror = function () { i++; tryNext(); };
+      img.onerror = function () { i; tryNext(); };
       img.src = 'files/' + candidates[i];
     })();
   })();
 
-  /* ======================================================================
+  /* 
      LIVE GITHUB PROJECTS
-     Pulls your public repositories from GitHub every time the page loads,
-     so the Projects section stays up to date automatically.
-
-     OPTIONAL — to show ONLY selected repos: add the topic "portfolio" to
-     those repos on GitHub (repo page → ⚙ next to About → Topics). When at
-     least one repo has that topic, only tagged repos are shown.
-     ====================================================================== */
+      */
   const GH_USER = 'dorukerel3';
-  const FEATURE_TOPIC = 'portfolio';   // repos with this topic are prioritized
+  const FEATURE_TOPIC = 'portfolio';
   const MAX_REPOS = 12;
 
-  // Static fallback shown only if GitHub can't be reached (e.g. offline / rate-limited)
   const FALLBACK = [
     {
       name: 'Environmental Security Station',
@@ -1011,7 +1003,7 @@
 
   const LANG_COLORS = {
     JavaScript:'#f1e05a', TypeScript:'#3178c6', Python:'#3572A5', C:'#555555',
-    'C++':'#f34b7d', 'C#':'#178600', HTML:'#e34c26', CSS:'#563d7c', Java:'#b07219',
+    'C':'#f34b7d', 'C#':'#178600', HTML:'#e34c26', CSS:'#563d7c', Java:'#b07219',
     Shell:'#89e051', Arduino:'#bd79d1', Go:'#00ADD8', Rust:'#dea584', Kotlin:'#A97BFF',
     Dockerfile:'#384d54', 'Jupyter Notebook':'#DA5B0B', Vue:'#41b883'
   };
@@ -1083,15 +1075,13 @@
       );
       if (!res.ok) throw new Error('HTTP '+res.status);
       let repos = await res.json();
-      if (!Array.isArray(repos) || repos.length === 0) throw new Error('no repos');
+      if (!Array.isArray(repos) || repos.length = 0) throw new Error('no repos');
 
       repos = repos.filter(r => !r.fork && !r.archived);
 
-      // If any repo is tagged with the feature topic, show only those.
       const featured = repos.filter(r => (r.topics||[]).includes(FEATURE_TOPIC));
       if (featured.length) repos = featured;
 
-      // Best first: by stars, then most recently updated.
       repos.sort((a,b) =>
         (b.stargazers_count - a.stargazers_count) ||
         (new Date(b.updated_at) - new Date(a.updated_at))
@@ -1120,11 +1110,31 @@
     document.getElementById('viewer-frame').src = '';
     document.body.style.overflow = '';
   }
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeViewer(); });
+  document.addEventListener('keydown', function (e) { if (e.key = 'Escape') closeViewer(); });
 
-  /* ---------- ARCHIVE: build dropdowns + per-file View buttons ---------- */
+  /* ---------- ARCHIVE: build dropdowns + per-file View buttons ----------
+     All categories start closed. Once someone expands/collapses a category,
+     that open/closed state is saved in a cookie (1 year) so it's remembered
+     on that device/browser next time they visit. */
+  function getOpenDocsCookie() {
+    const match = document.cookie.match(/(?:^|; )openDocs=([^;]*)/);
+    return match ? decodeURIComponent(match[1]).split(',').filter(Boolean) : [];
+  }
+  function setOpenDocsCookie(openIndices) {
+    const expires = new Date(Date.now() + 365 * 864e5).toUTCString();
+    document.cookie = 'openDocs=' + encodeURIComponent(openIndices.join(',')) + '; expires=' + expires + '; path=/; SameSite=Lax';
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     const cats = document.querySelectorAll('#documents .arch-cat');
+    const savedOpen = getOpenDocsCookie();
+
+    function saveOpenState() {
+      const openIndices = [];
+      cats.forEach(function (cat, i) { if (cat.classList.contains('open')) openIndices.push(i); });
+      setOpenDocsCookie(openIndices);
+    }
+
     cats.forEach(function (cat, idx) {
       const h3 = cat.querySelector('h3');
       const items = cat.querySelectorAll('.arch-item');
@@ -1134,7 +1144,13 @@
         const chev = document.createElement('span');
         chev.className = 'chev'; chev.textContent = '▼';
         h3.appendChild(count); h3.appendChild(chev);
-        h3.addEventListener('click', function () { cat.classList.toggle('open'); });
+        h3.addEventListener('click', function () {
+          cat.classList.toggle('open');
+          saveOpenState();
+        });
+      }
+      if (savedOpen.includes(String(idx))) {
+        cat.classList.add('open');
       }
       items.forEach(function (li) {
         const dl = li.querySelector('a.doc-dl');
@@ -1153,11 +1169,11 @@
         dl.parentNode.insertBefore(btn, dl);
       });
     });
-    if (cats.length) cats[0].classList.add('open');   // first category open by default
   });
 </script>
 
-<!-- ===== DOCUMENT VIEWER MODAL ===== -->
+
+<!-- = DOCUMENT VIEWER MODAL = -->
 <div class="viewer-backdrop" id="viewer" onclick="if(event.target===this)closeViewer()">
   <div class="viewer">
     <div class="viewer-head">
