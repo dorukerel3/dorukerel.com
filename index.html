@@ -446,24 +446,61 @@
   /* ---------- PRINT ---------- */
   @media print {
     :root { --maxw: 100%; }
-    body { background: #fff; font-size: 11px; }
+    body { background: #fff; font-size: 10.5px; }
     .nav, .no-print { display: none !important; }
     .container { padding: 0; max-width: 100%; }
-    .hero, section.block {
+
+    /* Only the hero header forces its own page-start block; section cards
+       are allowed to break across pages so content flows into the space
+       left on the previous page instead of leaving it blank. */
+    .hero {
       box-shadow: none;
       border: 1px solid #ccc;
       padding: 1rem 1.25rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
       break-inside: avoid;
+      background: #fff;
     }
-    .hero { background: #fff; }
-    .avatar { width: 80px; height: 80px; font-size: 1.8rem; box-shadow: none; }
-    .hero h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.2rem; }
+    section.block {
+      box-shadow: none;
+      border: 1px solid #ccc;
+      padding: 0.85rem 1.1rem;
+      margin-bottom: 0.6rem;
+      break-inside: auto;
+    }
+    /* Keep small, atomic pieces from being visually split by a page break */
+    .card, .cert, .project-card, .repo-card, .doc-item, .arch-item, .pin-row,
+    .ap-row, .exam-group { break-inside: avoid; }
+    .section-head { break-after: avoid; }
+    h3 { break-after: avoid; }
+
+    .avatar { width: 72px; height: 72px; font-size: 1.6rem; box-shadow: none; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero .summary { margin-top: 0.6rem; }
+    h2 { font-size: 1.15rem; }
+    section.block { margin-bottom: 0.6rem; }
+    .grid-2, .grid-3 { gap: 0.9rem; }
     a { color: var(--ink); text-decoration: none; }
     .tag { border: 1px solid #ccc; background: #f3f3f3; }
+    .repo-badge, .redacted-tag { background: #eee; border-color: #ccc; color: #333; }
+    .repo-card.repo-offline { border-left-color: #999; }
     footer.foot { color: var(--ink-faint); }
     .section-head::after { background: #ddd; }
+
+    /* The Documents & Archive accordion is JS-driven and starts collapsed
+       on screen; force every category open so the printed CV actually
+       shows the document list instead of just empty category headers. */
+    .arch-cat .arch-list { display: block !important; }
+    .arch-cat > h3 .count, .arch-cat > h3 .chev { display: none; }
+    .arch-cat > h3 { cursor: default; }
+
+    /* The "View" button opens an in-page JS modal that doesn't exist in a
+       static PDF, so it's dead weight here — hide it and keep only the
+       working "Download" link, which stays clickable in exported PDFs. */
+    .doc-view { display: none !important; }
+
+    /* Loading-state text is a screen-only concern */
+    .repo-status a { text-decoration: underline; }
   }
 </style>
 </head>
