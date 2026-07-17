@@ -89,6 +89,51 @@
   .nav-links a:hover { color: var(--accent); text-decoration: none; }
   .nav-actions { display: flex; gap: 0.5rem; align-items: center; }
 
+  /* language slide toggle */
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 4px 2px;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .lang-toggle-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink-faint);
+    transition: color 0.15s ease;
+  }
+  .lang-toggle[aria-checked="false"] .lang-toggle-en { color: var(--accent); }
+  .lang-toggle[aria-checked="true"] .lang-toggle-tr { color: var(--accent); }
+  .lang-toggle-track {
+    position: relative;
+    width: 38px;
+    height: 22px;
+    background: var(--line);
+    border: 2px solid #000000;
+    border-radius: 999px;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+  }
+  .lang-toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease;
+  }
+  .lang-toggle[aria-checked="true"] .lang-toggle-thumb { transform: translateX(16px); }
+  .lang-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
   .btn {
     border: 1px solid var(--accent);
     background: var(--accent);
@@ -526,7 +571,11 @@
       <a href="#contact"><span class="tr-text">İletişim</span><span class="en-text">Contact</span></a>
     </div>
     <div class="nav-actions">
-      <button class="btn ghost" id="langBtn" onclick="toggleLanguage()">TR</button>
+      <button type="button" class="lang-toggle" id="langToggle" role="switch" aria-checked="false" aria-label="Switch language" onclick="toggleLanguage()">
+        <span class="lang-toggle-label lang-toggle-en">EN</span>
+        <span class="lang-toggle-track"><span class="lang-toggle-thumb"></span></span>
+        <span class="lang-toggle-label lang-toggle-tr">TR</span>
+      </button>
       <button class="btn" onclick="downloadCV()">
         <span class="tr-text">CV İndir</span><span class="en-text">Download CV</span>
       </button>
@@ -1298,7 +1347,7 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
   function applyLanguage(lang) {
     const isEn = lang === 'en';
     document.body.classList.toggle('lang-en', isEn);
-    document.getElementById('langBtn').textContent = isEn ? 'TR' : 'EN';
+    document.getElementById('langToggle').setAttribute('aria-checked', String(!isEn));
     document.documentElement.lang = isEn ? 'en' : 'tr';
   }
   function toggleLanguage() {
