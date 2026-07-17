@@ -122,16 +122,17 @@
   }
   .lang-toggle-thumb {
     position: absolute;
-    top: 2px;
+    top: 50%;
     left: 2px;
     width: 14px;
     height: 14px;
     background: var(--accent);
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transform: translateY(-50%);
     transition: transform 0.2s ease;
   }
-  .lang-toggle[aria-checked="true"] .lang-toggle-thumb { transform: translateX(16px); }
+  .lang-toggle[aria-checked="true"] .lang-toggle-thumb { transform: translateY(-50%) translateX(16px); }
   .lang-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
 
   .btn {
@@ -568,6 +569,7 @@
       <a href="#projects"><span class="tr-text">Projeler</span><span class="en-text">Projects</span></a>
       <a href="#certs"><span class="tr-text">Sertifikalar</span><span class="en-text">Certificates</span></a>
       <a href="#documents"><span class="tr-text">Belgeler</span><span class="en-text">Documents</span></a>
+      <a href="#mentions"><span class="tr-text">Referanslar</span><span class="en-text">Mentions</span></a>
       <a href="#contact"><span class="tr-text">İletişim</span><span class="en-text">Contact</span></a>
     </div>
     <div class="nav-actions">
@@ -993,10 +995,28 @@
       </div>
   </section>
 
+  <!-- ===== MENTIONS & REFERENCES ===== -->
+  <section class="block" id="mentions">
+    <div class="section-head">
+      <span class="num">06</span>
+      <h2><span class="tr-text">Bahsedilmeler & Referanslar</span><span class="en-text">Mentions & References</span></h2>
+    </div>
+    <div class="card">
+      <h3><span class="tr-text">LinkedIn Gönderisi — Mustafa Altınok</span><span class="en-text">LinkedIn Post — Mustafa Altınok</span></h3>
+      <p style="color:var(--ink-soft); font-size:.92rem; margin:.4rem 0 1.1rem; max-width:60ch;">
+        <span class="tr-text">Danışmanım Mustafa Altınok'un, Codeavour için Project X takımında koçluk ettiği öğrenciler hakkında paylaştığı LinkedIn gönderisinde yer aldım.</span>
+        <span class="en-text">Featured in a LinkedIn post by my mentor, Mustafa Altınok, about the students he coached as part of the Project X team for Codeavour.</span>
+      </p>
+      <a class="btn" style="display:inline-block;" href="https://www.linkedin.com/posts/mustafaaltinok_dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1n%C4%B1-y%C3%BCr%C3%BCtt%C3%BC%C4%9F%C3%BCm-de%C4%9Ferli-%C3%B6%C4%9Frencilerim-ugcPost-7308137984288038912-6_Fm/?utm_source=social_share_send&amp;utm_medium=ios_app&amp;rcm=ACoAAEwbOlgBhWLhA_037z3WVRoZzOob0xiVCtw&amp;utm_campaign=copy_link" target="_blank" rel="noopener">
+        <span class="tr-text">Gönderiyi Görüntüle ↗</span><span class="en-text">View Post ↗</span>
+      </a>
+    </div>
+  </section>
+
   <!-- ===== CONTACT ===== -->
   <section class="block" id="contact">
     <div class="section-head">
-      <span class="num">06</span>
+      <span class="num">07</span>
       <h2><span class="tr-text">İletişim & Bağlantılar</span><span class="en-text">Contact & Links</span></h2>
     </div>
     <div class="contact-grid">
@@ -1015,6 +1035,7 @@
       <div class="contact-group">
         <strong><span class="tr-text">Geliştirici Profili</span><span class="en-text">Developer Profile</span></strong>
         <div>GitHub: <a href="https://github.com/dorukerel3" target="_blank" rel="noopener">github.com/dorukerel3</a></div>
+        <div>PCBWay: <a href="https://www.pcbway.com/project/member/shareproject/?bmbno=49CF2269-ED49-44" target="_blank" rel="noopener">pcbway.com</a></div>
       </div>
       <div class="contact-group">
         <strong><span class="tr-text">Hobiler & Oyun Ağı</span><span class="en-text">Hobbies & Gaming</span></strong>
@@ -1092,7 +1113,13 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
           [{ t: 'STEM Enrichment', b: true }, { t: ' \u2014 NASA Kennedy Space Center Camp; Bilkent University Summer Camp and \u201cFast & Curious\u201d Program; GAE Extraterrestrial Life Workshop', b: false }],
         ]
       },
-      footer: 'For all PDF files, go to dorukerel.com'
+      mentions: {
+        title: 'MENTIONS & REFERENCES',
+        name: 'LinkedIn Post \u2014 Mustafa Altınok',
+        link: 'linkedin.com',
+        desc: 'Featured in a LinkedIn post by my mentor, Mustafa Altınok, about the students he coached as part of the Project X team for Codeavour.'
+      },
+      footer: 'For additional information about me, go to dorukerel.com'
     },
     tr: {
       filename: 'Doruk-Erel-CV-TR.pdf',
@@ -1138,7 +1165,13 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
           [{ t: 'STEM Etkinlikleri', b: true }, { t: ' \u2014 NASA Kennedy Uzay Merkezi Kamp\u0131; Bilkent \u00dcniversitesi Yaz Kamp\u0131 ve \u201cFast & Curious\u201d Program\u0131; GAE D\u00fcnya \u00d6tesi Ya\u015fam At\u00f6lyesi', b: false }],
         ]
       },
-      footer: 'T\u00fcm PDF dosyalar\u0131 i\u00e7in dorukerel.com adresini ziyaret edin'
+      mentions: {
+        title: 'BAHSED\u0130LMELER & REFERANSLAR',
+        name: 'LinkedIn G\u00f6nderisi \u2014 Mustafa Altınok',
+        link: 'linkedin.com',
+        desc: 'Dan\u0131\u015fman\u0131m Mustafa Alt\u0131nok\u2019un, Codeavour i\u00e7in Project X tak\u0131m\u0131nda ko\u00e7luk etti\u011fi \u00f6\u011frenciler hakk\u0131nda payla\u015ft\u0131\u011f\u0131 LinkedIn g\u00f6nderisinde yer ald\u0131m.'
+      },
+      footer: 'Hakk\u0131mda daha fazla bilgi i\u00e7in dorukerel.com adresini ziyaret edin'
     }
   };
 
@@ -1317,6 +1350,14 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
     // ---- Extracurricular Activities ----
     sectionHeader(C.extracurricular.title);
     C.extracurricular.bullets.forEach(drawRichBullet);
+
+    // ---- Mentions & References ----
+    if (C.mentions) {
+      y += 4;
+      sectionHeader(C.mentions.title);
+      entryHeader(C.mentions.name, C.mentions.link);
+      bodyText(C.mentions.desc);
+    }
 
     drawFooter();
     doc.save(C.filename);
