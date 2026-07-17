@@ -6,6 +6,7 @@
 <meta name="color-scheme" content="light only">
 <meta name="description" content="Doruk Erel — Embedded Systems Developer, Hardware & Network Administrator. Academic portfolio and CV.">
 <meta name="author" content="Doruk Erel">
+<meta name="google" content="notranslate">
 <title>Doruk Erel — Academic Portfolio & CV</title>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -544,10 +545,10 @@
       <a href="#contact"><span class="tr-text">İletişim</span><span class="en-text">Contact</span></a>
     </div>
     <div class="nav-actions">
-      <button type="button" class="lang-toggle" id="langToggle" role="switch" aria-checked="false" aria-label="Switch language" onclick="toggleLanguage()">
-        <span class="lang-toggle-label lang-toggle-en">EN</span>
+      <button type="button" class="lang-toggle notranslate" id="langToggle" role="switch" aria-checked="false" aria-label="Switch language" translate="no" onclick="toggleLanguage()">
+        <span class="lang-toggle-label lang-toggle-en" translate="no">EN</span>
         <span class="lang-toggle-track"><span class="lang-toggle-thumb"></span></span>
-        <span class="lang-toggle-label lang-toggle-tr">TR</span>
+        <span class="lang-toggle-label lang-toggle-tr" translate="no">TR</span>
       </button>
       <button class="btn" onclick="downloadCV()">
         <span class="tr-text">CV İndir</span><span class="en-text">Download CV</span>
@@ -1004,7 +1005,7 @@
         <div>Reddit: <a href="https://www.reddit.com/user/DORUKEREL/" target="_blank" rel="noopener">reddit.com/user/DORUKEREL</a></div>
         <div style="font-size:.88rem;color:var(--ink-faint)">
           <span class="tr-text">FPV dronlar, bilgisayar oyunları ve müzik prodüksiyonu</span>
-          <span class="en-text">FPV drones, video games and music production</span>
+          <span class="en-text">FPV drones, video games, and music production</span>
         </div>
       </div>
     </div>
@@ -1144,7 +1145,7 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
 
     const pageW = doc.internal.pageSize.getWidth();
     const pageH = doc.internal.pageSize.getHeight();
-    const marginX = 54, marginTop = 36, marginBottom = 36;
+    const marginX = 54, marginTop = 25, marginBottom = 42;
     const contentW = pageW - marginX * 2;
     let y = marginTop;
 
@@ -1164,7 +1165,7 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
     }
 
     function sectionHeader(title) {
-      checkPageBreak(26);
+      checkPageBreak(22);
       doc.setFont('LiberationSans', 'bold');
       doc.setFontSize(11);
       doc.setTextColor(0, 0, 0);
@@ -1173,11 +1174,11 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       doc.setDrawColor(0, 0, 0);
       doc.setLineWidth(0.6);
       doc.line(marginX, y, marginX + contentW, y);
-      y += 13;
+      y += 9;
     }
 
     function entryHeader(title, rightText) {
-      checkPageBreak(14);
+      checkPageBreak(13);
       doc.setFont('LiberationSans', 'bold');
       doc.setFontSize(9.8);
       doc.setTextColor(0, 0, 0);
@@ -1188,7 +1189,7 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
         doc.setTextColor(68, 68, 68);
         doc.text(rightText, marginX + contentW, y, { align: 'right' });
       }
-      y += 14;
+      y += 13;
     }
 
     function bodyText(text) {
@@ -1196,13 +1197,13 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       doc.setFontSize(9.4);
       doc.setTextColor(0, 0, 0);
       const lines = doc.splitTextToSize(text, contentW);
-      checkPageBreak(lines.length * 12.6);
+      checkPageBreak(lines.length * 12.0);
       doc.text(lines, marginX, y);
-      y += lines.length * 12.6 + 4;
+      y += lines.length * 12.0 + 3;
     }
 
     function drawRichBullet(segments) {
-      const indent = 12, lineHeight = 12.6;
+      const indent = 12, lineHeight = 12.0;
       const textX = marginX + indent;
       const maxX = marginX + contentW;
       doc.setFontSize(9.4);
@@ -1232,35 +1233,35 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
           }
         });
       });
-      y += lineHeight + 2;
+      y += lineHeight + 1;
     }
 
     doc.setFont('LiberationSans', 'bold');
     doc.setFontSize(20);
     doc.setTextColor(0, 0, 0);
     doc.text(C.name, pageW / 2, y + 15, { align: 'center' });
-    y += 30;
+    y += 28;
     doc.setFont('LiberationSans', 'normal');
     doc.setFontSize(9.3);
     doc.text(C.contactLine1, pageW / 2, y, { align: 'center' });
-    y += 13;
+    y += 12;
     doc.text(C.contactLine2, pageW / 2, y, { align: 'center' });
-    y += 20;
+    y += 17;
 
     doc.setFontSize(9.6);
     const summaryLines = doc.splitTextToSize(C.summary, contentW);
     doc.text(summaryLines, marginX, y);
-    y += summaryLines.length * 13.2 + 8;
+    y += summaryLines.length * 13.2 + 5;
 
     sectionHeader(C.education.title);
     entryHeader(C.education.school, C.education.location);
-    y += 2;
+    y += 1;
     C.education.bullets.forEach(drawRichBullet);
-    y += 6;
+    y += 4;
 
     sectionHeader(C.honors.title);
     C.honors.bullets.forEach(drawRichBullet);
-    y += 6;
+    y += 4;
 
     sectionHeader(C.skills.title);
     const labelW = 132;
@@ -1269,13 +1270,13 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       doc.setFontSize(9.4);
       doc.setTextColor(0, 0, 0);
       const valueLines = doc.splitTextToSize(value, contentW - labelW);
-      checkPageBreak(valueLines.length * 12.8);
+      checkPageBreak(valueLines.length * 12.0);
       doc.text(label, marginX, y);
       doc.setFont('LiberationSans', 'normal');
       doc.text(valueLines, marginX + labelW, y);
-      y += Math.max(valueLines.length * 12.8, 12.8) + 3;
+      y += Math.max(valueLines.length * 12.0, 12.0) + 2;
     });
-    y += 6;
+    y += 4;
 
     sectionHeader(C.projectsTitle);
     const projects = (window.__cvProjectsData && window.__cvProjectsData.length)
@@ -1285,15 +1286,15 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       entryHeader(p.name, p.linkLabel || '');
       const desc = (p.description && p.description.trim()) ? p.description : C.projectsNoDesc;
       bodyText(desc);
-      if (idx < projects.length - 1) y += 2;
+      if (idx < projects.length - 1) y += 1;
     });
-    y += 4;
+    y += 3;
 
     sectionHeader(C.extracurricular.title);
     C.extracurricular.bullets.forEach(drawRichBullet);
 
     if (C.mentions) {
-      y += 4;
+      y += 3;
       sectionHeader(C.mentions.title);
       entryHeader(C.mentions.name, C.mentions.link);
       bodyText(C.mentions.desc);
