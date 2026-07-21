@@ -17,6 +17,13 @@
     window.cookiehub.load(cpm);
   });
 </script>
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xq3p60lr4n");
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
@@ -1323,11 +1330,29 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
   }
 
   function downloadCV() {
+    const lang = document.body.classList.contains('lang-en') ? 'en' : 'tr';
     try {
       if (!window.jspdf) throw new Error('jsPDF failed to load');
       generateCV();
+      if (typeof gtag === 'function') {
+        gtag('event', 'download_main_cv', {
+          method: 'header_button',
+          cv_language: lang,
+          file_name: CV_CONTENT[lang].filename
+        });
+      }
+      if (typeof clarity === 'function') {
+        clarity('event', 'download_main_cv');
+        clarity('set', 'cv_language', lang);
+      }
     } catch (err) {
       console.error('CV PDF generation failed, falling back to browser print:', err);
+      if (typeof gtag === 'function') {
+        gtag('event', 'download_main_cv', {
+          method: 'print_fallback',
+          cv_language: lang
+        });
+      }
       window.print();
     }
   }
@@ -1490,13 +1515,40 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
 
   document.addEventListener('DOMContentLoaded', loadRepos);
 
+  function fileNameFromUrl(url) {
+    try {
+      return decodeURIComponent(url.split('/').pop().split('?')[0]);
+    } catch (e) {
+      return url.split('/').pop();
+    }
+  }
+
+  function trackDocEvent(name, url, title) {
+    const fileName = fileNameFromUrl(url);
+    if (typeof gtag === 'function') {
+      gtag('event', name, {
+        document_name: title || fileName,
+        document_url: url,
+        file_name: fileName,
+        file_extension: (fileName.split('.').pop() || '').toLowerCase(),
+        page_language: document.body.classList.contains('lang-en') ? 'en' : 'tr'
+      });
+    }
+    if (typeof clarity === 'function') {
+      clarity('event', name);
+      clarity('set', 'document', fileName);
+    }
+  }
+
   function openViewer(url, title) {
     const v = document.getElementById('viewer');
+    const label = title || fileNameFromUrl(url);
     document.getElementById('viewer-frame').src = url;
-    document.getElementById('viewer-title').textContent = title || url.split('/').pop();
+    document.getElementById('viewer-title').textContent = label;
     document.getElementById('viewer-dl').href = url;
     v.classList.add('open');
     document.body.style.overflow = 'hidden';
+    trackDocEvent('view_document', url, label);
   }
   function closeViewer() {
     const v = document.getElementById('viewer');
@@ -1505,6 +1557,45 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeViewer(); });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (e) {
+      if (typeof gtag !== 'function') return;
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+
+      const raw = link.getAttribute('href');
+      if (!raw || raw === '#' || raw.charAt(0) === '#') return;
+
+      const text = (link.innerText || link.textContent || '').trim().slice(0, 100);
+      const protocol = link.protocol;
+
+      if (protocol === 'mailto:') {
+        gtag('event', 'contact_click', { method: 'email', destination: link.href.replace('mailto:', '') });
+        return;
+      }
+      if (protocol === 'tel:') {
+        gtag('event', 'contact_click', { method: 'phone', destination: link.href.replace('tel:', '') });
+        return;
+      }
+
+      if (link.hasAttribute('download') || raw.indexOf('files/') !== -1 || /\.pdf($|\?)/i.test(raw)) {
+        const row = link.closest('.arch-item, li');
+        const labelEl = row && row.querySelector(document.body.classList.contains('lang-en') ? '.t .en-text' : '.t .tr-text');
+        trackDocEvent('download_document', raw, labelEl ? labelEl.textContent.trim() : (text || null));
+        return;
+      }
+
+      if (link.hostname && link.hostname !== window.location.hostname) {
+        gtag('event', 'outbound_link_click', {
+          destination_url: link.href,
+          destination_domain: link.hostname,
+          link_text: text,
+          page_language: document.body.classList.contains('lang-en') ? 'en' : 'tr'
+        });
+      }
+    });
+  });
 
   function getOpenDocsCookie() {
     const match = document.cookie.match(/(?:^|; )openDocs=([^;]*)/);
