@@ -1,10 +1,1667 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S24JZGM1PF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S24JZGM1PF');
+</script>
+<script src="https://cdn.cookiehub.eu/c2/dd980357.js"></script>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var cpm = {};
+    window.cookiehub.load(cpm);
+  });
+</script>
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xq3p60lr4n");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Doruk Erel — Embedded Systems Developer, Hardware & Network Administrator. Science high school student in Ankara building end-to-end projects in hardware design, embedded systems, and network management. Academic portfolio and CV.">
+<meta name="author" content="Doruk Erel">
+<meta name="google" content="notranslate">
+<title>Doruk Erel — Academic Portfolio & CV</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%238a1538'/%3E%3Cstop offset='100%25' stop-color='%2326355c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23g)'/%3E%3Ctext x='32' y='34' text-anchor='middle' dominant-baseline='middle' font-family='Georgia, Times New Roman, serif' font-weight='700' font-size='26' fill='%23ffffff'%3EDE%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: light only;
+    --bg: #f6f8fb;
+    --surface: #ffffff;
+    --ink: #0f172a;
+    --ink-soft: #000000;
+    --ink-faint: #000000;
+    --accent: #8a1538;
+    --accent-2: #26355c;
+    --line: #e2e8f0;
+    --line-soft: #eef2f7;
+    --chip: #f7eef1;
+    --chip-ink: #6e1423;
+    --radius: 14px;
+    --shadow: 0 10px 30px -12px rgba(15, 23, 42, 0.18);
+    --shadow-sm: 0 2px 10px -4px rgba(15, 23, 42, 0.12);
+    --maxw: 980px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; background: #99D9EA; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, system-ui, -apple-system, sans-serif;
+    background: #99D9EA;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 { font-family: 'Georgia', 'Times New Roman', serif; }
+
+  a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    backdrop-filter: saturate(180%) blur(10px);
+    background: rgba(255, 255, 255, 0.82);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand {
+    font-family: 'Georgia', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+  .brand span { color: var(--accent); }
+  .nav-links {
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+  }
+  .nav-links a { color: var(--ink-soft); font-weight: 500; white-space: nowrap; }
+  .nav-links a:hover { color: var(--accent); text-decoration: none; }
+  .nav-actions { display: flex; gap: 0.5rem; align-items: center; }
+
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 4px 2px;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .lang-toggle-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink-faint);
+    transition: color 0.15s ease;
+  }
+  .lang-toggle[aria-checked="false"] .lang-toggle-en { color: var(--accent); }
+  .lang-toggle[aria-checked="true"] .lang-toggle-tr { color: var(--accent); }
+  .lang-toggle-track {
+    position: relative;
+    width: 38px;
+    height: 22px;
+    background: var(--line);
+    border: 2px solid #000000;
+    border-radius: 999px;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+  }
+  .lang-toggle-thumb {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
+  }
+  .lang-toggle[aria-checked="true"] .lang-toggle-thumb { transform: translateY(-50%) translateX(16px); }
+  .lang-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+  .btn {
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.05s;
+    font-family: inherit;
+  }
+  .btn:hover { background: #5e0f2b; }
+  .btn:active { transform: translateY(1px); }
+  .btn.ghost {
+    background: transparent;
+    color: var(--accent);
+  }
+  .btn.ghost:hover { background: var(--chip); }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  .container { max-width: var(--maxw); margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  section.block {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    margin-bottom: 1.8rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-head h2 {
+    font-size: 1.6rem;
+    margin: 0;
+    color: var(--ink);
+  }
+  .section-head .num {
+    font-family: 'Georgia', serif;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .section-head::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    align-self: center;
+  }
+
+  h3 { font-size: 1.18rem; margin: 0 0 0.4rem; color: var(--ink); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  @media (max-width: 720px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    section.block { padding: 1.75rem; }
+  }
+
+  .hero {
+    background:
+      radial-gradient(1200px 400px at 80% -10%, rgba(138,21,56,0.14), transparent 60%),
+      linear-gradient(180deg, #ffffff, #f8eef1);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 3.25rem 2.5rem;
+    margin-bottom: 1.8rem;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Georgia', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    box-shadow: 0 8px 24px -8px rgba(138,21,56,0.5);
+    flex-shrink: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+  .avatar.has-photo { color: transparent; }
+  .avatar.has-photo .avatar-initials { display: none; }
+  .hero h1 { font-size: 2.7rem; margin: 0 0 0.35rem; color: var(--ink); line-height: 1.1; }
+  .hero .role { font-size: 1.15rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+  .hero .meta { color: var(--ink-faint); font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+  .hero .summary { margin-top: 1rem; color: var(--ink-soft); max-width: 60ch; }
+  @media (max-width: 600px) {
+    .hero { grid-template-columns: 1fr; text-align: center; padding: 2.25rem 1.5rem; }
+    .avatar { margin: 0 auto; }
+    .hero .meta { justify-content: center; }
+  }
+
+  .card {
+    background: #fbfdff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent-2);
+    padding: 1.4rem 1.5rem;
+    border-radius: 10px;
+  }
+  .card + .card { margin-top: 1rem; }
+  .card .muted { color: var(--ink-faint); font-size: 0.9rem; }
+
+  .pill-list { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+  .pill-list li {
+    position: relative;
+    padding-left: 1.3rem;
+    margin-bottom: 0.3rem;
+    color: var(--ink-soft);
+  }
+  .pill-list li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0.62em;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent-2);
+  }
+  .score {
+    display: inline-block;
+    margin-left: 0.35rem;
+    min-width: 1.4rem;
+    text-align: center;
+    padding: 0.05rem 0.45rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    background: #16a34a;
+    vertical-align: 1px;
+  }
+  .score.mid { background: #26355c; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+  .tag {
+    background: var(--chip);
+    color: var(--chip-ink);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #e9d2da;
+  }
+
+  .exam-group strong { display: block; margin: 0.9rem 0 0.2rem; color: var(--ink); }
+  .exam-group strong:first-child { margin-top: 0; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-group strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+  }
+  .contact-group div { margin-bottom: 0.3rem; color: var(--ink-soft); }
+
+  .cert {
+    text-align: center;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.25rem;
+    background: #fbfdff;
+  }
+  .cert .badge {
+    width: 56px; height: 56px;
+    margin: 0 auto 0.75rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.5rem;
+  }
+  .cert strong { display: block; color: var(--ink); }
+  .cert p { font-size: 0.88rem; color: var(--ink-faint); margin: 0.3rem 0 0; }
+
+  footer.foot {
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+    padding: 1rem 0 0;
+  }
+
+  .repo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 720px) { .repo-grid { grid-template-columns: 1fr; } }
+  .repo-card { display: flex; flex-direction: column; }
+  .repo-card h3 { font-size: 1.05rem; margin-bottom: 0.2rem; }
+  .repo-card h3 a { color: var(--ink); }
+  .repo-card h3 a:hover { color: var(--accent); }
+  .repo-desc { color: var(--ink-soft); margin: 0.35rem 0 0; flex: 1; font-size: 0.95rem; }
+  .repo-meta {
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
+    margin-top: 0.8rem; font-size: 0.85rem; color: var(--ink-faint);
+    align-items: center;
+  }
+  .lang-dot {
+    width: 11px; height: 11px; border-radius: 50%;
+    display: inline-block; margin-right: 0.4rem; vertical-align: -1px;
+    background: var(--accent-2);
+  }
+  .repo-status { color: var(--ink-faint); font-size: 0.95rem; padding: 0.5rem 0; }
+  .repo-status a { font-weight: 600; }
+  .repo-skeleton {
+    height: 120px; border-radius: 10px;
+    background: linear-gradient(90deg, #f1f5f9 25%, #e8eef5 37%, #f1f5f9 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+    border: 1px solid var(--line);
+  }
+  @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+
+  .doc-list { display: grid; gap: 0.75rem; }
+  .doc-item {
+    display: flex; align-items: center; gap: 1rem;
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 0.9rem 1.1rem; background: #fbfdff;
+  }
+  .doc-ico {
+    width: 44px; height: 44px; border-radius: 9px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .doc-info { flex: 1; min-width: 0; }
+  .doc-info strong { color: var(--ink); display: block; }
+  .doc-info span { font-size: 0.85rem; color: var(--ink-faint); }
+  .doc-dl {
+    border: 1px solid var(--accent); color: var(--accent); background: transparent;
+    padding: 0.45rem 1rem; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 600; white-space: nowrap;
+  }
+  .doc-dl:hover { background: var(--accent); color: #fff; text-decoration: none; }
+  @media (max-width: 520px) { .doc-item { flex-wrap: wrap; } .doc-dl { width: 100%; text-align: center; } }
+
+  .arch-cat { margin-top: 1.6rem; }
+  .arch-cat:first-child { margin-top: 0; }
+  .arch-cat > h3 {
+    font-size: 1.02rem; color: var(--accent);
+    border-bottom: 1px solid var(--line); padding-bottom: 0.4rem; margin: 0 0 0.4rem;
+  }
+  .arch-list { list-style: none; margin: 0; padding: 0; }
+  .arch-item {
+    display: flex; align-items: baseline; gap: 0.7rem;
+    padding: 0.45rem 0; border-bottom: 1px dashed var(--line-soft); font-size: 0.94rem;
+  }
+  .arch-item:last-child { border-bottom: none; }
+  .arch-item .t { color: var(--ink); flex: 1 1 auto; min-width: 0; }
+  .arch-item .fn {
+    color: var(--ink-faint); font-size: 0.78rem;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; white-space: nowrap;
+  }
+  .arch-item a.dl { white-space: nowrap; font-size: 0.85rem; font-weight: 600; flex-shrink: 0; }
+  @media (max-width: 620px) { .arch-item .fn { display: none; } }
+
+  .redacted-tag { display: inline-block; margin-left: 0.5rem; padding: 0.08rem 0.45rem; border-radius: 5px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: #b91c1c; background: #fee2e2; border: 1px solid #fecaca; vertical-align: 1px; }
+  .arch-note { color: var(--ink-faint); font-size: 0.88rem; margin: 0 0 1.2rem; }
+
+  .arch-item a.doc-dl { white-space: nowrap; flex-shrink: 0; font-size: 0.82rem; padding: 0.35rem 0.8rem; }
+
+  .repo-badge {
+    display: inline-block; margin-left: 0.4rem; vertical-align: 2px;
+    font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+    color: #92400e; background: #fef3c7; border: 1px solid #fde68a; border-radius: 5px; padding: 0.05rem 0.4rem;
+  }
+  .repo-card.repo-offline { border-left-color: #f59e0b; }
+
+  .arch-cat > h3 {
+    cursor: pointer; user-select: none;
+    display: flex; align-items: center; gap: 0.6rem;
+    transition: color 0.15s;
+  }
+  .arch-cat > h3:hover { color: var(--accent-2); }
+  .arch-cat > h3 .count {
+    margin-left: auto; font-size: 0.76rem; font-weight: 700; color: var(--ink-faint);
+    background: var(--chip); border: 1px solid #e9d2da; border-radius: 999px; padding: 0.05rem 0.5rem;
+    font-family: ui-monospace, Menlo, monospace;
+  }
+  .arch-cat > h3 .chev { font-size: 0.7rem; color: var(--ink-faint); transition: transform 0.2s; }
+  .arch-cat.open > h3 .chev { transform: rotate(180deg); }
+  .arch-cat:not(.open) .arch-list { display: none; }
+
+  .doc-view {
+    border: 1px solid var(--line); background: #fff; color: var(--accent);
+    padding: 0.35rem 0.8rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; white-space: nowrap; font-family: inherit; flex-shrink: 0;
+  }
+  .doc-view:hover { background: var(--chip); }
+
+  .viewer-backdrop {
+    position: fixed; inset: 0; z-index: 2000; display: none;
+    align-items: center; justify-content: center; padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(2px);
+  }
+  .viewer-backdrop.open { display: flex; }
+  .viewer {
+    background: #fff; width: min(980px, 100%); height: min(90vh, 100%);
+    border-radius: 14px; overflow: hidden; display: flex; flex-direction: column;
+    box-shadow: 0 24px 70px -18px rgba(0, 0, 0, 0.55);
+  }
+  .viewer-head {
+    display: flex; align-items: center; gap: 0.9rem;
+    padding: 0.75rem 1.1rem; border-bottom: 1px solid var(--line);
+  }
+  .viewer-head .vtitle {
+    flex: 1; min-width: 0; font-weight: 600; color: var(--ink); font-size: 0.95rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .viewer-head a.vdl { font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+  .viewer-head button.vclose {
+    border: none; background: var(--chip); color: var(--ink);
+    width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1rem; line-height: 1;
+    flex-shrink: 0;
+  }
+  .viewer-head button.vclose:hover { background: #e2e8f0; }
+  .viewer iframe { flex: 1; width: 100%; border: 0; background: #f1f5f9; }
+  @media print { .viewer-backdrop { display: none !important; } }
+
+  body:not(.lang-en) .en-text { display: none !important; }
+  body.lang-en .tr-text { display: none !important; }
+
+  @media print {
+    :root { --maxw: 100%; }
+    body { background: #fff; font-size: 10.5px; }
+    .nav, .no-print { display: none !important; }
+    .container { padding: 0; max-width: 100%; }
+
+    .hero {
+      box-shadow: none;
+      border: 1px solid #ccc;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.6rem;
+      break-inside: avoid;
+      background: #fff;
+    }
+    section.block {
+      box-shadow: none;
+      border: 1px solid #ccc;
+      padding: 0.85rem 1.1rem;
+      margin-bottom: 0.6rem;
+      break-inside: auto;
+    }
+    .card, .cert, .project-card, .repo-card, .doc-item, .arch-item, .pin-row,
+    .ap-row, .exam-group { break-inside: avoid; }
+    .section-head { break-after: avoid; }
+    h3 { break-after: avoid; }
+
+    .avatar { width: 72px; height: 72px; font-size: 1.6rem; box-shadow: none; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero .summary { margin-top: 0.6rem; }
+    h2 { font-size: 1.15rem; }
+    section.block { margin-bottom: 0.6rem; }
+    .grid-2, .grid-3 { gap: 0.9rem; }
+    a { color: var(--ink); text-decoration: none; }
+    .tag { border: 1px solid #ccc; background: #f3f3f3; }
+    .repo-badge, .redacted-tag { background: #eee; border-color: #ccc; color: #333; }
+    .repo-card.repo-offline { border-left-color: #999; }
+    footer.foot { color: var(--ink-faint); }
+    .section-head::after { background: #ddd; }
+
+    .arch-cat .arch-list { display: block !important; }
+    .arch-cat > h3 .count, .arch-cat > h3 .chev { display: none; }
+    .arch-cat > h3 { cursor: default; }
+
+    .doc-view { display: none !important; }
+
+    .repo-status a { text-decoration: underline; }
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.0.0/jspdf.umd.min.js"></script>
 </head>
-<body>
-  <h1>Hello World</h1>
+<body class="lang-en">
+
+<nav class="nav no-print">
+  <div class="nav-inner">
+    <div class="brand">Doruk <span>Erel</span></div>
+    <div class="nav-links">
+      <a href="#about"><span class="tr-text">Hakkımda</span><span class="en-text">About</span></a>
+      <a href="#education"><span class="tr-text">Eğitim</span><span class="en-text">Education</span></a>
+      <a href="#skills"><span class="tr-text">Yetenekler</span><span class="en-text">Skills</span></a>
+      <a href="#projects"><span class="tr-text">Projeler</span><span class="en-text">Projects</span></a>
+      <a href="#certs"><span class="tr-text">Sertifikalar</span><span class="en-text">Certificates</span></a>
+      <a href="#documents"><span class="tr-text">Belgeler</span><span class="en-text">Documents</span></a>
+      <a href="#mentions"><span class="tr-text">Referanslar</span><span class="en-text">Mentions</span></a>
+      <a href="#contact"><span class="tr-text">İletişim</span><span class="en-text">Contact</span></a>
+    </div>
+    <div class="nav-actions">
+      <button type="button" class="lang-toggle notranslate" id="langToggle" role="switch" aria-checked="false" aria-label="Switch language" translate="no" onclick="toggleLanguage()">
+        <span class="lang-toggle-label lang-toggle-en" translate="no">EN</span>
+        <span class="lang-toggle-track"><span class="lang-toggle-thumb"></span></span>
+        <span class="lang-toggle-label lang-toggle-tr" translate="no">TR</span>
+      </button>
+      <button class="btn" onclick="downloadCV()">
+        <span class="tr-text">CV İndir</span><span class="en-text">Download CV</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <header class="hero" id="about">
+    <div class="avatar" id="avatar"><span class="avatar-initials">DE</span></div>
+    <div>
+      <h1>Doruk Erel</h1>
+      <div class="role">
+        <span class="tr-text">Gömülü Sistemler Geliştiricisi · Donanım & Ağ Yöneticisi</span>
+        <span class="en-text">Embedded Systems Developer · Hardware & Network Administrator</span>
+      </div>
+      <div class="meta">
+        <span>📍 <span class="tr-text">Ankara, Türkiye</span><span class="en-text">Ankara, Turkey</span></span>
+        <span>✉️ <a href="mailto:dorukerel39.1.1@gmail.com">dorukerel39.1.1@gmail.com</a></span>
+        <span>🔗 <a href="https://github.com/dorukerel3" target="_blank" rel="noopener">github.com/dorukerel3</a></span>
+      </div>
+      <p class="summary">
+        <span class="tr-text">Ankara'da bir fen lisesi öğrencisiyim. Donanım tasarımı, gömülü sistem yazılım ve ağ yönetimi alanlarında uçtan uca projeler geliştiriyorum. Kendime özel PCB tasarımı, 3D baskıdan VPN altyapısı, siber güvenlik prototiplerine kadar tüm donanım-yazılım yığınını bağımsız olarak yürütüyorum. Mühendisliğin yanı sıra kimya ve matematik olimpiyatlarında yarışıyorum (URFODU Kimya, Waterloo Avogadro, Kanguru Matematik). College Board AP Scholar ödülünü aldım (Calculus AB 5, Physics 1 5). Akademik çalışmalarımın dışında piyano ve gitar çalıyorum, Cubase LE 15 ile kulağa güzel gelen tempolar oluşturuyorum. Cambridge İngilizce sertifikası kazandım. Basketbol, tenis, jimnastik, dalış, kayak gibi sporlar ile aktif ilgileniyor ve katılım sağlıyorum. NASA Kennedy Uzay Merkezi ile Bilkent Yaz Okulu gibi STEM kamplarına katılarak kendimi her alanda geliştirmeye devam ediyorum.</span>
+        <span class="en-text">I am a science high school student in Ankara. I develop end-to-end projects in hardware design, embedded systems software, and network management. I independently manage the entire hardware-software stack, from custom PCB design and 3D printing to VPN infrastructure and cybersecurity prototypes. Besides engineering, I compete in chemistry and mathematics olympiads (URFODU Chemistry, Waterloo Avogadro, Kanguru Mathematics). I received the College Board AP Scholar award (Calculus AB 5, Physics 1 5). Outside of my academic studies, I play piano and guitar, create enjoyable rhythms with Cubase LE 15. I have earned a Cambridge English certificate. I actively participate in sports such as basketball, tennis, gymnastics, diving, and skiing. I continue to improve myself in all areas by participating in STEM camps such as the NASA Kennedy Space Center and the Bilkent Summer School.</span>
+      </p>
+    </div>
+  </header>
+
+  <section class="block" id="education">
+    <div class="section-head">
+      <span class="num">01</span>
+      <h2><span class="tr-text">Akademik Profil & Sınavlar</span><span class="en-text">Education & Examinations</span></h2>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h3><span class="tr-text">Lise Eğitimi</span><span class="en-text">Secondary Education</span></h3>
+        <div class="card">
+          <strong>
+            <span class="tr-text">Bilfen Ankara Çayyolu Fen Lisesi</span>
+            <span class="en-text">Bilfen Ankara Çayyolu Science High School</span>
+          </strong>
+          <div class="muted"><span class="tr-text">Ankara, Türkiye</span><span class="en-text">Ankara, Turkey</span></div>
+          <p style="margin:.75rem 0 .25rem;font-size:.92rem;color:var(--ink-faint)">
+            <span class="tr-text">Karneler talep üzerine sunulabilir:</span>
+            <span class="en-text">Report cards available on request:</span>
+          </p>
+          <ul class="pill-list">
+            <li><a href="files/9-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">9. Sınıf Karnesi (PDF)</span><span class="en-text">Grade 9 Report Card (PDF)</span></a></li>
+            <li><a href="files/10-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">10. Sınıf Karnesi (PDF)</span><span class="en-text">Grade 10 Report Card (PDF)</span></a></li>
+            <li><a href="files/11-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">11. Sınıf Karnesi (PDF)</span><span class="en-text">Grade 11 Report Card (PDF)</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h3><span class="tr-text">Uluslararası Sınavlar</span><span class="en-text">International Examinations</span></h3>
+        <div class="card exam-group">
+          <strong>AP — Advanced Placement</strong>
+          <ul class="pill-list">
+            <li>Calculus AB <span class="score">5</span></li>
+            <li>Physics 1 <span class="score">5</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2><span class="tr-text">Teknik Yetenekler</span><span class="en-text">Technical Skills</span></h2>
+    </div>
+    <div class="grid-2">
+      <div>
+        <h3><span class="tr-text">Donanım & Üretim</span><span class="en-text">Hardware & Manufacturing</span></h3>
+        <div class="tags">
+          <span class="tag">ESP32</span>
+          <span class="tag">Altium Designer</span>
+          <span class="tag">KiCad</span>
+          <span class="tag">Fritzing</span>
+          <span class="tag"><span class="tr-text">PCB Kimyasal Aşındırma</span><span class="en-text">PCB Chemical Etching</span></span>
+          <span class="tag">Fusion 360</span>
+          <span class="tag"><span class="tr-text">3D Baskı (PETG)</span><span class="en-text">3D Printing (PETG)</span></span>
+        </div>
+      </div>
+      <div>
+        <h3><span class="tr-text">Ağ Yönetimi & Sistem</span><span class="en-text">Networking & Systems</span></h3>
+        <div class="tags">
+          <span class="tag">Tailscale</span>
+          <span class="tag">WireGuard VPN</span>
+          <span class="tag"><span class="tr-text">Samba NAS</span><span class="en-text">Samba NAS</span></span>
+          <span class="tag"><span class="tr-text">Linux Sistem Yönetimi</span><span class="en-text">Linux Administration</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2><span class="tr-text">Projeler</span><span class="en-text">Projects</span></h2>
+    </div>
+    <p class="repo-status" id="repo-status">
+      <span class="tr-text">GitHub hesabımdan canlı olarak yükleniyor…</span>
+      <span class="en-text">Loading live from my GitHub…</span>
+    </p>
+    <div class="repo-grid" id="repo-grid">
+      <div class="repo-skeleton"></div>
+      <div class="repo-skeleton"></div>
+    </div>
+  </section>
+
+  <section class="block" id="certs">
+    <div class="section-head">
+      <span class="num">04</span>
+      <h2><span class="tr-text">Sertifikalar & Başarılar</span><span class="en-text">Certificates & Achievements</span></h2>
+    </div>
+    <div class="grid-3">
+      <div class="cert">
+        <div class="badge">🏅</div>
+        <strong><span class="tr-text">Kanguru Matematik Türkiye</span><span class="en-text">Kangaroo Math Turkey</span></strong>
+        <p><span class="tr-text">Uluslararası Matematik Yarışması</span><span class="en-text">International Mathematics Competition</span></p>
+      </div>
+      <div class="cert">
+        <div class="badge">🎓</div>
+        <strong>AP Scholar</strong>
+        <p><span class="tr-text">College Board · 2025</span><span class="en-text">College Board · 2025</span></p>
+      </div>
+      <div class="cert">
+        <div class="badge">📜</div>
+        <strong><span class="tr-text">TOEFL Junior Standard</span><span class="en-text">TOEFL Junior Standard</span></strong>
+        <p><span class="tr-text">ETS · 2024</span><span class="en-text">ETS · 2024</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="documents">
+    <div class="section-head">
+      <span class="num">05</span>
+      <h2><span class="tr-text">Belgeler & Arşiv</span><span class="en-text">Documents & Archive</span></h2>
+    </div>
+    <div class="arch-cat">
+      <h3><span class="tr-text">Standart Sınavlar (AP)</span><span class="en-text">Standardized Exams (AP)</span></h3>
+      <ul class="arch-list">
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">AP Score Report — 2025</span><span class="en-text">AP Score Report — 2025</span></span>
+          <span class="fn">AP-Score-Report-2025-redacted.pdf</span>
+          <a class="doc-dl" href="files/AP-Score-Report-2025-redacted.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">AP Scholar Award — 2025</span><span class="en-text">AP Scholar Award — 2025</span></span>
+          <span class="fn">AP-Scholar-Award-2025.pdf</span>
+          <a class="doc-dl" href="files/AP-Scholar-Award-2025.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+      </ul>
+    </div>
+
+      <div class="arch-cat">
+        <h3><span class="tr-text">Akademik Kayıtlar &amp; Karneler</span><span class="en-text">Academic Records &amp; Transcripts</span></h3>
+        <ul class="arch-list">
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">9. Sınıf Karnesi</span><span class="en-text">Grade 9 Report Card</span></span>
+          <span class="fn">9-Sinif-Karne.pdf</span>
+          <a class="doc-dl" href="files/9-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">9. Sınıf Takdir Belgesi</span><span class="en-text">Grade 9 Honour Certificate</span></span>
+          <span class="fn">9-Sinif-Taktir.pdf</span>
+          <a class="doc-dl" href="files/9-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">10. Sınıf Karnesi</span><span class="en-text">Grade 10 Report Card</span></span>
+          <span class="fn">10-Sinif-Karne.pdf</span>
+          <a class="doc-dl" href="files/10-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">10. Sınıf Takdir Belgesi</span><span class="en-text">Grade 10 Honour Certificate</span></span>
+          <span class="fn">10-Sinif-Taktir.pdf</span>
+          <a class="doc-dl" href="files/10-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">11. Sınıf Karnesi</span><span class="en-text">Grade 11 Report Card</span></span>
+          <span class="fn">11-Sinif-Karne.pdf</span>
+          <a class="doc-dl" href="files/11-Sinif-Karne.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">11. Sınıf Takdir Belgesi</span><span class="en-text">Grade 11 Honour Certificate</span></span>
+          <span class="fn">11-Sinif-Taktir.pdf</span>
+          <a class="doc-dl" href="files/11-Sinif-Taktir.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">11. Sınıf Üstün Başarı Belgesi</span><span class="en-text">Grade 11 High Honour Certificate</span></span>
+          <span class="fn">ustun-basari-belgesi.pdf</span>
+          <a class="doc-dl" href="files/ustun-basari-belgesi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">TZV Bölge Finali Belgesi</span><span class="en-text">TZV Regional Final Certificate</span></span>
+          <span class="fn">TZV-Bolge-Finali.pdf</span>
+          <a class="doc-dl" href="files/TZV-Bolge-Finali.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        </ul>
+      </div>
+      <div class="arch-cat">
+        <h3><span class="tr-text">Bilim, Matematik &amp; Mühendislik Ödülleri</span><span class="en-text">Science, Math &amp; Engineering Awards</span></h3>
+        <ul class="arch-list">
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">URFODU 2026 Kimya Diploması</span><span class="en-text">URFODU 2026 Chemistry Diploma</span></span>
+          <span class="fn">urfodu-kimya-2026.pdf</span>
+          <a class="doc-dl" href="files/urfodu-kimya-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">URFODU 2025 Kimya Katılım</span><span class="en-text">URFODU 2025 Chemistry Participation</span></span>
+          <span class="fn">urfodu-kimya-2025.pdf</span>
+          <a class="doc-dl" href="files/urfodu-kimya-2025.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Waterloo Avogadro Sınavı Birinciliği</span><span class="en-text">Waterloo Avogadro Contest — 1st Place</span></span>
+          <span class="fn">waterloo-avogadro-2026.pdf</span>
+          <a class="doc-dl" href="files/waterloo-avogadro-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">URFODU Kimya Derece Belgesi</span><span class="en-text">URFODU Chemistry Ranking Certificate</span></span>
+          <span class="fn">URFODU-Kimya-Derece.pdf</span>
+          <a class="doc-dl" href="files/URFODU-Kimya-Derece.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Kanguru Matematik Başarı Belgesi</span><span class="en-text">Kangaroo Math Achievement Certificate</span></span>
+          <span class="fn">kanguru-matematik-2026.pdf</span>
+          <a class="doc-dl" href="files/kanguru-matematik-2026.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">HBEC 11. Sınıf Katılım Sertifikası</span><span class="en-text">HBEC Grade 11 Participation</span></span>
+          <span class="fn">hbec-katilim-11.pdf</span>
+          <a class="doc-dl" href="files/hbec-katilim-11.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">HBEC 10. Sınıf Katılım Sertifikası</span><span class="en-text">HBEC Grade 10 Participation</span></span>
+          <span class="fn">hbec-katilim-10.pdf</span>
+          <a class="doc-dl" href="files/hbec-katilim-10.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">9. Sınıf TALES Matematik Katılım</span><span class="en-text">Grade 9 TALES Math Participation</span></span>
+          <span class="fn">tales-matematik-9.pdf</span>
+          <a class="doc-dl" href="files/tales-matematik-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">9. Sınıf URFODU Kimya Derece</span><span class="en-text">Grade 9 URFODU Chemistry Ranking</span></span>
+          <span class="fn">urfodu-kimya-derece-9.pdf</span>
+          <a class="doc-dl" href="files/urfodu-kimya-derece-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">URFODU İngilizce Katılım Belgesi</span><span class="en-text">URFODU English Participation</span></span>
+          <span class="fn">urfodu-ingilizce-katilim.pdf</span>
+          <a class="doc-dl" href="files/urfodu-ingilizce-katilim.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">9. Sınıf Kanguru Matematik Katılım</span><span class="en-text">Grade 9 Kangaroo Math Participation</span></span>
+          <span class="fn">kanguru-matematik-9.pdf</span>
+          <a class="doc-dl" href="files/kanguru-matematik-9.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Bilfen Hackidhon Katılım Belgesi</span><span class="en-text">Bilfen Hackathon Participation</span></span>
+          <span class="fn">hackidhon.pdf</span>
+          <a class="doc-dl" href="files/hackidhon.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        </ul>
+      </div>
+      <div class="arch-cat">
+        <h3><span class="tr-text">Müzik, Sanat &amp; Diller</span><span class="en-text">Music, Arts &amp; Languages</span></h3>
+        <ul class="arch-list">
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Odeon Gitar Eğitim Sertifikası I</span><span class="en-text">Odeon Guitar Certificate I</span></span>
+          <span class="fn">odeon-gitar-1.pdf</span>
+          <a class="doc-dl" href="files/odeon-gitar-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Odeon Gitar Eğitim Sertifikası II</span><span class="en-text">Odeon Guitar Certificate II</span></span>
+          <span class="fn">odeon-gitar-2.pdf</span>
+          <a class="doc-dl" href="files/odeon-gitar-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Odeon Piyano Eğitim Sertifikası I</span><span class="en-text">Odeon Piano Certificate I</span></span>
+          <span class="fn">odeon-piyano-1.pdf</span>
+          <a class="doc-dl" href="files/odeon-piyano-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Odeon Piyano Eğitim Sertifikası II</span><span class="en-text">Odeon Piano Certificate II</span></span>
+          <span class="fn">odeon-piyano-2.pdf</span>
+          <a class="doc-dl" href="files/odeon-piyano-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Lotus Sanat Akademisi Piyano Sertifikası</span><span class="en-text">Lotus Art Academy Piano Certificate</span></span>
+          <span class="fn">lotus-piyano-sertifika.pdf</span>
+          <a class="doc-dl" href="files/lotus-piyano-sertifika.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">LCM Piano Grade 2 Sertifikası</span><span class="en-text">LCM Piano Grade 2 Certificate</span></span>
+          <span class="fn">lcm-piano-grade-2.pdf</span>
+          <a class="doc-dl" href="files/lcm-piano-grade-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Cambridge İngilizce Sertifikası</span><span class="en-text">Cambridge English Certificate</span></span>
+          <span class="fn">cambridge-ingilizce-sertifikasi.pdf</span>
+          <a class="doc-dl" href="files/cambridge-ingilizce-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">TOEFL Junior Skor Raporu — 2024</span><span class="en-text">TOEFL Junior Score Report — 2024</span></span>
+          <span class="fn">TOEFL-Junior-Score-Report-2024.pdf</span>
+          <a class="doc-dl" href="files/TOEFL-Junior-Score-Report-2024.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">TOEFL Junior Başarı Sertifikası — 2024</span><span class="en-text">TOEFL Junior Certificate of Achievement — 2024</span></span>
+          <span class="fn">TOEFL-Junior-Certificate-2024.pdf</span>
+          <a class="doc-dl" href="files/TOEFL-Junior-Certificate-2024.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Uluslararası Gençlik Ödülü — Bronz</span><span class="en-text">Int&#x27;l Award for Young People — Bronze</span></span>
+          <span class="fn">Genclik-Odulu-Bronz.pdf</span>
+          <a class="doc-dl" href="files/Genclik-Odulu-Bronz.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Uluslararası Gençlik Ödülü — Gümüş</span><span class="en-text">Int&#x27;l Award for Young People — Silver</span></span>
+          <span class="fn">Genclik-Odulu-Gumus.pdf</span>
+          <a class="doc-dl" href="files/Genclik-Odulu-Gumus.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        </ul>
+      </div>
+      <div class="arch-cat">
+        <h3><span class="tr-text">Spor, Sosyal &amp; Ekstra Müfredat</span><span class="en-text">Sports, Social &amp; Extracurricular</span></h3>
+        <ul class="arch-list">
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Tenis Lisansı</span><span class="en-text">Tennis License</span></span>
+          <span class="fn">Tenis-Lisansi.pdf</span>
+          <a class="doc-dl" href="files/Tenis-Lisansi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Bilkent Yaz Kampı Sertifikası</span><span class="en-text">Bilkent Summer Camp Certificate</span></span>
+          <span class="fn">Bilkent-Yaz-Kampi.pdf</span>
+          <a class="doc-dl" href="files/Bilkent-Yaz-Kampi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Bilkent Fast &amp; Curious Sertifikası</span><span class="en-text">Bilkent Fast &amp; Curious Certificate</span></span>
+          <span class="fn">Bilkent-Fast-Curious.pdf</span>
+          <a class="doc-dl" href="files/Bilkent-Fast-Curious.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">GAE Dünya Ötesi Yaşam Atölyesi</span><span class="en-text">GAE Extraterrestrial Life Workshop</span></span>
+          <span class="fn">GAE-Dunya-Otesi.pdf</span>
+          <a class="doc-dl" href="files/GAE-Dunya-Otesi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">9. Sınıf Sosyal Etkinlik Katılım Belgesi</span><span class="en-text">Grade 9 Social Activity Participation</span></span>
+          <span class="fn">9-sinif-sosyal-etkinlik-katılım.pdf</span>
+          <a class="doc-dl" href="files/9-sinif-sosyal-etkinlik-katılım.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">10. Sınıf Sosyal Etkinlik Belgesi</span><span class="en-text">Grade 10 Social Activity Certificate</span></span>
+          <span class="fn">10-sinif-sosyal-etkinlik.pdf</span>
+          <a class="doc-dl" href="files/10-sinif-sosyal-etkinlik.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">11. Sınıf Sosyal Etkinlik Belgesi</span><span class="en-text">Grade 11 Social Activity Certificate</span></span>
+          <span class="fn">11-sinif-sosyal-etkinlik.pdf</span>
+          <a class="doc-dl" href="files/11-sinif-sosyal-etkinlik.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Dalgıç (Scuba) Sertifikası</span><span class="en-text">Scuba Diving Certificate</span></span>
+          <span class="fn">dalgic-sertifikasi.pdf</span>
+          <a class="doc-dl" href="files/dalgic-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Kayak Sertifikası</span><span class="en-text">Skiing Certificate</span></span>
+          <span class="fn">kayak-sertifikasi.pdf</span>
+          <a class="doc-dl" href="files/kayak-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">iFLY Orlando Uçuş Sertifikası</span><span class="en-text">iFLY Orlando Indoor Skydiving Certificate</span></span>
+          <span class="fn">ifly-ucus-sertifikasi.pdf</span>
+          <a class="doc-dl" href="files/ifly-ucus-sertifikasi.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Çankaya Üniv. Jimnastik Başarı Belgesi</span><span class="en-text">Çankaya Univ. Gymnastics Achievement</span></span>
+          <span class="fn">cankaya-jimnastik-basari.pdf</span>
+          <a class="doc-dl" href="files/cankaya-jimnastik-basari.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı I</span><span class="en-text">Çankaya Univ. Basketball Achievement I</span></span>
+          <span class="fn">cankaya-basketbol-1.pdf</span>
+          <a class="doc-dl" href="files/cankaya-basketbol-1.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı II</span><span class="en-text">Çankaya Univ. Basketball Achievement II</span></span>
+          <span class="fn">cankaya-basketbol-2.pdf</span>
+          <a class="doc-dl" href="files/cankaya-basketbol-2.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Çankaya Üniv. Basketbol Başarı III</span><span class="en-text">Çankaya Univ. Basketball Achievement III</span></span>
+          <span class="fn">cankaya-basketbol-3.pdf</span>
+          <a class="doc-dl" href="files/cankaya-basketbol-3.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">NASA Kennedy Uzay Merkezi Kampı</span><span class="en-text">NASA Kennedy Space Center Camp</span></span>
+          <span class="fn">NASA-KSC-Camp.pdf</span>
+          <a class="doc-dl" href="files/NASA-KSC-Camp.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
+        </ul>
+      </div>
+  </section>
+
+  <section class="block" id="mentions">
+    <div class="section-head">
+      <span class="num">06</span>
+      <h2><span class="tr-text">Bahsedilmeler & Referanslar</span><span class="en-text">Mentions & References</span></h2>
+    </div>
+    <div class="card">
+      <h3><span class="tr-text">LinkedIn Gönderisi — Mustafa Altınok</span><span class="en-text">LinkedIn Post — Mustafa Altınok</span></h3>
+      <p style="color:var(--ink-soft); font-size:.92rem; margin:.4rem 0 1.1rem; max-width:60ch;">
+        <span class="tr-text">Danışmanım Mustafa Altınok'un, Codeavour için Project X takımında koçluk ettiği öğrenciler hakkında paylaştığı LinkedIn gönderisinde yer aldım.</span>
+        <span class="en-text">Featured in a LinkedIn post by my mentor, Mustafa Altınok, about the students he coached as part of the Project X team for Codeavour.</span>
+      </p>
+      <a class="btn" style="display:inline-block;" href="https://www.linkedin.com/posts/mustafaaltinok_dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1n%C4%B1-y%C3%BCr%C3%BCtt%C3%BC%C4%9F%C3%BCm-de%C4%9Ferli-%C3%B6%C4%9Frencilerim-ugcPost-7308137984288038912-6_Fm/?utm_source=social_share_send&amp;utm_medium=ios_app&amp;rcm=ACoAAEwbOlgBhWLhA_037z3WVRoZzOob0xiVCtw&amp;utm_campaign=copy_link" target="_blank" rel="noopener">
+        <span class="tr-text">Gönderiyi Görüntüle ↗</span><span class="en-text">View Post ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="section-head">
+      <span class="num">07</span>
+      <h2><span class="tr-text">İletişim & Bağlantılar</span><span class="en-text">Contact & Links</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-group">
+        <strong><span class="tr-text">E-Posta</span><span class="en-text">Email</span></strong>
+        <div><a href="mailto:dorukerel39.1.1@gmail.com">dorukerel39.1.1@gmail.com</a> <span style="color:var(--ink-faint);font-size:.85rem">(<span class="tr-text">Birincil</span><span class="en-text">Primary</span>)</span></div>
+        <div><a href="mailto:dorukerel39.1.1@dorukerel.com">dorukerel39.1.1@dorukerel.com</a></div>
+        <div><a href="mailto:dorukerel39.1@gmail.com">dorukerel39.1@gmail.com</a></div>
+        <div><a href="mailto:ereldoruk1@gmail.com">ereldoruk1@gmail.com</a></div>
+      </div>
+      <div class="contact-group">
+        <strong><span class="tr-text">Telefon</span><span class="en-text">Phone</span></strong>
+        <div>TR: <a href="tel:+905338998477">+90 (533) 899 84 77</a></div>
+        <div>US: <a href="tel:+12512552253">+1 (251) 255-2253</a></div>
+      </div>
+      <div class="contact-group">
+        <strong><span class="tr-text">Geliştirici Profili</span><span class="en-text">Developer Profile</span></strong>
+        <div>GitHub: <a href="https://github.com/dorukerel3" target="_blank" rel="noopener">github.com/dorukerel3</a></div>
+        <div>PCBWay: <a href="https://www.pcbway.com/project/member/shareproject/?bmbno=49CF2269-ED49-44" target="_blank" rel="noopener">pcbway.com</a></div>
+      </div>
+      <div class="contact-group">
+        <strong><span class="tr-text">Hobiler & Oyun Ağı</span><span class="en-text">Hobbies & Gaming</span></strong>
+        <div>Steam: <a href="https://steamcommunity.com/id/DORUKEREL/" target="_blank" rel="noopener">steamcommunity.com/id/DORUKEREL</a></div>
+        <div>Discord: dorukerel3</div>
+        <div>Reddit: <a href="https://www.reddit.com/user/DORUKEREL/" target="_blank" rel="noopener">reddit.com/user/DORUKEREL</a></div>
+        <div>SteamDeckRepo: <a href="https://steamdeckrepo.com/user/15474" target="_blank" rel="noopener">steamdeckrepo.com</a></div>
+        <div style="font-size:.88rem;color:var(--ink-faint)">
+          <span class="tr-text">FPV dronlar, bilgisayar oyunları ve müzik prodüksiyonu</span>
+          <span class="en-text">FPV drones, video games and music production</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span class="tr-text">© 2026 Doruk Erel · Tüm hakları saklıdır.</span>
+    <span class="en-text">© 2026 Doruk Erel · All rights reserved.</span>
+  </footer>
+
+</div>
+
+<script>
+const CV_FONT_REGULAR_B64 = "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";
+const CV_FONT_BOLD_B64 = "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";
+
+  const CV_CONTENT = {
+    en: {
+      filename: 'Doruk-Erel-CV.pdf',
+      name: 'DORUK EREL',
+      contactLine1: 'Ankara, Turkey  \u2022  dorukerel39.1.1@gmail.com  \u2022  +90 (533) 899 84 77 (TR)',
+      contactLine2: '+1 (251) 255-2253 (US)  \u2022  github.com/dorukerel3  \u2022  dorukerel.com',
+      summary: null,
+      education: {
+        title: 'EDUCATION',
+        school: 'Bilfen Ankara \u00c7ayyolu Science High School',
+        location: 'Ankara, Turkey',
+        bullets: [
+          [{ t: 'Standardized testing: AP Calculus AB \u2014 5; AP Physics 1 \u2014 5 (College Board, 2025)', b: false }],
+          [{ t: 'TOEFL Junior Standard \u2014 865/900, Superior level (ETS, 2024)', b: false }],
+        ]
+      },
+      honors: {
+        title: 'HONORS & AWARDS',
+        bullets: [
+          [{ t: 'College Board AP Scholar Award', b: true }, { t: ' \u2014 2025', b: false }],
+          [{ t: 'Waterloo Avogadro Contest', b: true }, { t: ' \u2014 1st Place \u2014 2026', b: false }],
+          [{ t: 'URFODU Chemistry Olympiad', b: true }, { t: ' \u2014 Diploma, 2026; Participation, 2025', b: false }],
+          [{ t: 'Kangaroo Math Turkey', b: true }, { t: ' \u2014 International Mathematics Competition, Achievement Certificate \u2014 2026', b: false }],
+          [{ t: 'International Award for Young People', b: true }, { t: ' \u2014 Silver and Bronze Awards', b: false }],
+          [{ t: 'TZV Regional Final', b: true }, { t: ' \u2014 Certificate of Achievement', b: false }],
+          [{ t: 'Additional recognition: HBEC Participation (Grades 10\u201311), TALES Mathematics Participation, Bilfen Hackathon Participation', b: false }],
+        ]
+      },
+      skills: {
+        title: 'TECHNICAL SKILLS',
+        rows: [
+          ['Hardware & Manufacturing:', 'ESP32, Altium Designer, KiCad, Fritzing, PCB Chemical Etching, Fusion 360, 3D Printing (PETG)'],
+          ['Networking & Systems:', 'Tailscale, WireGuard VPN, Samba NAS, Linux System Administration'],
+        ]
+      },
+      projectsTitle: 'SELECTED PROJECTS',
+      projectsNoDesc: 'No description yet.',
+      extracurricular: {
+        title: 'EXTRACURRICULAR ACTIVITIES',
+        bullets: [
+          [{ t: 'Athletics', b: true }, { t: ' \u2014 Licensed Tennis; Basketball and Gymnastics (\u00c7ankaya University); Scuba Diving; Alpine Skiing; Indoor Skydiving (iFLY Orlando)', b: false }],
+          [{ t: 'Music', b: true }, { t: ' \u2014 Piano (Odeon Music School Certificates I\u2013II, LCM Piano Grade 2, Lotus Art Academy Certificate); Guitar (Odeon Music School Certificates I\u2013II); Music Production (Cubase LE 15)', b: false }],
+          [{ t: 'STEM Enrichment', b: true }, { t: ' \u2014 NASA Kennedy Space Center Camp; Bilkent University Summer Camp and \u201cFast & Curious\u201d Program; GAE Extraterrestrial Life Workshop', b: false }],
+        ]
+      },
+      mentions: {
+        title: 'MENTIONS & REFERENCES',
+        name: 'LinkedIn Post \u2014 Mustafa Altınok',
+        link: 'linkedin.com',
+        desc: 'Featured in a LinkedIn post by my mentor, Mustafa Altınok, about the students he coached as part of the Project X team for Codeavour.'
+      },
+      footer: 'For additional information about me, go to dorukerel.com'
+    },
+    tr: {
+      filename: 'Doruk-Erel-CV-TR.pdf',
+      name: 'DORUK EREL',
+      contactLine1: 'Ankara, T\u00fcrkiye  \u2022  dorukerel39.1.1@gmail.com  \u2022  +90 (533) 899 84 77 (TR)',
+      contactLine2: '+1 (251) 255-2253 (US)  \u2022  github.com/dorukerel3  \u2022  dorukerel.com',
+      summary: null,
+      education: {
+        title: 'E\u011eiTiM',
+        school: 'Bilfen Ankara \u00c7ayyolu Fen Lisesi',
+        location: 'Ankara, T\u00fcrkiye',
+        bullets: [
+          [{ t: 'Standart s\u0131navlar: AP Calculus AB \u2014 5; AP Physics 1 \u2014 5 (College Board, 2025)', b: false }],
+          [{ t: 'TOEFL Junior Standard \u2014 865/900, Superior seviye (ETS, 2024)', b: false }],
+        ]
+      },
+      honors: {
+        title: 'ONURLAR VE \u00d6D\u00dcLLER',
+        bullets: [
+          [{ t: 'College Board AP Scholar \u00d6d\u00fcl\u00fc', b: true }, { t: ' \u2014 2025', b: false }],
+          [{ t: 'Waterloo Avogadro S\u0131nav\u0131', b: true }, { t: ' \u2014 Birincilik \u2014 2026', b: false }],
+          [{ t: 'URFODU Kimya Olimpiyat\u0131', b: true }, { t: ' \u2014 Diploma, 2026; Kat\u0131l\u0131m, 2025', b: false }],
+          [{ t: 'Kanguru Matematik T\u00fcrkiye', b: true }, { t: ' \u2014 Uluslararas\u0131 Matematik Yar\u0131\u015fmas\u0131, Ba\u015far\u0131 Belgesi \u2014 2026', b: false }],
+          [{ t: 'Uluslararas\u0131 Gen\u00e7lik \u00d6d\u00fcl\u00fc', b: true }, { t: ' \u2014 G\u00fcm\u00fc\u015f ve Bronz \u00d6d\u00fclleri', b: false }],
+          [{ t: 'TZV B\u00f6lge Finali', b: true }, { t: ' \u2014 Ba\u015far\u0131 Belgesi', b: false }],
+          [{ t: 'Ek ba\u015far\u0131lar: HBEC Kat\u0131l\u0131m\u0131 (10\u201311. S\u0131n\u0131flar), TALES Matematik Kat\u0131l\u0131m\u0131, Bilfen Hackathon Kat\u0131l\u0131m\u0131', b: false }],
+        ]
+      },
+      skills: {
+        title: 'TEKN\u0130K YETENEKLER',
+        rows: [
+          ['Donan\u0131m ve \u00dcretim:', 'ESP32, Altium Designer, KiCad, Fritzing, PCB Kimyasal A\u015f\u0131nd\u0131rma, Fusion 360, 3D Bask\u0131 (PETG)'],
+          ['A\u011f Y\u00f6netimi ve Sistemler:', 'Tailscale, WireGuard VPN, Samba NAS, Linux Sistem Y\u00f6netimi'],
+        ]
+      },
+      projectsTitle: 'SE\u00c7\u0130LM\u0130\u015e PROJELER',
+      projectsNoDesc: 'A\u00e7\u0131klama eklenmemi\u015f.',
+      extracurricular: {
+        title: 'DERS DI\u015eI ETK\u0130NL\u0130KLER',
+        bullets: [
+          [{ t: 'M\u00fczik', b: true }, { t: ' \u2014 Piyano (Odeon M\u00fczik Okulu Sertifikalar\u0131 I\u2013II, LCM Piano Grade 2, Lotus Sanat Akademisi Sertifikas\u0131); Gitar (Odeon M\u00fczik Okulu Sertifikalar\u0131 I\u2013II); M\u00fczik Prod\u00fcksiyonu (Cubase LE 15)', b: false }],
+          [{ t: 'Spor', b: true }, { t: ' \u2014 Lisansl\u0131 Tenis; Basketbol ve Jimnastik (\u00c7ankaya \u00dcniversitesi); Dalg\u0131\u00e7l\u0131k; Kayak; Kapal\u0131 Alan Serbest D\u00fc\u015f\u00fc\u015f (iFLY Orlando)', b: false }],
+          [{ t: 'STEM Etkinlikleri', b: true }, { t: ' \u2014 NASA Kennedy Uzay Merkezi Kamp\u0131; Bilkent \u00dcniversitesi Yaz Kamp\u0131 ve \u201cFast & Curious\u201d Program\u0131; GAE D\u00fcnya \u00d6tesi Ya\u015fam At\u00f6lyesi', b: false }],
+        ]
+      },
+      mentions: {
+        title: 'BAHSED\u0130LMELER & REFERANSLAR',
+        name: 'LinkedIn G\u00f6nderisi \u2014 Mustafa Altınok',
+        link: 'linkedin.com',
+        desc: 'Dan\u0131\u015fman\u0131m Mustafa Alt\u0131nok\u2019un, Codeavour i\u00e7in Project X tak\u0131m\u0131nda ko\u00e7luk etti\u011fi \u00f6\u011frenciler hakk\u0131nda payla\u015ft\u0131\u011f\u0131 LinkedIn g\u00f6nderisinde yer ald\u0131m.'
+      },
+      footer: 'Hakk\u0131mda daha fazla bilgi i\u00e7in dorukerel.com adresini ziyaret edin'
+    }
+  };
+
+  function generateCV() {
+    const { jsPDF } = window.jspdf;
+    const lang = document.body.classList.contains('lang-en') ? 'en' : 'tr';
+    const C = CV_CONTENT[lang];
+    const bioSelector = lang === 'en' ? '.hero .summary .en-text' : '.hero .summary .tr-text';
+    const bioEl = document.querySelector(bioSelector);
+    C.summary = bioEl ? bioEl.textContent.trim() : 'Science high school student in Ankara, Turkey.';
+    const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+
+    doc.addFileToVFS('LiberationSans-Regular.ttf', CV_FONT_REGULAR_B64);
+    doc.addFont('LiberationSans-Regular.ttf', 'LiberationSans', 'normal');
+    doc.addFileToVFS('LiberationSans-Bold.ttf', CV_FONT_BOLD_B64);
+    doc.addFont('LiberationSans-Bold.ttf', 'LiberationSans', 'bold');
+
+    const pageW = doc.internal.pageSize.getWidth();
+    const pageH = doc.internal.pageSize.getHeight();
+    const marginX = 54, marginTop = 25, marginBottom = 42;
+    const contentW = pageW - marginX * 2;
+    let y = marginTop;
+
+    function drawFooter() {
+      doc.setFont('LiberationSans', 'normal');
+      doc.setFontSize(8);
+      doc.setTextColor(102, 102, 102);
+      doc.text(C.footer, pageW / 2, pageH - 29, { align: 'center' });
+    }
+
+    function checkPageBreak(needed) {
+      if (y + needed > pageH - marginBottom) {
+        drawFooter();
+        doc.addPage();
+        y = marginTop;
+      }
+    }
+
+    function sectionHeader(title) {
+      checkPageBreak(22);
+      doc.setFont('LiberationSans', 'bold');
+      doc.setFontSize(11);
+      doc.setTextColor(0, 0, 0);
+      doc.text(title, marginX, y);
+      y += 5;
+      doc.setDrawColor(0, 0, 0);
+      doc.setLineWidth(0.6);
+      doc.line(marginX, y, marginX + contentW, y);
+      y += 9;
+    }
+
+    function entryHeader(title, rightText) {
+      checkPageBreak(13);
+      doc.setFont('LiberationSans', 'bold');
+      doc.setFontSize(9.8);
+      doc.setTextColor(0, 0, 0);
+      doc.text(title, marginX, y);
+      if (rightText) {
+        doc.setFont('LiberationSans', 'normal');
+        doc.setFontSize(9.2);
+        doc.setTextColor(68, 68, 68);
+        doc.text(rightText, marginX + contentW, y, { align: 'right' });
+      }
+      y += 13;
+    }
+
+    function bodyText(text) {
+      doc.setFont('LiberationSans', 'normal');
+      doc.setFontSize(9.4);
+      doc.setTextColor(0, 0, 0);
+      const lines = doc.splitTextToSize(text, contentW);
+      checkPageBreak(lines.length * 12.0);
+      doc.text(lines, marginX, y);
+      y += lines.length * 12.0 + 3;
+    }
+
+    function drawRichBullet(segments) {
+      const indent = 12, lineHeight = 12.0;
+      const textX = marginX + indent;
+      const maxX = marginX + contentW;
+      doc.setFontSize(9.4);
+
+      checkPageBreak(lineHeight);
+      doc.setFont('LiberationSans', 'normal');
+      doc.setTextColor(0, 0, 0);
+      doc.text('\u2022', marginX, y);
+
+      let cx = textX;
+      segments.forEach(function (seg) {
+        const words = seg.t.split(' ');
+        doc.setFont('LiberationSans', seg.b ? 'bold' : 'normal');
+        words.forEach(function (word) {
+          if (word === '') return;
+          const prefix = (cx === textX ? '' : ' ');
+          const w = doc.getTextWidth(prefix + word);
+          if (cx + w > maxX) {
+            y += lineHeight;
+            checkPageBreak(lineHeight);
+            cx = textX;
+            doc.text(word, cx, y);
+            cx += doc.getTextWidth(word);
+          } else {
+            doc.text(prefix + word, cx, y);
+            cx += w;
+          }
+        });
+      });
+      y += lineHeight + 1;
+    }
+
+    doc.setFont('LiberationSans', 'bold');
+    doc.setFontSize(20);
+    doc.setTextColor(0, 0, 0);
+    doc.text(C.name, pageW / 2, y + 15, { align: 'center' });
+    y += 28;
+    doc.setFont('LiberationSans', 'normal');
+    doc.setFontSize(9.3);
+    doc.text(C.contactLine1, pageW / 2, y, { align: 'center' });
+    y += 12;
+    doc.text(C.contactLine2, pageW / 2, y, { align: 'center' });
+    y += 17;
+
+    doc.setFontSize(9.6);
+    const summaryLines = doc.splitTextToSize(C.summary, contentW);
+    doc.text(summaryLines, marginX, y);
+    y += summaryLines.length * 13.2 + 5;
+
+    sectionHeader(C.education.title);
+    entryHeader(C.education.school, C.education.location);
+    y += 1;
+    C.education.bullets.forEach(drawRichBullet);
+    y += 4;
+
+    sectionHeader(C.honors.title);
+    C.honors.bullets.forEach(drawRichBullet);
+    y += 4;
+
+    sectionHeader(C.skills.title);
+    const labelW = 132;
+    C.skills.rows.forEach(function ([label, value]) {
+      doc.setFont('LiberationSans', 'bold');
+      doc.setFontSize(9.4);
+      doc.setTextColor(0, 0, 0);
+      const valueLines = doc.splitTextToSize(value, contentW - labelW);
+      checkPageBreak(valueLines.length * 12.0);
+      doc.text(label, marginX, y);
+      doc.setFont('LiberationSans', 'normal');
+      doc.text(valueLines, marginX + labelW, y);
+      y += Math.max(valueLines.length * 12.0, 12.0) + 2;
+    });
+    y += 4;
+
+    sectionHeader(C.projectsTitle);
+    const projects = (window.__cvProjectsData && window.__cvProjectsData.length)
+      ? window.__cvProjectsData
+      : [{ name: 'Environmental Security Station', description: '', linkLabel: '' }];
+    projects.forEach(function (p, idx) {
+      entryHeader(p.name, p.linkLabel || '');
+      const desc = (p.description && p.description.trim()) ? p.description : C.projectsNoDesc;
+      bodyText(desc);
+      if (idx < projects.length - 1) y += 1;
+    });
+    y += 3;
+
+    sectionHeader(C.extracurricular.title);
+    C.extracurricular.bullets.forEach(drawRichBullet);
+
+    if (C.mentions) {
+      y += 3;
+      sectionHeader(C.mentions.title);
+      entryHeader(C.mentions.name, C.mentions.link);
+      bodyText(C.mentions.desc);
+    }
+
+    drawFooter();
+    doc.save(C.filename);
+  }
+
+  function downloadCV() {
+    const lang = document.body.classList.contains('lang-en') ? 'en' : 'tr';
+    try {
+      if (!window.jspdf) throw new Error('jsPDF failed to load');
+      generateCV();
+      if (typeof gtag === 'function') {
+        gtag('event', 'download_main_cv', {
+          method: 'header_button',
+          cv_language: lang,
+          file_name: CV_CONTENT[lang].filename
+        });
+      }
+      if (typeof clarity === 'function') {
+        clarity('event', 'download_main_cv');
+        clarity('set', 'cv_language', lang);
+      }
+    } catch (err) {
+      console.error('CV PDF generation failed, falling back to browser print:', err);
+      if (typeof gtag === 'function') {
+        gtag('event', 'download_main_cv', {
+          method: 'print_fallback',
+          cv_language: lang
+        });
+      }
+      window.print();
+    }
+  }
+
+  function setLangCookie(value) {
+    const expires = new Date(Date.now() + 365 * 864e5).toUTCString();
+    document.cookie = 'lang=' + value + '; expires=' + expires + '; path=/; SameSite=Lax';
+  }
+  function getLangCookie() {
+    const match = document.cookie.match(/(?:^|; )lang=(en|tr)/);
+    return match ? match[1] : null;
+  }
+  function applyLanguage(lang) {
+    const isEn = lang === 'en';
+    document.body.classList.toggle('lang-en', isEn);
+    document.getElementById('langToggle').setAttribute('aria-checked', String(!isEn));
+    document.documentElement.lang = isEn ? 'en' : 'tr';
+  }
+  function toggleLanguage() {
+    const newLang = document.body.classList.contains('lang-en') ? 'tr' : 'en';
+    applyLanguage(newLang);
+    setLangCookie(newLang);
+  }
+  (function initLanguage() {
+    const saved = getLangCookie();
+    if (saved === 'tr') applyLanguage('tr');
+  })();
+
+  (function () {
+    const candidates = ['profile.jpg','profile.jpeg','profile.png','profile.webp','profile.JPG','profile.PNG'];
+    const avatar = document.getElementById('avatar');
+    if (!avatar) return;
+    let i = 0;
+    (function tryNext() {
+      if (i >= candidates.length) return;
+      const img = new Image();
+      img.onload = function () {
+        avatar.style.backgroundImage = 'url("files/' + candidates[i] + '")';
+        avatar.classList.add('has-photo');
+      };
+      img.onerror = function () { i++; tryNext(); };
+      img.src = 'files/' + candidates[i];
+    })();
+  })();
+
+  const GH_USER = 'dorukerel3';
+  const FEATURE_TOPIC = 'portfolio';
+  const MAX_REPOS = 12;
+
+  const FALLBACK = [
+    {
+      name: 'Environmental Security Station',
+      html_url: 'https://github.com/' + GH_USER,
+      desc_tr: 'Tehlikeleri önceden algılayan akıllı güvenlik ve yangın alarmı sistemi.',
+      desc_en: 'A smart security and fire-alarm system that detects hazards in advance.',
+      language: 'C', stargazers_count: 0, offline: true, topics: ['iot', 'sensors', 'prototyping']
+    }
+  ];
+
+  const LANG_COLORS = {
+    JavaScript:'#f1e05a', TypeScript:'#3178c6', Python:'#3572A5', C:'#555555',
+    'C++':'#f34b7d', 'C#':'#178600', HTML:'#e34c26', CSS:'#563d7c', Java:'#b07219',
+    Shell:'#89e051', Arduino:'#bd79d1', Go:'#00ADD8', Rust:'#dea584', Kotlin:'#A97BFF',
+    Dockerfile:'#384d54', 'Jupyter Notebook':'#DA5B0B', Vue:'#41b883'
+  };
+
+  function esc(s){ const d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+  function bi(tr,en){ return '<span class="tr-text">'+esc(tr)+'</span><span class="en-text">'+esc(en)+'</span>'; }
+
+  function repoCard(r){
+    const url = esc(r.html_url);
+    const name = esc(r.name);
+    const desc = (r.desc_tr || r.desc_en)
+      ? '<p class="repo-desc">'+bi(r.desc_tr, r.desc_en)+'</p>'
+      : (r.description
+          ? '<p class="repo-desc">'+esc(r.description)+'</p>'
+          : '<p class="repo-desc" style="color:var(--ink-faint)">'+bi('Açıklama eklenmemiş.','No description yet.')+'</p>');
+
+    const topics = (r.topics || []).slice(0,5)
+      .map(t => '<span class="tag">'+esc(t)+'</span>').join('');
+    const tagsHtml = topics ? '<div class="tags">'+topics+'</div>' : '';
+
+    const meta = [];
+    if (r.language){
+      const c = LANG_COLORS[r.language] || 'var(--accent-2)';
+      meta.push('<span><span class="lang-dot" style="background:'+c+'"></span>'+esc(r.language)+'</span>');
+    }
+    if (r.stargazers_count) meta.push('<span>★ '+r.stargazers_count+'</span>');
+    if (r.updated_at){
+      const d = new Date(r.updated_at);
+      const m = d.toLocaleDateString('en-US',{month:'short',year:'numeric'});
+      meta.push(bi('Güncellendi '+m, 'Updated '+m));
+    }
+    if (!r.offline) {
+      meta.push('<a href="'+url+'" target="_blank" rel="noopener">'+bi('GitHub’da Aç ↗','View on GitHub ↗')+'</a>');
+    }
+
+    const head = r.offline
+      ? '<h3>'+name+' <span class="repo-badge">'+bi('GitHub’da değil','Not on GitHub')+'</span></h3>'
+      : '<h3><a href="'+url+'" target="_blank" rel="noopener">'+name+'</a></h3>';
+
+    return '<div class="card repo-card'+(r.offline ? ' repo-offline' : '')+'">'
+      + head
+      + desc + tagsHtml
+      + '<div class="repo-meta">'+meta.join('')+'</div>'
+      + '</div>';
+  }
+
+  function render(list, fromGitHub){
+    const grid = document.getElementById('repo-grid');
+    const status = document.getElementById('repo-status');
+    grid.innerHTML = list.map(repoCard).join('');
+
+    window.__cvProjectsData = list.map(function (r) {
+      return {
+        name: r.name,
+        description: r.description || r.desc_en || '',
+        linkLabel: r.offline ? '' : ('github.com/' + GH_USER)
+      };
+    });
+
+    if (fromGitHub){
+      status.innerHTML = bi(
+        'GitHub hesabımdan ('+GH_USER+') canlı olarak yüklendi — yeni depo eklediğinizde otomatik güncellenir.',
+        'Loaded live from my GitHub (@'+GH_USER+') — updates automatically when I push new repos.'
+      );
+    } else {
+      status.innerHTML = bi(
+        'GitHub şu anda ulaşılamadı; öne çıkan projeler gösteriliyor. ',
+        'GitHub couldn’t be reached right now; showing featured projects. '
+      ) + '<a href="https://github.com/'+GH_USER+'" target="_blank" rel="noopener">github.com/'+GH_USER+'</a>';
+    }
+  }
+
+  async function loadRepos(){
+    try {
+      const res = await fetch(
+        'https://api.github.com/users/'+GH_USER+'/repos?per_page=100&sort=updated',
+        { headers: { 'Accept': 'application/vnd.github+json' } }
+      );
+      if (!res.ok) throw new Error('HTTP '+res.status);
+      let repos = await res.json();
+      if (!Array.isArray(repos) || repos.length === 0) throw new Error('no repos');
+
+      repos = repos.filter(r => !r.fork && !r.archived);
+
+      const featured = repos.filter(r => (r.topics||[]).includes(FEATURE_TOPIC));
+      if (featured.length) repos = featured;
+
+      repos.sort((a,b) =>
+        (b.stargazers_count - a.stargazers_count) ||
+        (new Date(b.updated_at) - new Date(a.updated_at))
+      );
+
+      render(repos.slice(0, MAX_REPOS).concat(FALLBACK), true);
+    } catch (e) {
+      render(FALLBACK, false);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadRepos);
+
+  function fileNameFromUrl(url) {
+    try {
+      return decodeURIComponent(url.split('/').pop().split('?')[0]);
+    } catch (e) {
+      return url.split('/').pop();
+    }
+  }
+
+  function trackDocEvent(name, url, title) {
+    const fileName = fileNameFromUrl(url);
+    if (typeof gtag === 'function') {
+      gtag('event', name, {
+        document_name: title || fileName,
+        document_url: url,
+        file_name: fileName,
+        file_extension: (fileName.split('.').pop() || '').toLowerCase(),
+        page_language: document.body.classList.contains('lang-en') ? 'en' : 'tr'
+      });
+    }
+    if (typeof clarity === 'function') {
+      clarity('event', name);
+      clarity('set', 'document', fileName);
+    }
+  }
+
+  function openViewer(url, title) {
+    const v = document.getElementById('viewer');
+    const label = title || fileNameFromUrl(url);
+    document.getElementById('viewer-frame').src = url;
+    document.getElementById('viewer-title').textContent = label;
+    document.getElementById('viewer-dl').href = url;
+    v.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    trackDocEvent('view_document', url, label);
+  }
+  function closeViewer() {
+    const v = document.getElementById('viewer');
+    v.classList.remove('open');
+    document.getElementById('viewer-frame').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeViewer(); });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (e) {
+      if (typeof gtag !== 'function') return;
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+
+      const raw = link.getAttribute('href');
+      if (!raw || raw === '#' || raw.charAt(0) === '#') return;
+
+      const text = (link.innerText || link.textContent || '').trim().slice(0, 100);
+      const protocol = link.protocol;
+
+      if (protocol === 'mailto:') {
+        gtag('event', 'contact_click', { method: 'email', destination: link.href.replace('mailto:', '') });
+        return;
+      }
+      if (protocol === 'tel:') {
+        gtag('event', 'contact_click', { method: 'phone', destination: link.href.replace('tel:', '') });
+        return;
+      }
+
+      if (link.hasAttribute('download') || raw.indexOf('files/') !== -1 || /\.pdf($|\?)/i.test(raw)) {
+        const row = link.closest('.arch-item, li');
+        const labelEl = row && row.querySelector(document.body.classList.contains('lang-en') ? '.t .en-text' : '.t .tr-text');
+        trackDocEvent('download_document', raw, labelEl ? labelEl.textContent.trim() : (text || null));
+        return;
+      }
+
+      if (link.hostname && link.hostname !== window.location.hostname) {
+        gtag('event', 'outbound_link_click', {
+          destination_url: link.href,
+          destination_domain: link.hostname,
+          link_text: text,
+          page_language: document.body.classList.contains('lang-en') ? 'en' : 'tr'
+        });
+      }
+    });
+  });
+
+  function getOpenDocsCookie() {
+    const match = document.cookie.match(/(?:^|; )openDocs=([^;]*)/);
+    return match ? decodeURIComponent(match[1]).split(',').filter(Boolean) : [];
+  }
+  function setOpenDocsCookie(openIndices) {
+    const expires = new Date(Date.now() + 365 * 864e5).toUTCString();
+    document.cookie = 'openDocs=' + encodeURIComponent(openIndices.join(',')) + '; expires=' + expires + '; path=/; SameSite=Lax';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const cats = document.querySelectorAll('#documents .arch-cat');
+    const savedOpen = getOpenDocsCookie();
+
+    function saveOpenState() {
+      const openIndices = [];
+      cats.forEach(function (cat, i) { if (cat.classList.contains('open')) openIndices.push(i); });
+      setOpenDocsCookie(openIndices);
+    }
+
+    cats.forEach(function (cat, idx) {
+      const h3 = cat.querySelector('h3');
+      const items = cat.querySelectorAll('.arch-item');
+      if (h3) {
+        const count = document.createElement('span');
+        count.className = 'count'; count.textContent = items.length;
+        const chev = document.createElement('span');
+        chev.className = 'chev'; chev.textContent = '▼';
+        h3.appendChild(count); h3.appendChild(chev);
+        h3.addEventListener('click', function () {
+          cat.classList.toggle('open');
+          saveOpenState();
+        });
+      }
+      if (savedOpen.includes(String(idx))) {
+        cat.classList.add('open');
+      }
+      items.forEach(function (li) {
+        const dl = li.querySelector('a.doc-dl');
+        if (!dl) return;
+        const url = dl.getAttribute('href');
+        const tr = li.querySelector('.t .tr-text');
+        const en = li.querySelector('.t .en-text');
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'doc-view';
+        btn.innerHTML = '<span class="tr-text">Görüntüle</span><span class="en-text">View</span>';
+        btn.addEventListener('click', function () {
+          const isEn = document.body.classList.contains('lang-en');
+          const title = (isEn ? (en && en.textContent) : (tr && tr.textContent)) || url.split('/').pop();
+          openViewer(url, title);
+        });
+        dl.parentNode.insertBefore(btn, dl);
+      });
+    });
+  });
+</script>
+
+<div class="viewer-backdrop" id="viewer" onclick="if(event.target===this)closeViewer()">
+  <div class="viewer">
+    <div class="viewer-head">
+      <span class="vtitle" id="viewer-title"></span>
+      <a class="vdl" id="viewer-dl" href="#" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+      <button class="vclose" type="button" onclick="closeViewer()" aria-label="Close">✕</button>
+    </div>
+    <iframe id="viewer-frame" title="Document viewer"></iframe>
+  </div>
+</div>
 </body>
 </html>
