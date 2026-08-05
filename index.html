@@ -372,6 +372,22 @@
   .repo-card h3 a { color: var(--ink); }
   .repo-card h3 a:hover { color: var(--accent); }
   .repo-desc { color: var(--ink-soft); margin: 0.35rem 0 0; flex: 1; font-size: 0.95rem; }
+  .repo-image {
+    margin: 0.75rem 0 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #fbfdff;
+    line-height: 0;
+  }
+  .repo-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 240px;
+    object-fit: cover;
+    object-position: top;
+  }
   .repo-meta {
     display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
     margin-top: 0.8rem; font-size: 0.85rem; color: var(--ink-faint);
@@ -1454,9 +1470,13 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       ? '<h3>'+name+' <span class="repo-badge">'+bi('GitHub’da değil','Not on GitHub')+'</span></h3>'
       : '<h3><a href="'+url+'" target="_blank" rel="noopener">'+name+'</a></h3>';
 
-    return '<div class="card repo-card'+(r.offline ? ' repo-offline' : '')+'">'
+    const imageHtml = r.previewImage
+      ? '<div class="repo-image"><img src="'+esc(r.previewImage)+'" alt="'+name+' preview" loading="lazy" onerror="this.parentNode.remove()"></div>'
+      : '';
+
+    return '<div class="card repo-card'+(r.offline ? ' repo-offline' : '')+'" data-repo="'+esc(r.name)+'">'
       + head
-      + desc + tagsHtml
+      + desc + imageHtml + tagsHtml
       + '<div class="repo-meta">'+meta.join('')+'</div>'
       + '</div>';
   }
@@ -1487,6 +1507,50 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
     }
   }
 
+  async function fetchReadmeImage(repoName){
+    try {
+      const res = await fetch(
+        'https://api.github.com/repos/'+GH_USER+'/'+repoName+'/readme',
+        { headers: { 'Accept': 'application/vnd.github.html+json' } }
+      );
+      if (!res.ok) return null;
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const imgs = doc.querySelectorAll('img');
+      for (const img of imgs){
+        const src = img.getAttribute('src') || '';
+        if (!src) continue;
+        if (/(shields\.io|badge|badgen|travis|circleci|codecov|github\.com\/.+\/workflows|githubusercontent\.com\/.+\/badge)/i.test(src)) continue;
+        const abs = src.startsWith('http') ? src : new URL(src, 'https://github.com/'+GH_USER+'/'+repoName+'/raw/HEAD/').href;
+        return abs;
+      }
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async function loadReadmeImages(list){
+    await Promise.all(list.map(async function(r){
+      if (r.offline) return;
+      const img = await fetchReadmeImage(r.name);
+      if (img){
+        r.previewImage = img;
+        const card = document.querySelector('.repo-card[data-repo="'+r.name+'"]');
+        if (card && !card.querySelector('.repo-image')){
+          const desc = card.querySelector('.repo-desc');
+          const wrap = document.createElement('div');
+          wrap.className = 'repo-image';
+          const el = document.createElement('img');
+          el.src = img; el.alt = r.name+' preview'; el.loading = 'lazy';
+          el.onerror = function(){ wrap.remove(); };
+          wrap.appendChild(el);
+          if (desc && desc.parentNode) desc.parentNode.insertBefore(wrap, desc.nextSibling);
+        }
+      }
+    }));
+  }
+
   async function loadRepos(){
     try {
       const res = await fetch(
@@ -1508,6 +1572,7 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       );
 
       render(repos.slice(0, MAX_REPOS).concat(FALLBACK), true);
+      loadReadmeImages(repos.slice(0, MAX_REPOS));
     } catch (e) {
       render(FALLBACK, false);
     }
