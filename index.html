@@ -372,21 +372,68 @@
   .repo-card h3 a { color: var(--ink); }
   .repo-card h3 a:hover { color: var(--accent); }
   .repo-desc { color: var(--ink-soft); margin: 0.35rem 0 0; flex: 1; font-size: 0.95rem; }
-  .repo-image {
+  .repo-carousel {
+    position: relative;
     margin: 0.75rem 0 0;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--line);
     background: #fbfdff;
+  }
+  .repo-carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  .repo-slide {
+    flex: 0 0 100%;
     line-height: 0;
   }
-  .repo-image img {
+  .repo-slide img {
     width: 100%;
     height: auto;
     display: block;
     max-height: 240px;
     object-fit: cover;
     object-position: top;
+  }
+  .repo-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(15,23,42,0.55);
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-family: inherit;
+    padding: 0;
+  }
+  .repo-carousel:hover .repo-nav { opacity: 1; }
+  .repo-nav.prev { left: 8px; }
+  .repo-nav.next { right: 8px; }
+  .repo-nav:hover { background: rgba(15,23,42,0.8); }
+  .repo-dots {
+    position: absolute;
+    bottom: 8px; left: 0; right: 0;
+    display: flex; justify-content: center; gap: 6px;
+  }
+  .repo-dots span {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+    box-shadow: 0 0 2px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .repo-dots span.active { background: #fff; }
+  @media (hover: none) {
+    .repo-carousel .repo-nav { opacity: 1; }
   }
   .repo-meta {
     display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem;
@@ -1470,13 +1517,9 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       ? '<h3>'+name+' <span class="repo-badge">'+bi('GitHub’da değil','Not on GitHub')+'</span></h3>'
       : '<h3><a href="'+url+'" target="_blank" rel="noopener">'+name+'</a></h3>';
 
-    const imageHtml = r.previewImage
-      ? '<div class="repo-image"><img src="'+esc(r.previewImage)+'" alt="'+name+' preview" loading="lazy" onerror="this.parentNode.remove()"></div>'
-      : '';
-
     return '<div class="card repo-card'+(r.offline ? ' repo-offline' : '')+'" data-repo="'+esc(r.name)+'">'
       + head
-      + desc + imageHtml + tagsHtml
+      + desc + tagsHtml
       + '<div class="repo-meta">'+meta.join('')+'</div>'
       + '</div>';
   }
@@ -1507,45 +1550,106 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
     }
   }
 
-  async function fetchReadmeImage(repoName){
+  async function fetchReadmeImages(repoName){
     try {
       const res = await fetch(
         'https://api.github.com/repos/'+GH_USER+'/'+repoName+'/readme',
         { headers: { 'Accept': 'application/vnd.github.html+json' } }
       );
-      if (!res.ok) return null;
+      if (!res.ok) return [];
       const html = await res.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const imgs = doc.querySelectorAll('img');
+      const out = [];
+      const seen = {};
       for (const img of imgs){
         const src = img.getAttribute('src') || '';
         if (!src) continue;
         if (/(shields\.io|badge|badgen|travis|circleci|codecov|github\.com\/.+\/workflows|githubusercontent\.com\/.+\/badge)/i.test(src)) continue;
         const abs = src.startsWith('http') ? src : new URL(src, 'https://github.com/'+GH_USER+'/'+repoName+'/raw/HEAD/').href;
-        return abs;
+        if (seen[abs]) continue;
+        seen[abs] = true;
+        out.push(abs);
       }
-      return null;
+      return out;
     } catch (e) {
-      return null;
+      return [];
     }
+  }
+
+  function buildCarousel(images, repoName){
+    const wrap = document.createElement('div');
+    wrap.className = 'repo-carousel';
+    if (images.length > 1) wrap.classList.add('multi');
+
+    const track = document.createElement('div');
+    track.className = 'repo-carousel-track';
+
+    images.forEach(function(src, i){
+      const slide = document.createElement('div');
+      slide.className = 'repo-slide';
+      const el = document.createElement('img');
+      el.src = src; el.alt = repoName+' image '+(i+1); el.loading = 'lazy';
+      el.onerror = function(){ slide.remove(); syncDots(); };
+      slide.appendChild(el);
+      track.appendChild(slide);
+    });
+    wrap.appendChild(track);
+
+    let index = 0;
+    function go(n){
+      const slides = track.querySelectorAll('.repo-slide');
+      if (!slides.length) return;
+      index = (n + slides.length) % slides.length;
+      track.style.transform = 'translateX(-'+(index*100)+'%)';
+      dots.querySelectorAll('span').forEach(function(d,i){ d.classList.toggle('active', i===index); });
+    }
+
+    const prev = document.createElement('button');
+    prev.type='button'; prev.className='repo-nav prev'; prev.setAttribute('aria-label','Previous image'); prev.textContent='‹';
+    prev.onclick = function(e){ e.preventDefault(); go(index-1); };
+    const next = document.createElement('button');
+    next.type='button'; next.className='repo-nav next'; next.setAttribute('aria-label','Next image'); next.textContent='›';
+    next.onclick = function(e){ e.preventDefault(); go(index+1); };
+
+    const dots = document.createElement('div');
+    dots.className = 'repo-dots';
+    function syncDots(){
+      const n = track.querySelectorAll('.repo-slide').length;
+      dots.innerHTML = '';
+      if (n <= 1){ wrap.classList.remove('multi'); return; }
+      for (let i=0;i<n;i++){
+        const d = document.createElement('span');
+        if (i===0) d.classList.add('active');
+        d.onclick = function(){ go(i); };
+        dots.appendChild(d);
+      }
+    }
+    syncDots();
+
+    if (images.length > 1){ wrap.appendChild(prev); wrap.appendChild(next); wrap.appendChild(dots); }
+
+    let startX = 0;
+    track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', function(e){
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) go(index + (dx < 0 ? 1 : -1));
+    }, {passive:true});
+
+    return wrap;
   }
 
   async function loadReadmeImages(list){
     await Promise.all(list.map(async function(r){
       if (r.offline) return;
-      const img = await fetchReadmeImage(r.name);
-      if (img){
-        r.previewImage = img;
+      const images = await fetchReadmeImages(r.name);
+      if (images && images.length){
+        r.previewImages = images;
         const card = document.querySelector('.repo-card[data-repo="'+r.name+'"]');
-        if (card && !card.querySelector('.repo-image')){
+        if (card && !card.querySelector('.repo-carousel')){
           const desc = card.querySelector('.repo-desc');
-          const wrap = document.createElement('div');
-          wrap.className = 'repo-image';
-          const el = document.createElement('img');
-          el.src = img; el.alt = r.name+' preview'; el.loading = 'lazy';
-          el.onerror = function(){ wrap.remove(); };
-          wrap.appendChild(el);
-          if (desc && desc.parentNode) desc.parentNode.insertBefore(wrap, desc.nextSibling);
+          const carousel = buildCarousel(images, r.name);
+          if (desc && desc.parentNode) desc.parentNode.insertBefore(carousel, desc.nextSibling);
         }
       }
     }));
