@@ -392,9 +392,9 @@
     width: 100%;
     height: auto;
     display: block;
-    max-height: 240px;
-    object-fit: cover;
-    object-position: top;
+    max-height: 300px;
+    object-fit: contain;
+    background: #f1f5f9;
   }
   .repo-nav {
     position: absolute;
@@ -1559,18 +1559,28 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       if (!res.ok) return [];
       const html = await res.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
-      const imgs = doc.querySelectorAll('img');
       const out = [];
       const seen = {};
-      for (const img of imgs){
-        const src = img.getAttribute('src') || '';
-        if (!src) continue;
-        if (/(shields\.io|badge|badgen|travis|circleci|codecov|github\.com\/.+\/workflows|githubusercontent\.com\/.+\/badge)/i.test(src)) continue;
+      const badge = /(shields\.io|badge|badgen|travis|circleci|codecov|forthebadge|\/workflows\/|actions\/workflow|badge\.fury|img\.shields)/i;
+
+      function add(src){
+        if (!src) return;
+        if (badge.test(src)) return;
+        if (/\.svg($|\?)/i.test(src)) return;
         const abs = src.startsWith('http') ? src : new URL(src, 'https://github.com/'+GH_USER+'/'+repoName+'/raw/HEAD/').href;
-        if (seen[abs]) continue;
+        if (seen[abs]) return;
         seen[abs] = true;
         out.push(abs);
       }
+
+      doc.querySelectorAll('img').forEach(function(img){
+        add(img.getAttribute('data-canonical-src') || img.getAttribute('src'));
+      });
+      doc.querySelectorAll('a').forEach(function(a){
+        const href = a.getAttribute('href') || '';
+        if (/\.(png|jpe?g|gif|webp)($|\?)/i.test(href)) add(href);
+      });
+
       return out;
     } catch (e) {
       return [];
