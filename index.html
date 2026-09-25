@@ -1138,7 +1138,6 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
       name: 'DORUK EREL',
       contactLine1: 'Ankara, Turkey  \u2022  dorukerel39.1.1@gmail.com  \u2022  +90 (533) 899 84 77 (TR)',
       contactLine2: '+1 (251) 255-2253 (US)  \u2022  github.com/dorukerel3  \u2022  dorukerel.com',
-      summary: null,
       education: {
         title: 'EDUCATION',
         schools: [
@@ -1185,12 +1184,6 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
           [{ t: 'STEM Enrichment', b: true }, { t: ' \u2014 NASA Kennedy Space Center Camp; Bilkent University Summer Camp and \u201cFast & Curious\u201d Program; GAE Extraterrestrial Life Workshop', b: false }],
         ]
       },
-      mentions: {
-        title: 'MENTIONS & REFERENCES',
-        name: 'LinkedIn Post \u2014 Mustafa Altınok',
-        link: 'linkedin.com',
-        desc: 'Featured in a LinkedIn post by my mentor, Mustafa Altınok, about the students he coached as part of the Project X team for Codeavour.'
-      },
       footer: 'For additional information about me, go to dorukerel.com'
     },
     tr: {
@@ -1198,7 +1191,6 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
       name: 'DORUK EREL',
       contactLine1: 'Ankara, T\u00fcrkiye  \u2022  dorukerel39.1.1@gmail.com  \u2022  +90 (533) 899 84 77 (TR)',
       contactLine2: '+1 (251) 255-2253 (US)  \u2022  github.com/dorukerel3  \u2022  dorukerel.com',
-      summary: null,
       education: {
         title: 'E\u011e\u0130T\u0130M',
         schools: [
@@ -1244,12 +1236,6 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
           [{ t: 'Spor', b: true }, { t: ' \u2014 Lisansl\u0131 Tenis; Basketbol ve Jimnastik (\u00c7ankaya \u00dcniversitesi); Dalg\u0131\u00e7l\u0131k; Kayak; Kapal\u0131 Alan Serbest D\u00fc\u015f\u00fc\u015f (iFLY Orlando)', b: false }],
           [{ t: 'STEM Etkinlikleri', b: true }, { t: ' \u2014 NASA Kennedy Uzay Merkezi Kamp\u0131; Bilkent \u00dcniversitesi Yaz Kamp\u0131 ve \u201cFast & Curious\u201d Program\u0131; GAE D\u00fcnya \u00d6tesi Ya\u015fam At\u00f6lyesi', b: false }],
         ]
-      },
-      mentions: {
-        title: 'BAHSED\u0130LMELER & REFERANSLAR',
-        name: 'LinkedIn G\u00f6nderisi \u2014 Mustafa Altınok',
-        link: 'linkedin.com',
-        desc: 'Dan\u0131\u015fman\u0131m Mustafa Alt\u0131nok\u2019un, Codeavour i\u00e7in Project X tak\u0131m\u0131nda ko\u00e7luk etti\u011fi \u00f6\u011frenciler hakk\u0131nda payla\u015ft\u0131\u011f\u0131 LinkedIn g\u00f6nderisinde yer ald\u0131m.'
       },
       footer: 'Hakk\u0131mda daha fazla bilgi i\u00e7in dorukerel.com adresini ziyaret edin'
     }
@@ -1368,9 +1354,6 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
     doc.text(C.contactLine2, pageW / 2, y, { align: 'center' });
     y += 15 * k;
 
-    bodyText(C.summary);
-    y += 3 * k;
-
     sectionHeader(C.education.title);
     C.education.schools.forEach(function (sch, idx) {
       entryHeader(sch.school, sch.location);
@@ -1413,13 +1396,6 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
     sectionHeader(C.extracurricular.title);
     C.extracurricular.bullets.forEach(drawRichBullet);
 
-    if (C.mentions) {
-      y += 3 * k;
-      sectionHeader(C.mentions.title);
-      entryHeader(C.mentions.name, C.mentions.link);
-      bodyText(C.mentions.desc);
-    }
-
     drawFooter();
     return doc;
   }
@@ -1427,8 +1403,6 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
   function generateCV() {
     const lang = document.body.classList.contains('lang-en') ? 'en' : 'tr';
     const C = CV_CONTENT[lang];
-    const bioEl = document.querySelector(lang === 'en' ? '.hero .summary .en-text' : '.hero .summary .tr-text');
-    C.summary = bioEl ? bioEl.textContent.replace(/\s+/g, ' ').trim() : 'Science high school student in Ankara, Turkey.';
 
     let doc = null;
     for (let step = 0; step <= 12; step++) {
@@ -1437,16 +1411,31 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
     }
     while (doc.getNumberOfPages() > 1) doc.deletePage(doc.getNumberOfPages());
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    if (isIOS) {
-      const blobUrl = doc.output('bloburl');
-      const win = window.open(blobUrl, '_blank');
-      if (!win) window.location.href = blobUrl;
-    } else {
-      doc.save(C.filename);
-    }
+    deliverPDF(doc.output('blob'), C.filename);
     return doc;
+  }
+
+  function deliverPDF(blob, filename) {
+    const ua = navigator.userAgent;
+    const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const isInApp = /GSA\/|FBAN|FBAV|Instagram|Line\/|Twitter|LinkedInApp/i.test(ua);
+    const file = typeof File === 'function' ? new File([blob], filename, { type: 'application/pdf' }) : null;
+
+    if (isIOS && isInApp && file && navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], title: filename }).catch(function () {});
+      return;
+    }
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.rel = 'noopener';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
   }
 
   function downloadCV() {
