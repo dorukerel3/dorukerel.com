@@ -678,10 +678,24 @@
         <h3><span class="tr-text">Lise Eğitimi</span><span class="en-text">Secondary Education</span></h3>
         <div class="card">
           <strong>
+            <span class="tr-text">Ankara ABC Fen Lisesi</span>
+            <span class="en-text">Ankara ABC Science High School</span>
+          </strong>
+          <div class="muted"><span class="tr-text">Ankara, Türkiye · 12. Sınıf</span><span class="en-text">Ankara, Turkey · Grade 12</span></div>
+          <p style="margin:.75rem 0 .25rem;font-size:.92rem;color:var(--ink-faint)">
+            <span class="tr-text">Resmi transkript (9–11. sınıflar):</span>
+            <span class="en-text">Official transcript (grades 9–11):</span>
+          </p>
+          <ul class="pill-list">
+            <li><a href="files/Ankara-ABC-Transcript.pdf" download target="_blank" rel="noopener"><span class="tr-text">Resmi Transkript (PDF)</span><span class="en-text">Official Transcript (PDF)</span></a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>
             <span class="tr-text">Bilfen Ankara Çayyolu Fen Lisesi</span>
             <span class="en-text">Bilfen Ankara Çayyolu Science High School</span>
           </strong>
-          <div class="muted"><span class="tr-text">Ankara, Türkiye</span><span class="en-text">Ankara, Turkey</span></div>
+          <div class="muted"><span class="tr-text">Ankara, Türkiye · 9–11. Sınıf</span><span class="en-text">Ankara, Turkey · Grades 9–11</span></div>
           <p style="margin:.75rem 0 .25rem;font-size:.92rem;color:var(--ink-faint)">
             <span class="tr-text">Karneler talep üzerine sunulabilir:</span>
             <span class="en-text">Report cards available on request:</span>
@@ -799,6 +813,11 @@
       <div class="arch-cat">
         <h3><span class="tr-text">Akademik Kayıtlar &amp; Karneler</span><span class="en-text">Academic Records &amp; Transcripts</span></h3>
         <ul class="arch-list">
+        <li class="arch-item">
+          <span class="t"><span class="tr-text">Resmi Transkript (9–11. Sınıflar)</span><span class="en-text">Official Transcript (Grades 9–11)</span></span>
+          <span class="fn">Ankara-ABC-Transcript.pdf</span>
+          <a class="doc-dl" href="files/Ankara-ABC-Transcript.pdf" download target="_blank" rel="noopener"><span class="tr-text">İndir ↓</span><span class="en-text">Download ↓</span></a>
+        </li>
         <li class="arch-item">
           <span class="t"><span class="tr-text">9. Sınıf Karnesi</span><span class="en-text">Grade 9 Report Card</span></span>
           <span class="fn">9-Sinif-Karne.pdf</span>
@@ -1122,11 +1141,19 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       summary: null,
       education: {
         title: 'EDUCATION',
-        school: 'Bilfen Ankara \u00c7ayyolu Science High School',
-        location: 'Ankara, Turkey',
-        bullets: [
-          [{ t: 'Standardized testing: AP Calculus AB \u2014 5; AP Physics 1 \u2014 5 (College Board, 2025)', b: false }],
-          [{ t: 'TOEFL Junior Standard \u2014 865/900, Superior level (ETS, 2024)', b: false }],
+        schools: [
+          {
+            school: 'Ankara ABC Science High School',
+            location: 'Ankara, Turkey \u00b7 Grade 12',
+            bullets: []
+          },
+          {
+            school: 'Bilfen Ankara \u00c7ayyolu Science High School',
+            location: 'Ankara, Turkey \u00b7 Grades 9\u201311',
+            bullets: [
+              [{ t: 'Standardized testing: AP Calculus AB \u2014 5; AP Physics 1 \u2014 5 (College Board, 2025)', b: false }],
+            ]
+          }
         ]
       },
       honors: {
@@ -1174,11 +1201,19 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
       summary: null,
       education: {
         title: 'E\u011eiTiM',
-        school: 'Bilfen Ankara \u00c7ayyolu Fen Lisesi',
-        location: 'Ankara, T\u00fcrkiye',
-        bullets: [
-          [{ t: 'Standart s\u0131navlar: AP Calculus AB \u2014 5; AP Physics 1 \u2014 5 (College Board, 2025)', b: false }],
-          [{ t: 'TOEFL Junior Standard \u2014 865/900, Superior seviye (ETS, 2024)', b: false }],
+        schools: [
+          {
+            school: 'Ankara ABC Fen Lisesi',
+            location: 'Ankara, T\u00fcrkiye \u00b7 12. S\u0131n\u0131f',
+            bullets: []
+          },
+          {
+            school: 'Bilfen Ankara \u00c7ayyolu Fen Lisesi',
+            location: 'Ankara, T\u00fcrkiye \u00b7 9\u201311. S\u0131n\u0131f',
+            bullets: [
+              [{ t: 'Standart s\u0131navlar: AP Calculus AB \u2014 5; AP Physics 1 \u2014 5 (College Board, 2025)', b: false }],
+            ]
+          }
         ]
       },
       honors: {
@@ -1345,9 +1380,12 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDuATgAACYUAAAAIkdQT1P9Be/kAAAmOA
     y += summaryLines.length * 13.2 + 5;
 
     sectionHeader(C.education.title);
-    entryHeader(C.education.school, C.education.location);
-    y += 1;
-    C.education.bullets.forEach(drawRichBullet);
+    C.education.schools.forEach(function (sch, idx) {
+      entryHeader(sch.school, sch.location);
+      y += 1;
+      sch.bullets.forEach(drawRichBullet);
+      if (idx < C.education.schools.length - 1) y += 5;
+    });
     y += 4;
 
     sectionHeader(C.honors.title);
