@@ -84,7 +84,7 @@
     border-bottom: 1px solid var(--line);
   }
   .nav-inner {
-    max-width: 1100px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0.7rem 1.5rem;
     display: flex;
@@ -104,7 +104,7 @@
   .nav-links {
     display: flex;
     gap: 0.9rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-size: 0.85rem;
   }
   .nav-links a { color: var(--ink-soft); font-weight: 500; white-space: nowrap; }
@@ -179,6 +179,69 @@
 
   @media (max-width: 720px) {
     .nav-links { display: none; }
+  }
+
+  a.btn { text-decoration: none; display: inline-block; }
+  a.btn:hover { text-decoration: none; }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn.ghost.active { background: var(--accent); color: #fff; }
+  @media (max-width: 1240px) {
+    .nav-inner { gap: 0.75rem; padding: 0.7rem 1.1rem; }
+    .nav-links { gap: 0.7rem; font-size: 0.8rem; }
+    .brand { font-size: 1rem; }
+    .nav-actions .btn { padding: 0.45rem 0.8rem; font-size: 0.82rem; }
+  }
+  @media (max-width: 1080px) {
+    .nav-links { gap: 0.55rem; font-size: 0.75rem; }
+    .nav-actions { gap: 0.35rem; }
+    .nav-actions .btn { padding: 0.4rem 0.65rem; font-size: 0.78rem; }
+  }
+  @media (max-width: 959px) {
+    .nav-flasher { display: none !important; }
+  }
+  @media (max-width: 880px) {
+    .nav-links { flex-wrap: wrap; row-gap: 0.15rem; }
+  }
+
+  .flasher-back { display: inline-flex; align-items: center; gap: 0.45rem; margin-bottom: 1.2rem; }
+  .fx-intro { margin: 0 0 1.4rem; max-width: 70ch; }
+  .fx-notice { border: 1px solid #fecaca; background: #fee2e2; color: #7f1d1d; border-radius: 10px; padding: 0.9rem 1.1rem; font-size: 0.92rem; margin-bottom: 1.4rem; }
+  .fx-notice.fx-info { border-color: #bfdbfe; background: #eff6ff; color: #1e3a5f; }
+  .fx-steps { display: grid; gap: 1.35rem; }
+  .fx-step { display: grid; grid-template-columns: 2.1rem 1fr; gap: 0.9rem; align-items: start; }
+  .fx-num {
+    width: 2.1rem; height: 2.1rem; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: #fff; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.92rem;
+  }
+  .fx-step h3 { font-size: 1.05rem; margin: 0.2rem 0 0.5rem; }
+  .fx-row { display: flex; flex-wrap: wrap; gap: 0.6rem 0.9rem; align-items: center; }
+  .fx-hint { font-size: 0.85rem; color: var(--ink-faint); opacity: 0.72; margin: 0.45rem 0 0; }
+  .fx-status { font-size: 0.9rem; }
+  .fx-status.ok { color: #15803d; font-weight: 600; }
+  .fx-status.err { color: #b91c1c; font-weight: 600; }
+  .fx-mono { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
+  .fx-input {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 0.95rem;
+    padding: 0.5rem 0.75rem; border: 1px solid var(--line); border-radius: 8px;
+    width: 11rem; background: #fff; color: var(--ink);
+  }
+  .fx-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .fx-input.invalid { border-color: #b91c1c; background: #fff5f5; }
+  select.fx-input { width: auto; font-family: inherit; }
+  .fx-check { display: inline-flex; gap: 0.45rem; align-items: center; font-size: 0.9rem; cursor: pointer; }
+  .fx-file-input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .fx-progress-wrap { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.8rem; }
+  .fx-progress { flex: 1; height: 10px; border-radius: 999px; background: var(--line-soft); overflow: hidden; border: 1px solid var(--line); }
+  .fx-progress > div { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width 0.2s ease; }
+  .fx-pct { font-family: ui-monospace, Menlo, monospace; font-size: 0.85rem; min-width: 3rem; text-align: right; }
+  .fx-log-title { font-size: 0.95rem; margin: 1.6rem 0 0.5rem; }
+  .fx-log {
+    background: #0f172a; color: #e2e8f0; margin: 0;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 0.8rem; line-height: 1.5;
+    padding: 0.9rem 1rem; border-radius: 10px; height: 230px; overflow: auto;
+    white-space: pre-wrap; word-break: break-word;
   }
 
   .container { max-width: var(--maxw); margin: 0 auto; padding: 2rem 1.5rem 4rem; }
@@ -634,6 +697,7 @@
       <a href="#contact"><span class="tr-text">İletişim</span><span class="en-text">Contact</span></a>
     </div>
     <div class="nav-actions">
+      <a href="#flasher" class="btn ghost nav-flasher" id="navFlasher">Web Flasher</a>
       <button type="button" class="lang-toggle notranslate" id="langToggle" role="switch" aria-checked="false" aria-label="Switch language" translate="no" onclick="toggleLanguage()">
         <span class="lang-toggle-label lang-toggle-en" translate="no">EN</span>
         <span class="lang-toggle-track"><span class="lang-toggle-thumb"></span></span>
@@ -646,7 +710,7 @@
   </div>
 </nav>
 
-<div class="container">
+<div class="container" id="cvView">
 
   <header class="hero" id="about">
     <div class="avatar" id="avatar"><span class="avatar-initials">DE</span></div>
@@ -1126,6 +1190,122 @@
     <span class="en-text">© 2026 Doruk Erel · All rights reserved.</span>
   </footer>
 
+</div>
+
+<div class="container" id="flasherView" hidden>
+  <button type="button" class="btn ghost flasher-back" id="flasherBack">
+    <span aria-hidden="true">←</span>
+    <span class="tr-text">CV'ye Dön</span><span class="en-text">Back to CV</span>
+  </button>
+
+  <section class="block">
+    <div class="section-head">
+      <span class="num">⚡</span>
+      <h2>Web Flasher</h2>
+    </div>
+    <p class="fx-intro">
+      <span class="tr-text">Firmware'i doğrudan tarayıcınızdan USB üzerinden bir mikrodenetleyiciye yükleyin. Hiçbir şey yüklemeniz gerekmez. Önce kart tipinizi seçin.</span>
+      <span class="en-text">Flash firmware to a microcontroller directly from your browser over USB. Nothing to install. Start by choosing your board type.</span>
+    </p>
+
+    <div class="fx-notice" id="fxUnsupported" hidden>
+      <span class="tr-text">Tarayıcınız bu özelliği desteklemiyor. Lütfen bilgisayarda Chrome, Edge veya Opera kullanın.</span>
+      <span class="en-text">Your browser does not support this feature. Please use Chrome, Edge or Opera on a computer.</span>
+    </div>
+
+    <div class="fx-steps">
+      <div class="fx-step">
+        <div class="fx-num">1</div>
+        <div>
+          <h3><span class="tr-text">Kart Tipi</span><span class="en-text">Board Type</span></h3>
+          <div class="fx-row">
+            <select id="fxBoard" class="fx-input" aria-label="Board type">
+              <option value="esp">ESP32 / ESP8266 (ESP32, S2, S3, C2, C3, C5, C6, H2, P4)</option>
+              <option value="avr">Arduino / AVR (Uno, Nano, Mega, Pro Mini)</option>
+              <option value="stm32">STM32 (DFU / USB bootloader)</option>
+              <option value="rp2040">Raspberry Pi Pico / RP2040</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="fxRp2040" hidden>
+        <div class="fx-notice fx-info">
+          <p style="margin:0 0 0.6rem;font-weight:600;"><span class="tr-text">RP2040 tarayıcıdan seri ile programlanmaz — bunun yerine bir sürücü olarak bağlanır:</span><span class="en-text">The RP2040 is not flashed over serial from a browser — it mounts as a drive instead:</span></p>
+          <ol style="margin:0;padding-left:1.2rem;line-height:1.7;">
+            <li><span class="tr-text">BOOTSEL tuşunu basılı tutarak Pico'yu USB'ye takın.</span><span class="en-text">Hold the BOOTSEL button while plugging the Pico into USB.</span></li>
+            <li><span class="tr-text">Bilgisayarınızda <span class="fx-mono">RPI-RP2</span> adlı bir sürücü belirir.</span><span class="en-text">A drive named <span class="fx-mono">RPI-RP2</span> appears on your computer.</span></li>
+            <li><span class="tr-text"><span class="fx-mono">.uf2</span> dosyanızı bu sürücüye sürükleyip bırakın. Kart otomatik yeniden başlar.</span><span class="en-text">Drag and drop your <span class="fx-mono">.uf2</span> file onto that drive. The board reboots automatically.</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="fxFlow">
+        <div class="fx-step">
+          <div class="fx-num">2</div>
+          <div>
+            <h3><span class="tr-text">Firmware Dosyası</span><span class="en-text">Firmware File</span></h3>
+            <div class="fx-row">
+              <input type="file" id="fxFile" class="fx-file-input">
+              <label for="fxFile" class="btn ghost" id="fxFileBtn"><span class="tr-text">Dosya Seç</span><span class="en-text">Choose File</span></label>
+              <span class="fx-status" id="fxFileInfo"><span class="tr-text">Dosya seçilmedi</span><span class="en-text">No file selected</span></span>
+            </div>
+            <p class="fx-hint" id="fxFileHint"></p>
+          </div>
+        </div>
+
+        <div class="fx-step">
+          <div class="fx-num">3</div>
+          <div>
+            <h3><span id="fxPortLabel"><span class="tr-text">Seri Port</span><span class="en-text">Serial Port</span></span></h3>
+            <div class="fx-row">
+              <button type="button" class="btn ghost" id="fxPortBtn"><span class="tr-text">Seç</span><span class="en-text">Select</span></button>
+              <span class="fx-status" id="fxPortInfo"><span class="tr-text">Seçilmedi</span><span class="en-text">Nothing selected</span></span>
+            </div>
+            <p class="fx-hint" id="fxPortHint"></p>
+          </div>
+        </div>
+
+        <div class="fx-step" id="fxAddrStep">
+          <div class="fx-num">4</div>
+          <div>
+            <h3><span class="tr-text">Yükleme Adresi</span><span class="en-text">Flash Address</span></h3>
+            <div class="fx-row">
+              <input type="text" id="fxAddr" class="fx-input" value="0x0" spellcheck="false" autocomplete="off" aria-label="Flash address">
+              <select id="fxBaud" class="fx-input" aria-label="Baud rate">
+                <option value="921600" selected>921600 baud</option>
+                <option value="460800">460800 baud</option>
+                <option value="115200">115200 baud</option>
+              </select>
+              <label class="fx-check"><input type="checkbox" id="fxErase"><span class="tr-text">Önce tüm flash'ı sil</span><span class="en-text">Erase entire flash first</span></label>
+            </div>
+            <p class="fx-hint">
+              <span class="tr-text">Onaltılık adres, 0x1000'e hizalı olmalı. Yaygın: 0x0 (birleşik imaj, S3/C3), 0x1000 (ESP32 bootloader), 0x8000 (bölüm tablosu), 0x10000 (uygulama).</span>
+              <span class="en-text">Hex address, must be aligned to 0x1000. Common: 0x0 (merged image, S3/C3), 0x1000 (ESP32 bootloader), 0x8000 (partition table), 0x10000 (application).</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="fx-step">
+          <div class="fx-num">5</div>
+          <div>
+            <h3><span class="tr-text">Yükle</span><span class="en-text">Flash</span></h3>
+            <div class="fx-row">
+              <button type="button" class="btn" id="fxFlashBtn" disabled><span class="tr-text">Yükle</span><span class="en-text">Flash</span></button>
+              <span class="fx-status" id="fxState"></span>
+            </div>
+            <div class="fx-progress-wrap">
+              <div class="fx-progress"><div id="fxBar"></div></div>
+              <span class="fx-pct" id="fxPct">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="fx-log-title"><span class="tr-text">Günlük</span><span class="en-text">Log</span></h3>
+        <pre class="fx-log" id="fxLog" aria-live="polite"></pre>
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>
@@ -1737,6 +1917,409 @@ const CV_FONT_BOLD_B64 = "AAEAAAAOAIAAAwBgR0RFRgDiAZMAAED8AAAAHEdQT1MGxObzAABBGA
       render(FALLBACK, false);
     }
   }
+
+  const FX_ESP_LIB = 'https://cdn.jsdelivr.net/npm/esptool-js@0.7.0/bundle.js';
+  const FX_DFU_LIB = 'https://cdn.jsdelivr.net/npm/dfu@0.1.5/dfu.js';
+  const FX_BRIDGES = { 0x303a: 'Espressif USB', 0x10c4: 'Silicon Labs CP210x', 0x1a86: 'WCH CH34x', 0x0403: 'FTDI', 0x067b: 'Prolific PL2303', 0x2341: 'Arduino', 0x2a03: 'Arduino' };
+  const FX_TITLE_CV = document.title;
+  const FX_BOARDS = {
+    esp:    { transport: 'serial', accept: '.bin', max: 16 * 1024 * 1024, needsAddr: true,  needsBaud: true },
+    avr:    { transport: 'serial', accept: '.hex,.bin', max: 512 * 1024, needsAddr: false, needsBaud: true },
+    stm32:  { transport: 'usb',    accept: '.bin,.dfu', max: 4 * 1024 * 1024, needsAddr: true, needsBaud: false },
+    rp2040: { transport: 'none' }
+  };
+  const fx = { board: 'esp', esplib: null, dfulib: null, port: null, usb: null, data: null, fileName: '', busy: false, ready: false, serialOK: 'serial' in navigator, usbOK: 'usb' in navigator };
+
+  const AVR_SIGNATURES = {
+    '1e950f': { name: 'ATmega328P', pageSize: 128, flash: 32768 },
+    '1e9514': { name: 'ATmega328',  pageSize: 128, flash: 32768 },
+    '1e9406': { name: 'ATmega168',  pageSize: 128, flash: 16384 },
+    '1e930b': { name: 'ATmega88',   pageSize: 64,  flash: 8192 },
+    '1e9801': { name: 'ATmega2560', pageSize: 256, flash: 262144 },
+    '1e9703': { name: 'ATmega1280', pageSize: 256, flash: 131072 },
+    '1e9702': { name: 'ATmega128',  pageSize: 256, flash: 131072 },
+    '1e9502': { name: 'ATmega32',   pageSize: 128, flash: 32768 }
+  };
+
+  async function avrFlash(port, data, baud, term, onProgress) {
+    const RESP_OK = 0x10, IN_SYNC = 0x14, CRC_EOP = 0x20;
+    await port.open({ baudRate: baud });
+    const writer = port.writable.getWriter();
+    const reader = port.readable.getReader();
+    let buf = [];
+    let waiter = null;
+    (async function pump() {
+      try {
+        for (;;) {
+          const { value, done } = await reader.read();
+          if (done) break;
+          if (value) { for (let i = 0; i < value.length; i++) buf.push(value[i]); if (waiter) waiter(); }
+        }
+      } catch (e) {}
+    })();
+
+    function readBytes(n, timeout) {
+      return new Promise(function (resolve, reject) {
+        const t = setTimeout(function () { waiter = null; reject(new Error('Timeout waiting for programmer response')); }, timeout);
+        waiter = function () {
+          if (buf.length >= n) {
+            clearTimeout(t); waiter = null;
+            resolve(buf.splice(0, n));
+          }
+        };
+        waiter();
+      });
+    }
+    async function cmd(bytes, respLen, timeout) {
+      buf = [];
+      await writer.write(new Uint8Array(bytes));
+      const r = await readBytes(respLen + 2, timeout || 1000);
+      if (r[0] !== IN_SYNC || r[r.length - 1] !== RESP_OK) throw new Error('Programmer out of sync');
+      return r.slice(1, -1);
+    }
+
+    async function toggleReset() {
+      await port.setSignals({ dataTerminalReady: false, requestToSend: false });
+      await new Promise(function (r) { setTimeout(r, 250); });
+      await port.setSignals({ dataTerminalReady: true, requestToSend: true });
+      await new Promise(function (r) { setTimeout(r, 50); });
+    }
+
+    try {
+      term.writeLine('Resetting board and syncing with bootloader...');
+      let synced = false;
+      for (let attempt = 0; attempt < 3 && !synced; attempt++) {
+        await toggleReset();
+        for (let i = 0; i < 5 && !synced; i++) {
+          try {
+            buf = [];
+            await writer.write(new Uint8Array([0x30, CRC_EOP]));
+            const r = await readBytes(2, 400);
+            if (r[0] === IN_SYNC && r[1] === RESP_OK) synced = true;
+          } catch (e) {}
+        }
+      }
+      if (!synced) throw new Error('Could not sync. Is this an STK500/Arduino bootloader board? Try pressing reset just before flashing.');
+
+      const sig = await cmd([0x75, CRC_EOP], 3, 1000);
+      const sigHex = sig.map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+      const chip = AVR_SIGNATURES[sigHex];
+      term.writeLine('Signature: 0x' + sigHex + (chip ? ' (' + chip.name + ')' : ' (unknown AVR)'));
+      const pageSize = chip ? chip.pageSize : 128;
+      const flashMax = chip ? chip.flash : 32768;
+      if (data.length > flashMax) throw new Error('Firmware is ' + data.length + ' bytes but this chip has only ' + flashMax + ' bytes of flash.');
+
+      await cmd([0x50, CRC_EOP], 0, 1000);
+      await cmd([0x56, 0x00, 0x00, 0x00, 0x00, CRC_EOP], 1, 1000);
+
+      const total = data.length;
+      for (let addr = 0; addr < total; addr += pageSize) {
+        const wordAddr = addr >> 1;
+        await cmd([0x55, wordAddr & 0xff, (wordAddr >> 8) & 0xff, CRC_EOP], 0, 1000);
+        const chunk = data.subarray(addr, Math.min(addr + pageSize, total));
+        const prog = [0x64, (chunk.length >> 8) & 0xff, chunk.length & 0xff, 0x46];
+        for (let i = 0; i < chunk.length; i++) prog.push(chunk[i]);
+        prog.push(CRC_EOP);
+        await cmd(prog, 0, 2000);
+        onProgress((addr + chunk.length) / total * 100);
+      }
+
+      term.writeLine('Verifying...');
+      for (let addr = 0; addr < total; addr += pageSize) {
+        const wordAddr = addr >> 1;
+        const len = Math.min(pageSize, total - addr);
+        await cmd([0x55, wordAddr & 0xff, (wordAddr >> 8) & 0xff, CRC_EOP], 0, 1000);
+        const read = await cmd([0x74, (len >> 8) & 0xff, len & 0xff, 0x46, CRC_EOP], len, 2000);
+        for (let i = 0; i < len; i++) {
+          if (read[i] !== data[addr + i]) throw new Error('Verification failed at byte ' + (addr + i));
+        }
+      }
+
+      await cmd([0x51, CRC_EOP], 0, 1000).catch(function () {});
+      term.writeLine('Done. The sketch is now running.');
+    } finally {
+      try { reader.cancel(); } catch (e) {}
+      try { reader.releaseLock(); } catch (e) {}
+      try { writer.releaseLock(); } catch (e) {}
+      try { await port.close(); } catch (e) {}
+    }
+  }
+
+  function fxEl(id) { return document.getElementById(id); }
+
+  function fxLog(text) {
+    const log = fxEl('fxLog');
+    log.textContent += text;
+    if (log.textContent.length > 60000) log.textContent = log.textContent.slice(-50000);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  const fxTerminal = {
+    clean: function () { fxEl('fxLog').textContent = ''; },
+    writeLine: function (data) { fxLog(data + '\n'); },
+    write: function (data) { fxLog(data); }
+  };
+
+  function fxSetStatus(id, html, cls) {
+    const el = fxEl(id);
+    el.className = 'fx-status' + (cls ? ' ' + cls : '');
+    el.innerHTML = html;
+  }
+
+  function fxHex(n, pad) { return '0x' + n.toString(16).toUpperCase().padStart(pad || 1, '0'); }
+  function fxSize(n) { return n >= 1048576 ? (n / 1048576).toFixed(2) + ' MB' : (n / 1024).toFixed(1) + ' KB'; }
+
+  function fxParseAddr(value) {
+    const s = String(value).trim().toLowerCase().replace(/^0x/, '');
+    if (!/^[0-9a-f]{1,8}$/.test(s)) return null;
+    const n = parseInt(s, 16);
+    return n % 0x1000 === 0 ? n : null;
+  }
+
+  function fxCfg() { return FX_BOARDS[fx.board]; }
+  function fxTransportOK() { const t = fxCfg().transport; return t === 'usb' ? fx.usbOK : fx.serialOK; }
+  function fxConn() { return fxCfg().transport === 'usb' ? fx.usb : fx.port; }
+
+  function fxRefresh() {
+    const cfg = fxCfg();
+    if (cfg.transport === 'none') { fxEl('fxFlashBtn').disabled = true; return; }
+    const addrOk = !cfg.needsAddr || fxParseAddr(fxEl('fxAddr').value) !== null;
+    const locked = fx.busy || !fxTransportOK();
+    if (cfg.needsAddr) fxEl('fxAddr').classList.toggle('invalid', !addrOk);
+    fxEl('fxFlashBtn').disabled = locked || !fx.data || !fxConn() || !addrOk;
+    fxEl('fxPortBtn').disabled = locked;
+    fxEl('fxFile').disabled = fx.busy;
+    fxEl('fxFileBtn').style.pointerEvents = fx.busy ? 'none' : '';
+    fxEl('fxFileBtn').style.opacity = fx.busy ? '0.45' : '';
+    if (cfg.needsAddr) fxEl('fxAddr').disabled = fx.busy;
+    if (cfg.needsBaud) fxEl('fxBaud').disabled = fx.busy;
+    if (fxEl('fxErase')) fxEl('fxErase').disabled = fx.busy;
+    fxEl('flasherBack').disabled = fx.busy;
+  }
+
+  function fxApplyBoard() {
+    const cfg = fxCfg();
+    const isNone = cfg.transport === 'none';
+    fxEl('fxRp2040').hidden = !isNone;
+    fxEl('fxFlow').hidden = isNone;
+    if (isNone) return;
+    fxEl('fxFile').setAttribute('accept', cfg.accept);
+    fxEl('fxAddrStep').style.display = cfg.needsAddr ? '' : 'none';
+    fxEl('fxBaud').style.display = cfg.needsBaud ? '' : 'none';
+    fxEl('fxErase').closest('.fx-check').style.display = cfg.needsBaud ? '' : 'none';
+    fxEl('fxPortLabel').innerHTML = cfg.transport === 'usb'
+      ? bi('USB Cihazı (DFU)', 'USB Device (DFU)')
+      : bi('Seri Port', 'Serial Port');
+    const hints = {
+      esp: bi('Kartı USB ile bağlayın. Görünmezse BOOT tuşuna basılı tutarak takın.', 'Connect the board over USB. If it does not appear, hold BOOT while plugging it in.'),
+      avr: bi('.hex (yaygın) veya ham .bin kabul edilir. Standart Arduino bootloader gerekir.', 'Accepts .hex (common) or raw .bin. Requires a standard Arduino bootloader.'),
+      stm32: bi('Kartı DFU modunda bağlayın (BOOT0 yüksek). Adres genellikle 0x08000000\u2019dir.', 'Connect the board in DFU mode (BOOT0 high). Address is usually 0x08000000.')
+    };
+    fxEl('fxPortHint').innerHTML = '';
+    fxEl('fxFileHint').innerHTML = hints[fx.board] || '';
+    if (fx.board === 'stm32') fxEl('fxAddr').value = '0x08000000';
+    else if (fx.board === 'esp') fxEl('fxAddr').value = '0x0';
+    fx.data = null; fx.fileName = ''; fx.port = null; fx.usb = null;
+    fxSetStatus('fxFileInfo', bi('Dosya seçilmedi', 'No file selected'));
+    fxSetStatus('fxPortInfo', bi('Seçilmedi', 'Nothing selected'));
+    fxEl('fxState').textContent = '';
+    fxProgress(0);
+    if (!fxTransportOK()) fxEl('fxUnsupported').hidden = false; else fxEl('fxUnsupported').hidden = true;
+    fxRefresh();
+  }
+
+  function fxShowConn() {
+    const cfg = fxCfg();
+    if (cfg.transport === 'usb') {
+      if (!fx.usb) { fxSetStatus('fxPortInfo', bi('Seçilmedi', 'Nothing selected')); return; }
+      fxSetStatus('fxPortInfo', esc((fx.usb.productName || 'DFU device')) + ' <span class="fx-mono">(' + fxHex(fx.usb.vendorId, 4) + ':' + fxHex(fx.usb.productId, 4) + ')</span>', 'ok');
+      return;
+    }
+    if (!fx.port) { fxSetStatus('fxPortInfo', bi('Seçilmedi', 'Nothing selected')); return; }
+    const info = fx.port.getInfo();
+    const name = info.usbVendorId ? (FX_BRIDGES[info.usbVendorId] || 'USB Serial') : 'Serial';
+    const ids = info.usbVendorId ? ' <span class="fx-mono">(' + fxHex(info.usbVendorId, 4) + ':' + fxHex(info.usbProductId, 4) + ')</span>' : '';
+    fxSetStatus('fxPortInfo', esc(name) + ids, 'ok');
+  }
+
+  async function fxSelectPort() {
+    if (fx.busy || !fxTransportOK()) return;
+    try {
+      if (fxCfg().transport === 'usb') {
+        fx.usb = await navigator.usb.requestDevice({ filters: [] });
+      } else {
+        fx.port = await navigator.serial.requestPort();
+      }
+      fxShowConn();
+    } catch (e) {
+      if (!e || (e.name !== 'NotFoundError')) fxTerminal.writeLine('Selection error: ' + (e && e.message ? e.message : e));
+    }
+    fxRefresh();
+  }
+
+  function fxParseHex(text) {
+    const out = [];
+    let base = 0;
+    const lines = text.split(/\r?\n/);
+    for (const line of lines) {
+      if (!line || line[0] !== ':') continue;
+      const bytes = [];
+      for (let i = 1; i + 1 < line.length; i += 2) bytes.push(parseInt(line.substr(i, 2), 16));
+      const len = bytes[0], type = bytes[3];
+      let sum = 0; for (let i = 0; i < bytes.length; i++) sum = (sum + bytes[i]) & 0xff;
+      if (sum !== 0) throw new Error('Corrupt .hex file (checksum error)');
+      if (type === 0x00) {
+        const addr = base + ((bytes[1] << 8) | bytes[2]);
+        for (let i = 0; i < len; i++) out[addr + i] = bytes[4 + i];
+      } else if (type === 0x02) {
+        base = ((bytes[4] << 8) | bytes[5]) << 4;
+      } else if (type === 0x04) {
+        base = ((bytes[4] << 8) | bytes[5]) << 16;
+      } else if (type === 0x01) break;
+    }
+    const max = out.length;
+    const buf = new Uint8Array(max);
+    for (let i = 0; i < max; i++) buf[i] = out[i] === undefined ? 0xff : out[i];
+    return buf;
+  }
+
+  async function fxLoadFile(file) {
+    if (!file) return;
+    const cfg = fxCfg();
+    fx.data = null; fx.fileName = '';
+    const isHex = /\.hex$/i.test(file.name);
+    try {
+      if (fx.board === 'avr' && isHex) {
+        fx.data = fxParseHex(await file.text());
+      } else {
+        fx.data = new Uint8Array(await file.arrayBuffer());
+      }
+    } catch (e) {
+      fxSetStatus('fxFileInfo', bi('Dosya okunamadı: ', 'Could not read file: ') + esc(e.message), 'err');
+      fxRefresh(); return;
+    }
+    if (!fx.data.length || fx.data.length > cfg.max) {
+      fx.data = null;
+      fxSetStatus('fxFileInfo', bi('Dosya boyutu 1 bayt ile ', 'File size must be between 1 byte and ') + fxSize(cfg.max) + bi(' arasında olmalı', ''), 'err');
+    } else {
+      fx.fileName = file.name;
+      fxSetStatus('fxFileInfo', esc(file.name) + ' \u00b7 ' + fxSize(fx.data.length), 'ok');
+    }
+    fxRefresh();
+  }
+
+  function fxProgress(p) {
+    const v = Math.max(0, Math.min(100, Math.floor(p)));
+    fxEl('fxBar').style.width = v + '%';
+    fxEl('fxPct').textContent = v + '%';
+  }
+
+  function fxTrack(result, extra) {
+    if (typeof gtag === 'function') gtag('event', 'web_flasher', Object.assign({ result: result, board: fx.board, file_size: fx.data ? fx.data.length : 0 }, extra || {}));
+    if (typeof clarity === 'function') clarity('event', 'web_flasher_' + fx.board + '_' + result);
+  }
+
+  async function fxFlashESP(addr) {
+    if (!fx.esplib) fx.esplib = await import(FX_ESP_LIB);
+    const transport = new fx.esplib.Transport(fx.port, false);
+    try {
+      const loader = new fx.esplib.ESPLoader({ transport: transport, baudrate: parseInt(fxEl('fxBaud').value, 10), romBaudrate: 115200, terminal: fxTerminal });
+      const chip = await loader.main();
+      fxTerminal.writeLine('Writing ' + fx.fileName + ' (' + fxSize(fx.data.length) + ') at ' + fxHex(addr) + '...');
+      fxSetStatus('fxState', bi('Yazılıyor\u2026 ', 'Flashing\u2026 ') + '<span class="fx-mono">' + esc(chip) + '</span>');
+      await loader.writeFlash({ fileArray: [{ data: fx.data, address: addr }], flashMode: 'keep', flashFreq: 'keep', flashSize: 'keep', eraseAll: fxEl('fxErase').checked, compress: true, reportProgress: function (i, w, t) { fxProgress(t ? (w / t) * 100 : 0); } });
+      fxProgress(100);
+      await loader.after('hard_reset');
+      fxTrack('success', { chip: chip, flash_address: fxHex(addr) });
+    } finally {
+      try { await transport.disconnect(); } catch (e) {}
+    }
+  }
+
+  async function fxFlashAVR() {
+    await avrFlash(fx.port, fx.data, parseInt(fxEl('fxBaud').value, 10), fxTerminal, fxProgress);
+    fxProgress(100);
+    fxTrack('success');
+  }
+
+  async function fxFlashSTM32(addr) {
+    if (!fx.dfulib) fx.dfulib = await import(FX_DFU_LIB);
+    const mod = fx.dfulib;
+    await fx.usb.open();
+    if (fx.usb.configuration === null) await fx.usb.selectConfiguration(1);
+    const ifaces = mod.DFU ? mod.DFU.findDeviceDfuInterfaces(fx.usb) : [];
+    if (!ifaces.length) throw new Error('No DFU interface found. Put the board in DFU mode (BOOT0 high, then reset).');
+    let dfuDev = new mod.DFU.Device(fx.usb, ifaces[0]);
+    await dfuDev.open();
+    const memInfo = dfuDev.memoryInfo;
+    if (memInfo && mod.DFUse) dfuDev = new mod.DFUse.Device(fx.usb, ifaces[0]), await dfuDev.open();
+    if (dfuDev.startAddress !== undefined) dfuDev.startAddress = addr;
+    dfuDev.logProgress = function (done, total) { if (total) fxProgress(done / total * 100); };
+    dfuDev.logInfo = function (m) { fxTerminal.writeLine(m); };
+    fxTerminal.writeLine('Writing ' + fx.fileName + ' (' + fxSize(fx.data.length) + ') at ' + fxHex(addr) + '...');
+    fxSetStatus('fxState', bi('Yazılıyor\u2026', 'Flashing\u2026'));
+    await dfuDev.do_download(1024, fx.data.buffer, true);
+    fxProgress(100);
+    fxTrack('success', { flash_address: fxHex(addr) });
+    try { await fx.usb.close(); } catch (e) {}
+  }
+
+  async function fxFlash() {
+    const cfg = fxCfg();
+    const addr = cfg.needsAddr ? fxParseAddr(fxEl('fxAddr').value) : 0;
+    if (fx.busy || !fx.data || !fxConn() || addr === null) return;
+    fx.busy = true; fxRefresh();
+    fxTerminal.clean(); fxProgress(0);
+    fxSetStatus('fxState', bi('Bağlanıyor\u2026', 'Connecting\u2026'));
+    try {
+      if (fx.board === 'esp') await fxFlashESP(addr);
+      else if (fx.board === 'avr') await fxFlashAVR();
+      else if (fx.board === 'stm32') await fxFlashSTM32(addr);
+      fxSetStatus('fxState', bi('Yükleme tamamlandı, cihaz yeniden başlatıldı.', 'Flash complete, device has been reset.'), 'ok');
+    } catch (e) {
+      fxTerminal.writeLine('\nError: ' + (e && e.message ? e.message : String(e)));
+      fxSetStatus('fxState', bi('Yükleme başarısız. Ayrıntılar için günlüğe bakın.', 'Flashing failed. See the log for details.'), 'err');
+      fxTrack('failure');
+    } finally {
+      fx.busy = false; fxRefresh();
+    }
+  }
+
+  function fxInit() {
+    if (fx.ready) return;
+    fx.ready = true;
+    fxEl('fxBoard').addEventListener('change', function (e) { fx.board = e.target.value; fxApplyBoard(); });
+    fxEl('fxFile').addEventListener('change', function (e) { fxLoadFile(e.target.files[0]); e.target.value = ''; });
+    fxEl('fxPortBtn').addEventListener('click', fxSelectPort);
+    fxEl('fxAddr').addEventListener('input', fxRefresh);
+    fxEl('fxAddr').addEventListener('blur', function () { const n = fxParseAddr(this.value); if (n !== null) this.value = fxHex(n); });
+    fxEl('fxFlashBtn').addEventListener('click', fxFlash);
+    if (fx.serialOK) {
+      navigator.serial.addEventListener('disconnect', function (e) { if (e.target === fx.port && !fx.busy) { fx.port = null; fxShowConn(); fxRefresh(); } });
+    }
+    fxApplyBoard();
+  }
+
+  function fxRoute() {
+    const on = location.hash === '#flasher';
+    fxEl('flasherView').hidden = !on;
+    fxEl('cvView').hidden = on;
+    fxEl('navFlasher').classList.toggle('active', on);
+    document.title = on ? 'Web Flasher \u2014 Doruk Erel' : FX_TITLE_CV;
+    if (on) { fxInit(); window.scrollTo(0, 0); }
+    else if (location.hash) { const t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+  }
+
+  fxEl('flasherBack').addEventListener('click', function () {
+    if (fx.busy) return;
+    history.pushState(null, '', location.pathname + location.search);
+    fxRoute(); window.scrollTo(0, 0);
+  });
+
+  window.addEventListener('hashchange', fxRoute);
+  window.addEventListener('popstate', fxRoute);
+  window.addEventListener('beforeunload', function (e) { if (fx.busy) { e.preventDefault(); e.returnValue = ''; } });
+  fxRoute();
 
   document.addEventListener('DOMContentLoaded', loadRepos);
 
